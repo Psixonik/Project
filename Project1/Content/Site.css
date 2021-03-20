@@ -1,0 +1,76 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: aliceblue;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+table {
+    vertical-align: middle;
+    text-align: left;
+    width: 500px; /* Ширина таблицы */
+    margin: 200px auto; /* Выравниваем таблицу по центру */
+    border-collapse: collapse;
+}
+
+td {
+    border: 2px solid green; /* Рамка вокруг таблицы */
+    text-align: center; /* Выравниваем текст по центру ячейки */
+}
+
+th {
+    border: 2px solid black;
+    background-color: darkgrey;
+}
+input {
+    border-radius: 30px;
+    color: transparent;
+    width:42px;
+    height:42px;
+}
+#btnSearch {
+    background: url(../img/sort.png);
+}
+#btnAll {
+    background: url(../img/all.png);
+    margin-left:30px;
+}
+#DropDown {
+    height:40px;
+}
+input,
+input:active,
+input:focus {
+    outline: none;
+}
+#btnAll:hover {
+    background: url(../img/allSelect.png);
+}
+#btnSearch:hover {
+    background: url(../img/sortSelect.png);
+}
+#btnAll:active {
+    background: url(../img/allInput.png);
+}
+#btnSearch:active {
+    background: url(../img/sortInput.png);
+}
+

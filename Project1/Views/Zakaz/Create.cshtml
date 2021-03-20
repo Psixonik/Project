@@ -1,0 +1,11 @@
+﻿@using System.Text;
+@{
+    ViewBag.Title = "Create";
+}
+<form method="post" action="Zakaz/Create">
+    @foreach (string name in ViewBag.errorCrear)
+    {
+        @name
+        <br />
+    }
+</form>
