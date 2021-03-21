@@ -2,12 +2,14 @@
 using Project1.Context;
 using Project1.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Windows.Forms;
 
 namespace Project1.Controllers
 {
@@ -27,13 +29,15 @@ namespace Project1.Controllers
         public ActionResult Index()
         {
             creatSeachName();
-            ViewBag.details = workInBDSklad.GetDeteilAll(); ;
-            return View(db.Details);
+            ViewBag.details = workInBDSklad.GetDeteilAll();
+            return View(db.Detail);
+            //return View(db.Details);
         }
         private void creatSeachName()
         {
             ViewBag.ListName = "error";
             ViewBag.ListName = workInBDSklad.GetSeachMenu();
+            //var axez = db.Database;
         }
 
         [HttpPost]
@@ -45,7 +49,7 @@ namespace Project1.Controllers
                 case "all":
                     {
                         ViewBag.details = workInBDSklad.GetDeteilAll();
-                        return View(db.Details);
+                        return View(db.Detail);
                     }
                 default:
                     {

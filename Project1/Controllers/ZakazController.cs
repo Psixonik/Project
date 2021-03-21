@@ -28,7 +28,7 @@ namespace Project1.Controllers
         // GET: Zakaz
         public ActionResult AllZakaz()
         {
-            foreach (var item in db.Zakazs)
+            foreach (var item in db.Zakaz)
             {
                 newMashin = workInBDTypeMashin.GetTypeMashineById(item.typeMashiID);
                 titl.Add(newMashin.kyzov + " "+newMashin.colKyzov+" шт."+
@@ -36,7 +36,7 @@ namespace Project1.Controllers
                         newMashin.motor + " " + newMashin.colMotor + " шт.");
             }
             ViewBag.titl = titl;            
-            return View(db.Zakazs);
+            return View(db.Zakaz);
         }
 
         public  ActionResult Create(Zakaz zakaz)

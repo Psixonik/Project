@@ -20,22 +20,22 @@ namespace Project1.BDInitializer
             Detail p6 = new Detail { name = "мотор", type = "Мотор для МАЗа", col = 0, money = 17.80M };
             Detail p7 = new Detail { name = "мотор", type = "Мотор для КрАЗа", col = 10, money = 25.90M };
             Detail p8 = new Detail { name = "мотор", type = "Мотор для ЗИЛа", col = 1, money = 10.00M };
-            db.Details.Add(p1);
-            db.Details.Add(p2);
-            db.Details.Add(p3);
-            db.Details.Add(p4);
-            db.Details.Add(p5);
-            db.Details.Add(p6);
-            db.Details.Add(p7);
-            db.Details.Add(p8);
+            db.Detail.Add(p1);
+            db.Detail.Add(p2);
+            db.Detail.Add(p3);
+            db.Detail.Add(p4);
+            db.Detail.Add(p5);
+            db.Detail.Add(p6);
+            db.Detail.Add(p7);
+            db.Detail.Add(p8);
             db.SaveChanges();
 
             Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 100.00M, typeMashiID = 1 };
             Zakaz z2 = new Zakaz { name = "МАЗ", col = 7, money = 603.78M, typeMashiID = 2 };
             Zakaz z3 = new Zakaz { name = "БТР", col = 3, money = 98.40M, typeMashiID = 4 };
-            db.Zakazs.Add(z1);
-            db.Zakazs.Add(z2);
-            db.Zakazs.Add(z3);
+            db.Zakaz.Add(z1);
+            db.Zakaz.Add(z2);
+            db.Zakaz.Add(z3);
             db.SaveChanges();
 
             TypeMashin t1 = new TypeMashin{

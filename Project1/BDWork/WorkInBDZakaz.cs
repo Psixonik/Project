@@ -19,15 +19,15 @@ namespace Project1.BDWork
         Detail threMotor;//количество моторов на складе
         WorkInBDSklad workInBDSklad = new WorkInBDSklad();
 
-        static void SkladContext()
+        /*static void SkladContext()
         {
             Database.SetInitializer<BDContext>(new Initializer());
-        }
+        }*/
         BDContext db = new BDContext();
 
         public Detail Kyzov(TypeMashin newMashin)
         {
-            threKyzov = db.Details
+            threKyzov = db.Detail
                         .Where(b => b.type == newMashin.kyzov)
                         .FirstOrDefault();
             return threKyzov;
@@ -35,14 +35,14 @@ namespace Project1.BDWork
         public Detail Koleso(TypeMashin newMashin)
         {
 
-            threKoleso = db.Details
+            threKoleso = db.Detail
                          .Where(b => b.type == newMashin.koleso)
                          .FirstOrDefault();
             return threKoleso;
         }
         public Detail Motor(TypeMashin newMashin)
         {
-            threMotor = db.Details
+            threMotor = db.Detail
                         .Where(b => b.type == newMashin.motor)
                         .FirstOrDefault();
             return threMotor;
@@ -55,10 +55,10 @@ namespace Project1.BDWork
 
         public void deletZacaz(int id)
         {
-            Zakaz forDelet = db.Zakazs
+            Zakaz forDelet = db.Zakaz
                             .Where(o => o.id == id)
                             .FirstOrDefault();
-            db.Zakazs.Remove(forDelet);
+            db.Zakaz.Remove(forDelet);
             db.SaveChanges();
         }
     }

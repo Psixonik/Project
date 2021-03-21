@@ -17,7 +17,7 @@ namespace Project1.BDWork
             int newKoleso = threKoleso.col - zakaz.col;
             int newMotor = threMotor.col - zakaz.col;
 
-            var kyzov = db.Details
+            var kyzov = db.Detail
                     .Where(c => c.type == newMashin.kyzov)
                     .FirstOrDefault();
             // Внести изменения
@@ -25,7 +25,7 @@ namespace Project1.BDWork
             // Сохранить изменения
             db.SaveChanges();
 
-            var koleso = db.Details
+            var koleso = db.Detail
                 .Where(c => c.type == newMashin.koleso)
                 .FirstOrDefault();
             // Внести изменения
@@ -33,7 +33,7 @@ namespace Project1.BDWork
             // Сохранить изменения
             db.SaveChanges();
 
-            var motor = db.Details
+            var motor = db.Detail
                 .Where(c => c.type == newMashin.motor)
                 .FirstOrDefault();
             // Внести изменения
@@ -44,16 +44,16 @@ namespace Project1.BDWork
 
         public IEnumerable<Detail> GetDeteilSomeBdByType(string type)
         {
-            return db.Details.Where(c => c.name == type);
+            return db.Detail.Where(c => c.name == type);
         }
         public IEnumerable<Detail> GetDeteilAll()
         {
-            return db.Details;
+            return db.Detail;
         }
 
         public IEnumerable<string> GetSeachMenu()
         {
-            IEnumerable<string> menu = (from c in db.Details select c.name).ToList().Distinct();
+            IEnumerable<string> menu = (from c in db.Detail select c.name).ToList().Distinct();
             return menu;
         }
 

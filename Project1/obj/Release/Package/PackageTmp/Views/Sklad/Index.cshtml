@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Project1.Models.Detail>
+@using Project1.Models;
+
+@{
+    ViewBag.Title = "Склад";
+}
+<form method="post" action="/Sklad/Index">
+    <h2>Склад</h2>
+
+    <div>
+        <select name="dropdowntipo" id="DropDown">
+            @{
+                foreach (var item in ViewBag.ListName)
+                {
+                    <option value="@item">@item</option>
+                }
+            }
+        </select>
+        <input type="submit" name="filtr" id="btnSearch" value="1">
+        <input type="submit" name="filtr" id="btnAll" value="all">
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.col)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.money)
+            </th>
+        </tr>
+        @foreach (Detail item in ViewBag.details)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.col)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.money)
+                </td>
+            </tr>
+        }
+    </table>
+</form>
+
+

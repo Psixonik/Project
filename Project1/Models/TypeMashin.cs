@@ -11,14 +11,14 @@ namespace Project1.Models
 
         public string kyzov { set; get; }
 
-        public byte colKyzov { set; get; }
+        public int colKyzov { set; get; }
 
         public string koleso { set; get; }
 
-        public byte colKoleso { set; get; }
+        public int colKoleso { set; get; }
 
         public string motor { set; get; }
 
-        public byte colMotor { set; get; }
+        public int colMotor { set; get; }
     }
 }

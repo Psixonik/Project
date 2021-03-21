@@ -21,7 +21,7 @@ namespace Project1.BDWork
         }
         public TypeMashin GetTypeMashineById(int id)
         {
-            newMashin = newMashin = db.TypeMashin
+            newMashin = db.TypeMashin
                         .Where(b => b.id == id)
                         .FirstOrDefault();
             return newMashin;
