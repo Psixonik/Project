@@ -30,9 +30,10 @@ namespace Project1.Controllers
         {
             creatSeachName();
             ViewBag.details = workInBDSklad.GetDeteilAll();
-            return View(db.Detail);
+            return View(db.Details);
             //return View(db.Details);
         }
+
         private void creatSeachName()
         {
             ViewBag.ListName = "error";
@@ -49,11 +50,11 @@ namespace Project1.Controllers
                 case "all":
                     {
                         ViewBag.details = workInBDSklad.GetDeteilAll();
-                        return View(db.Detail);
+                        return View(db.Details);
                     }
                 default:
                     {
-                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByType(dropdowntipo);
+                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo);
                         return View(ViewBag.details);
                     }
             }

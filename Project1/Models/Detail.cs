@@ -15,7 +15,5 @@ namespace Project1.Models
 
         public int col { get; set; }
 
-        public decimal money { get; set; }
-
     }
 }

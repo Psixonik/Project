@@ -16,9 +16,13 @@ namespace Project1.Context
         }
         public BDContext() : base("DefaultConnection")
         { }*/
-        public DbSet<Detail> Detail { get; set; }
-        public DbSet<Zakaz> Zakaz  { get; set; }
-        public DbSet<TypeMashin> TypeMashin { get; set; }
-
+        public DbSet<Detail> Details { get; set; }
+        public DbSet<Zakaz> Zakazs  { get; set; }
+        public DbSet<TypeMashin> TypeMashins { get; set; }
+        public DbSet<Money> Moneys { get; set; }
+        public DbSet<Bazaar> Bazaars { get; set; }
+        public DbSet<NameOfMashin> NameOfMashins { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Credit> Credits { get; set; }
     }
 }

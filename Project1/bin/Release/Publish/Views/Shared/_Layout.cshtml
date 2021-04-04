@@ -1,43 +1,69 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title – приложение ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <!-- CSS dependencies-->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/MyStyle.css">
+
+    <!-- JS dependencies-->
+    <script src="~/Content/jquery-3.0.0.min.js"></script>
+    <!-- Bootstrap 4 dependency-->
+    <script src="~/Content/bootstrap.js"></script>
+    <!-- bootbox code-->
+    <script src="~/Content/bootbox.js"></script>
+
+    <!--<script src="~/Scripts/EndOfDay.js"></script>-->
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container tools">
             <!--<div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-    </div>-->
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>-->
+
+            <div class="navbar-collapse collapse" id="navbar" style="float: left;">
+                <ul class="hr">
+                    <li>@Html.ActionLink("Базар", "Index", "Bazaar")</li>
                     <li>@Html.ActionLink("Склад", "Index", "Sklad")</li>
                     <li>@Html.ActionLink("Зыказы", "AllZakaz", "Zakaz")</li>
-                    <li>@Html.ActionLink("Тест", "Test", "Test")</li>
+                    <li>@Html.ActionLink("Деньги", "Index", "Money")</li>
+                    <li>@Html.ActionLink("Рабочии", "Index", "Workers")</li>
+                    <li></li>
+                    <li>@Html.ActionLink("Новый День", "Index", "NewDay")</li>
                 </ul>
             </div>
+
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
+            <!--<p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>-->
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <script>
+
+    </script>
 </body>
 </html>

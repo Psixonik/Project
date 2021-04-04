@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: aliceblue;
+    background: red;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -42,7 +43,7 @@ th {
 }
 input {
     border-radius: 30px;
-    color: transparent;
+    /*color: transparent;*/
     width:42px;
     height:42px;
 }

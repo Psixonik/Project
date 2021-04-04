@@ -1,0 +1,47 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: aliceblue;
+
+}
+input {
+    border-radius: 30px;
+    /*color: transparent;*/
+    width: 42px;
+    height: 42px;
+    color: transparent;
+}
+#btnYes {
+    background: url(../../ikons/NotPressed/add.png) no-repeat 50% 50%;
+    margin-left: 10px;
+}
+#btnYes:hover {
+    background: url(../../ikons/Pressed/addPressed.png) no-repeat 50% 50%;
+}
+#btnNo {
+    background: url(../../ikons/NotPressed/delete.png) no-repeat 50% 50%;
+    margin-left:10px;
+}
+#btnNo:hover {
+    background: url(../../ikons/Pressed/deletePressed.png) no-repeat 50% 50%;
+}
+input,
+input:active,
+input:focus {
+    outline: none;
+}
+.btn {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+label {
+    font-size: 20px;
+}
+.list {
+    width: 300px;
+    margin: 0 auto;
+}
+#labelNo {
+    margin-left:50px;
+} 

@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<Project1.Models.Zakaz>
-@using Project1.Models;
+<!--@using Project1.Models;-->
 
 @{
     ViewBag.Title = "Заказы";
 }
-
+<h2>Заказы</h2>
 <form>
     <table class="table">
         <tr>
             <th>
+
                 @Html.DisplayNameFor(model => model.name)
             </th>
             <th>
@@ -25,21 +26,21 @@
             foreach (var item in Model)
             {
 
-            <tr>
-                <td title = "Кузов:@ViewBag.titl[count]">
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.col)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.money)
-                </td>
-                <td>
-                    @Html.ActionLink("Выполнить", "Create", item, null) |
-                    @Html.ActionLink("Удалить", "Delet", item, null)
-                </td>
-            </tr>
+        <tr>
+            <td title="Кузов:@ViewBag.titl[count]">
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.col)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.money)
+            </td>
+            <td>
+                @Html.ActionLink("Выполнить", "Create", item, null) |
+                @Html.ActionLink("Удалить", "Delet", item, null)
+            </td>
+        </tr>
                 count++;
             }
 

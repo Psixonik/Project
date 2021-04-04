@@ -1,0 +1,32 @@
+body{
+	/*background:red;*/
+}
+label {
+    font-size:20px;
+}
+#credit {
+    background: url(../../ikons/NotPressed/finance.png) no-repeat 50% 50%;
+}
+#credit:hover {
+    background: url(../../ikons/Pressed/financePressed.png) no-repeat 50% 50%;
+}
+input {
+    border-radius: 30px;
+    /*color: transparent;*/
+    width: 42px;
+    height: 42px;
+}
+.question {
+    border-radius: 30px;
+    /*color: transparent;*/
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+}
+.question {
+    background: url(../../ikons/NotPressed/checked.png) no-repeat 50% 50%;
+}
+
+.question:hover {
+    background: url(../../ikons/Pressed/checkedPressed.png) no-repeat 50% 50%;
+}

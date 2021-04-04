@@ -22,21 +22,22 @@ namespace Project1.Controllers
         bool fl = true;
         WorkInBDZakaz workInBDZakaz = new WorkInBDZakaz();
         WorkInBDTypeMashin workInBDTypeMashin = new WorkInBDTypeMashin();
+        WorkInBDMoney money = new WorkInBDMoney();
 
         List<string> titl = new List<string>();
 
         // GET: Zakaz
         public ActionResult AllZakaz()
         {
-            foreach (var item in db.Zakaz)
+            foreach (var item in db.Zakazs)
             {
-                newMashin = workInBDTypeMashin.GetTypeMashineById(item.typeMashiID);
+                newMashin = workInBDTypeMashin.GetTypeMashineByName(item.name);
                 titl.Add(newMashin.kyzov + " "+newMashin.colKyzov+" шт."+
                         "\nКолесо: " + newMashin.koleso + " " + newMashin.colKoleso + " шт.\n" +
                         newMashin.motor + " " + newMashin.colMotor + " шт.");
             }
             ViewBag.titl = titl;            
-            return View(db.Zakaz);
+            return View(db.Zakazs);
         }
 
         public  ActionResult Create(Zakaz zakaz)
@@ -50,6 +51,7 @@ namespace Project1.Controllers
             {
                 workInBDZakaz.UpdateSklad(zakaz, newMashin);
                 workInBDZakaz.deletZacaz(zakaz.id);
+                money.AddMoney(zakaz);
                 errorCrear.Add("Сборка заказа завершена");
             }
             ViewBag.errorCrear = errorCrear;            
@@ -59,31 +61,31 @@ namespace Project1.Controllers
         private void Kyzov(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
             threKyzov = workInBDZakaz.Kyzov(newMashin);
-            BildZakaz(threKyzov,zakaz);
+            BildZakaz(threKyzov,zakaz, "кузов", newMashin.colKyzov);
         }
         private void Koleso(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
             threKoleso = workInBDZakaz.Koleso(newMashin);
-            BildZakaz(threKoleso, zakaz);
+            BildZakaz(threKoleso, zakaz, "колесо", newMashin.colKoleso);
         }
         private void Motor(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         { 
             threMotor = workInBDZakaz.Motor(newMashin);
-            BildZakaz(threMotor, zakaz);
+            BildZakaz(threMotor, zakaz, "мотор", newMashin.colMotor);
         }
 
-        private void BildZakaz(Detail type,Zakaz zakaz)
+        private void BildZakaz(Detail type,Zakaz zakaz, string str, int col)
         {
             if (type == null)
             {
                 fl = false;
-                errorCrear.Add("На складе ненайден " + type.name +" типа "+type.type);
+                errorCrear.Add("На складе ненайден " + str +" типа "+ zakaz.name);
             }
-            if (type != null && type.col < newMashin.colKyzov * zakaz.col)
+            if (type != null && type.col < col * zakaz.col)
             {
                 fl = false;
-                errorCrear.Add("На складе недостаточьно " + type.name + " типа " + type.type+
-                    ". В наличии " + type.col + ". Необходимо " + newMashin.colKyzov * zakaz.col);
+                errorCrear.Add("На складе недостаточьно " + str + " типа " + type.type+
+                    ". В наличии " + type.col + ". Необходимо " + col * zakaz.col);
             }
         }
 

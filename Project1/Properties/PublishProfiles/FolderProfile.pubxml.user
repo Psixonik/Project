@@ -6,7 +6,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Project1\Project1\bin\Release\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Андрей\Desktop\1</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/Database.mdf">
@@ -43,10 +43,10 @@
       <publishTime>02/18/2018 08:44:54</publishTime>
     </File>
     <File Include="bin/Project1.dll">
-      <publishTime>03/21/2021 19:04:58</publishTime>
+      <publishTime>04/03/2021 16:14:00</publishTime>
     </File>
     <File Include="bin/Project1.pdb">
-      <publishTime>03/21/2021 19:04:58</publishTime>
+      <publishTime>04/03/2021 16:14:00</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>05/24/2018 12:38:22</publishTime>
@@ -231,32 +231,110 @@
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
+    <File Include="Content/bootbox.js">
+      <publishTime>03/25/2021 21:39:15</publishTime>
+    </File>
+    <File Include="Content/bootbox.locales.js">
+      <publishTime>03/25/2021 21:41:31</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>03/25/2021 21:33:45</publishTime>
+    </File>
     <File Include="Content/bootstrap-theme.css">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css.map">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css.map">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.bundle.js">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.bundle.js.map">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.bundle.min.js">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.bundle.min.js.map">
+      <publishTime>03/25/2021 21:33:27</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/27/2021 07:40:54</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.js">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.js.map">
+      <publishTime>03/25/2021 21:33:27</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/26/2021 12:08:19</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css.map">
-      <publishTime>12/26/2020 09:09:28</publishTime>
+      <publishTime>03/25/2021 21:30:33</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.js">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.js.map">
+      <publishTime>03/25/2021 21:33:27</publishTime>
+    </File>
+    <File Include="Content/css/money.css">
+      <publishTime>04/01/2021 15:36:22</publishTime>
+    </File>
+    <File Include="Content/css/newGame.css">
+      <publishTime>04/02/2021 16:37:57</publishTime>
+    </File>
+    <File Include="Content/css/Workers.css">
+      <publishTime>03/31/2021 09:55:41</publishTime>
+    </File>
+    <File Include="Content/jquery-3.0.0.min.js">
+      <publishTime>03/26/2021 15:29:18</publishTime>
+    </File>
+    <File Include="Content/jquery-migrate-1.4.1.min.js">
+      <publishTime>03/26/2021 15:29:18</publishTime>
+    </File>
+    <File Include="Content/jquery.min.js">
+      <publishTime>03/26/2021 15:18:27</publishTime>
+    </File>
+    <File Include="Content/MyStyle.css">
+      <publishTime>04/03/2021 16:00:22</publishTime>
+    </File>
+    <File Include="Content/popper.min.js">
+      <publishTime>03/25/2021 21:48:19</publishTime>
     </File>
     <File Include="Content/Site.css">
-      <publishTime>03/17/2021 20:44:22</publishTime>
+      <publishTime>03/27/2021 16:32:57</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>12/26/2020 09:09:26</publishTime>
@@ -278,6 +356,33 @@
     </File>
     <File Include="Global.asax">
       <publishTime>12/26/2020 09:09:26</publishTime>
+    </File>
+    <File Include="ikons/NotPressed/add.png">
+      <publishTime>03/31/2021 08:46:26</publishTime>
+    </File>
+    <File Include="ikons/NotPressed/checked.png">
+      <publishTime>04/01/2021 09:09:26</publishTime>
+    </File>
+    <File Include="ikons/NotPressed/checked_accept.png">
+      <publishTime>03/31/2021 08:05:28</publishTime>
+    </File>
+    <File Include="ikons/NotPressed/delete.png">
+      <publishTime>03/31/2021 08:48:59</publishTime>
+    </File>
+    <File Include="ikons/NotPressed/finance.png">
+      <publishTime>03/31/2021 10:31:06</publishTime>
+    </File>
+    <File Include="ikons/Pressed/addPressed.png">
+      <publishTime>03/31/2021 09:07:32</publishTime>
+    </File>
+    <File Include="ikons/Pressed/checkedPressed.png">
+      <publishTime>04/01/2021 09:09:26</publishTime>
+    </File>
+    <File Include="ikons/Pressed/deletePressed.png">
+      <publishTime>03/31/2021 09:07:32</publishTime>
+    </File>
+    <File Include="ikons/Pressed/financePressed.png">
+      <publishTime>03/31/2021 10:31:02</publishTime>
     </File>
     <File Include="img/all.png">
       <publishTime>03/15/2021 19:28:41</publishTime>
@@ -305,6 +410,9 @@
     </File>
     <File Include="Scripts/bootstrap.min.js">
       <publishTime>12/26/2020 09:09:28</publishTime>
+    </File>
+    <File Include="Scripts/EndOfDay.js">
+      <publishTime>03/30/2021 08:50:53</publishTime>
     </File>
     <File Include="Scripts/jquery-3.3.1.js">
       <publishTime>12/26/2020 09:09:30</publishTime>
@@ -339,20 +447,38 @@
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>12/26/2020 09:09:32</publishTime>
     </File>
+    <File Include="Views/Bazaar/Index.cshtml">
+      <publishTime>03/28/2021 20:28:23</publishTime>
+    </File>
+    <File Include="Views/Bazaar/Index1.cshtml">
+      <publishTime>03/25/2021 20:11:12</publishTime>
+    </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>12/26/2020 16:13:16</publishTime>
     </File>
+    <File Include="Views/Home/NewGame.cshtml">
+      <publishTime>04/02/2021 16:39:10</publishTime>
+    </File>
     <File Include="Views/Home/Zakaz.cshtml">
-      <publishTime>03/20/2021 13:06:52</publishTime>
+      <publishTime>03/27/2021 07:45:29</publishTime>
+    </File>
+    <File Include="Views/Money/Index.cshtml">
+      <publishTime>04/01/2021 17:34:36</publishTime>
+    </File>
+    <File Include="Views/Money/Partial.cshtml">
+      <publishTime>03/31/2021 10:58:36</publishTime>
+    </File>
+    <File Include="Views/NewDay/Index.cshtml">
+      <publishTime>03/30/2021 09:22:57</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>12/26/2020 09:09:26</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/21/2021 18:56:11</publishTime>
+      <publishTime>04/02/2021 16:57:55</publishTime>
     </File>
     <File Include="Views/Sklad/Index.cshtml">
-      <publishTime>03/20/2021 13:21:01</publishTime>
+      <publishTime>03/30/2021 10:55:40</publishTime>
     </File>
     <File Include="Views/Sklad/SkladOld.cshtml">
       <publishTime>03/17/2021 20:20:11</publishTime>
@@ -361,10 +487,13 @@
       <publishTime>03/21/2021 18:56:28</publishTime>
     </File>
     <File Include="Views/Web.config">
-      <publishTime>12/26/2020 09:09:26</publishTime>
+      <publishTime>03/28/2021 18:40:14</publishTime>
+    </File>
+    <File Include="Views/Workers/Index.cshtml">
+      <publishTime>03/31/2021 17:30:51</publishTime>
     </File>
     <File Include="Views/Zakaz/AllZakaz.cshtml">
-      <publishTime>03/20/2021 13:12:39</publishTime>
+      <publishTime>03/30/2021 10:55:40</publishTime>
     </File>
     <File Include="Views/Zakaz/Create.cshtml">
       <publishTime>03/20/2021 13:07:09</publishTime>
@@ -373,7 +502,7 @@
       <publishTime>12/26/2020 09:09:26</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/21/2021 17:34:53</publishTime>
+      <publishTime>04/03/2021 15:54:11</publishTime>
     </File>
   </ItemGroup>
 </Project>

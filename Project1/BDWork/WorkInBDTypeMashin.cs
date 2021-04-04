@@ -14,14 +14,14 @@ namespace Project1.BDWork
 
         public TypeMashin GetTypeMashineByName(string name)
         {
-            newMashin = db.TypeMashin
+            newMashin = db.TypeMashins
                         .Where(b => b.kyzov == name)
                         .FirstOrDefault();
             return newMashin;
         }
         public TypeMashin GetTypeMashineById(int id)
         {
-            newMashin = db.TypeMashin
+            newMashin = db.TypeMashins
                         .Where(b => b.id == id)
                         .FirstOrDefault();
             return newMashin;

@@ -129,43 +129,78 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BDInitializer\Initializer.cs" />
+    <Compile Include="BDInitializer\ReWriteBD.cs" />
+    <Compile Include="BDWork\WorkInBDBazaar.cs" />
+    <Compile Include="BDWork\WorkInBDCredit.cs" />
+    <Compile Include="BDWork\WorkInBDMoney.cs" />
     <Compile Include="BDWork\WorkInBDSklad.cs" />
     <Compile Include="BDWork\WorkInBDTypeMashin.cs" />
+    <Compile Include="BDWork\WorkInBDWorkes.cs" />
     <Compile Include="BDWork\WorkInBDZakaz.cs" />
     <Compile Include="Context\BDContext.cs" />
+    <Compile Include="Controllers\BazaarController.cs" />
+    <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewDayController.cs" />
     <Compile Include="Controllers\SkladController.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="Controllers\ZakazController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202103211509551_MigrateDB.cs" />
-    <Compile Include="Migrations\202103211509551_MigrateDB.designer.cs">
-      <DependentUpon>202103211509551_MigrateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Bazaar.cs" />
+    <Compile Include="Models\Credit.cs" />
     <Compile Include="Models\Detail.cs" />
+    <Compile Include="Models\Money.cs" />
+    <Compile Include="Models\NameOfMashin.cs" />
     <Compile Include="Models\TypeMashin.cs" />
+    <Compile Include="Models\Worker.cs" />
     <Compile Include="Models\Zakaz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Static\Day.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootbox.js" />
+    <Content Include="Content\bootbox.locales.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap.bundle.min.js" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.js" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\css\money.css" />
+    <Content Include="Content\css\newGame.css" />
+    <Content Include="Content\css\regulations.css" />
+    <Content Include="Content\css\Workers.css" />
+    <Content Include="Content\jquery-3.0.0.min.js" />
+    <Content Include="Content\jquery-migrate-1.4.1.min.js" />
+    <Content Include="Content\jquery.min.js" />
+    <Content Include="Content\MyStyle.css" />
+    <Content Include="Content\popper.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ikons\NotPressed\checked.png" />
+    <Content Include="ikons\Pressed\checkedPressed.png" />
+    <Content Include="ikons\NotPressed\add.png" />
+    <Content Include="ikons\NotPressed\checked_accept.png" />
+    <Content Include="ikons\NotPressed\delete.png" />
+    <Content Include="ikons\NotPressed\finance.png" />
+    <Content Include="ikons\Pressed\addPressed.png" />
+    <Content Include="ikons\Pressed\deletePressed.png" />
+    <Content Include="ikons\Pressed\financePressed.png" />
     <Content Include="img\all.png" />
     <Content Include="img\allInput.png" />
     <Content Include="img\allSelect.png" />
@@ -175,8 +210,22 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap.js.map" />
+    <Content Include="Content\bootstrap.min.js.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\EndOfDay.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -207,24 +256,23 @@
     <Content Include="Views\Home\Zakaz.cshtml" />
     <Content Include="Views\Sklad\Index.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
+    <Content Include="Views\Money\Index.cshtml" />
+    <Content Include="Views\Bazaar\Index.cshtml" />
+    <Content Include="Views\Bazaar\Index1.cshtml" />
+    <Content Include="Views\NewDay\Index.cshtml" />
+    <Content Include="Views\Workers\Index.cshtml" />
+    <Content Include="Views\Money\Partial.cshtml" />
+    <Content Include="Views\Home\NewGame.cshtml" />
+    <Content Include="Views\Home\Regulations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103211509551_MigrateDB.resx">
-      <DependentUpon>202103211509551_MigrateDB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

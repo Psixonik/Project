@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Project1.Models;
+using System.Data.SqlClient;
+using System.Web.Mvc;
 
 namespace Project1.BDWork
 {
@@ -17,45 +19,86 @@ namespace Project1.BDWork
             int newKoleso = threKoleso.col - zakaz.col;
             int newMotor = threMotor.col - zakaz.col;
 
-            var kyzov = db.Detail
+            var kyzov = db.Details
                     .Where(c => c.type == newMashin.kyzov)
                     .FirstOrDefault();
             // Внести изменения
             kyzov.col = kyzov.col - newMashin.colKyzov * zakaz.col;
+            if (kyzov.col == 0)
+            {
+                db.Details.Remove(kyzov);
+            }
             // Сохранить изменения
             db.SaveChanges();
 
-            var koleso = db.Detail
+            var koleso = db.Details
                 .Where(c => c.type == newMashin.koleso)
                 .FirstOrDefault();
             // Внести изменения
             koleso.col = koleso.col - newMashin.colKoleso * zakaz.col;
+            if (koleso.col == 0)
+            {
+                db.Details.Remove(koleso);
+            }
             // Сохранить изменения
             db.SaveChanges();
 
-            var motor = db.Detail
+            var motor = db.Details
                 .Where(c => c.type == newMashin.motor)
                 .FirstOrDefault();
             // Внести изменения
             motor.col = motor.col - newMashin.colMotor * zakaz.col;
+            if (motor.col == 0)
+            {
+                db.Details.Remove(motor);
+            }
             // Сохранить изменения
             db.SaveChanges();
         }
 
-        public IEnumerable<Detail> GetDeteilSomeBdByType(string type)
+        public Detail GetDeteilSomeBdByType(string type)
         {
-            return db.Detail.Where(c => c.name == type);
+            return db.Details.Where(c => c.type == type).FirstOrDefault();
         }
+        public IEnumerable<Detail> GetDeteilSomeBdByName(string name)
+        {
+            return db.Details.Where(c => c.name == name);
+        }
+
         public IEnumerable<Detail> GetDeteilAll()
         {
-            return db.Detail;
+            return db.Details;
         }
 
         public IEnumerable<string> GetSeachMenu()
         {
-            IEnumerable<string> menu = (from c in db.Detail select c.name).ToList().Distinct();
+            IEnumerable<string> menu = (from c in db.Details select c.name).ToList().Distinct();
             return menu;
         }
 
+        public void UpdateForBuy(string type, int colBuy)
+        {
+            Detail col;
+            col = db.Details.Where(c => c.type == type).FirstOrDefault();
+            col.col += colBuy;
+            db.SaveChanges();
+        }
+
+        public void newDetail(string newName,string newType, int newCol)
+        {
+            // Создать новую деталь
+            Detail newDetail = new Detail
+            {
+                name = newName,
+                type = newType,
+                col = newCol
+            };
+
+            // Добавить в DbSet
+            db.Details.Add(newDetail);
+
+            // Сохранить изменения в базе данных
+            db.SaveChanges();
+        }
     }
 }

@@ -4,10 +4,24 @@
 @{
     ViewBag.Title = "Склад";
 }
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My page</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+<!-- CSS dependencies
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/MyStyle.css">
+
+</head>
+    <body>-->
+
 <form method="post" action="/Sklad/Index">
     <h2>Склад</h2>
 
-    <div>
+    <div id="axez">
         <select name="dropdowntipo" id="DropDown">
             @{
                 foreach (var item in ViewBag.ListName)
@@ -32,9 +46,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.col)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.money)
-            </th>
         </tr>
         @foreach (Detail item in ViewBag.details)
         {
@@ -48,12 +59,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.col)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.money)
-                </td>
             </tr>
         }
     </table>
 </form>
-
+ <!--   </body>
+</html>-->
 

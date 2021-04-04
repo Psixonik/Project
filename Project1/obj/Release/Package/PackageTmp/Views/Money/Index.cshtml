@@ -1,0 +1,112 @@
+﻿@model IEnumerable<Project1.Models.Credit>
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/css/money.css">
+
+<form method="post" action="~/Money/Credit">
+    <h2>Деньги</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                Наличьность
+            </th>
+            <th>
+                Кредит
+            </th>
+            <th>
+                Дней до погашения кредита
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @ViewBag.mani
+            </td>
+            <td>
+                @ViewBag.credit
+            </td>
+            <td>
+                @ViewBag.day
+            </td>
+        </tr>
+    </table>
+    @{
+        if (ViewBag.day != 0)
+        {
+            <label>У Вас уже есть кредит</label>
+        }
+        else
+        {
+            <label>Взять кредит<input style="margin-left:10px;" id="credit"></label>
+        }
+    }
+
+    <div id="content" style="display:none;">
+        <table>
+            <tr>
+                <th>
+                    Сумма
+                </th>
+                <th>
+                    Время
+                </th>
+                <th>
+
+                </th>
+            </tr>
+            @{
+                foreach (var item in Model)
+                {
+                    <tr class="cheart+@item.id">
+                        <td>
+                            @item.cash
+                        </td>
+                        <td>
+                            @item.day
+                        </td>
+                        <td>
+                            <text style="visibility:visible;width:30px;" id="id+@item.id">@item.id</text>
+                            <text style="visibility:visible;width:30px;" id="cash+@item.id">@item.cash</text>
+                            <text style="visibility:visible;width:30px;" id="day+@item.id">@item.day</text>
+                            <input class="question" value="@item.id" onclick="test(this)">
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+    <div id="getCredit" style="display:none;">
+        <label>Вы уверены, что хотите взять кредит</label><br>
+        <label>в размере @Html.Hidden("cash", "") сроком на @Html.Hidden("day", "") дней?</label><br>
+        <label>Да<input type="submit" class="question" name="filtr" value="" id="btnYes"></label>
+        <label>Нет<input type="submit" class="question" name="filtr" value="no"></label>
+
+    </div>
+</form>
+
+<script type="text/javascript">
+    $('#credit').click(function () {
+        if ($("#content").is(":hidden")) {
+            $("#content").show("slow");
+        } else {
+            $("#content").hide("slow");
+        }
+    });
+</script>
+
+<script>
+    function test(txt) {
+        $("#content").hide("slow");
+        $("#getCredit").show("slow");
+        var cash = document.getElementById("cash+" + txt.value).innerText;
+        var day = document.getElementById("day+" + txt.value).innerText;
+        $('#cash').replaceWith(cash);
+        $('#day').replaceWith(day);
+        document.getElementById('btnYes').value = cash + " " + day;
+    }
+</script>
+

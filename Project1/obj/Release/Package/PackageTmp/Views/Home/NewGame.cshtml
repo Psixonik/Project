@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/css/newGame.css">
+    <title>NewGame</title>
+</head>
+<body>
+    <form method="post" action="/Home/GameOver">
+        <div class="list">
+            <h1>Вы проиграли.</h1>
+            <h2>Сыграть еще раз?</h2>
+            <div class="btn">
+                <label>Да</label><input type="submit" class="question" name="ansver" value="Yes" id="btnYes">
+                <label id="labelNo">Нет</label><input type="submit" class="question" name="ansver" value="No" id="btnNo">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
