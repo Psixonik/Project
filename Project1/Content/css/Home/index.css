@@ -1,0 +1,26 @@
+/*Home*/
+body {
+    background: url(../../../img/plant.jpg);
+    background-size: cover;
+}
+#bazaar_img, #sklad_img, #order_img {
+    width: 10%;
+    height: 10%;
+    margin-top: 20px;
+}
+#bank_img {
+    width: 6%;
+    height: 6%;
+    margin-top: 20px;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+ul.hr {
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+}
+ul.hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 35px; /* Отступ слева */
+}

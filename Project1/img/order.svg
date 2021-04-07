@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 181.03214 147.72061" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter id="b" x="-.25" y="-.25" width="1.5" height="1.5">
+   <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="4.3"/>
+   <feColorMatrix result="bluralpha" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.638000 0"/>
+   <feOffset dx="5.9" dy="5.9" in="bluralpha" result="offsetBlur"/>
+   <feMerge>
+    <feMergeNode in="offsetBlur"/>
+    <feMergeNode in="SourceGraphic"/>
+   </feMerge>
+  </filter>
+  <linearGradient id="c" x1="174.29" x2="209.58" y1="587.36" y2="552.07" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#003296" stop-opacity=".91765" offset="0"/>
+   <stop stop-color="#003296" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="a" x1="102.91" x2="118.9" y1="654.57" y2="637.77" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#003296" offset="0"/>
+   <stop stop-color="#003296" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-154.54 -494.73)">
+  <path transform="matrix(.97957 0 0 .93212 80.104 15.246)" d="m141.43 640.22c0 10.257-9.1142 18.571-20.357 18.571s-20.357-8.3147-20.357-18.571 9.1142-18.571 20.357-18.571 20.357 8.3147 20.357 18.571z" fill="url(#a)" filter="url(#b)" stroke="#003296" stroke-width="7.23"/>
+  <path d="m180 582.36 115-1.4286 33.571-50c-148.57-12.857-149.29-12.857-149.29-12.857l0.71429 64.286z" fill="url(#c)" stroke="#003296" stroke-width="14"/>
+  <path transform="matrix(.97957 0 0 .93212 155.69 15.246)" d="m141.43 640.22c0 10.257-9.1142 18.571-20.357 18.571s-20.357-8.3147-20.357-18.571 9.1142-18.571 20.357-18.571 20.357 8.3147 20.357 18.571z" fill="url(#a)" filter="url(#b)" stroke="#003296" stroke-width="7.23"/>
+  <path d="m179.2 513.73v-12.007h-17.664" fill="none" stroke="#003296" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"/>
+  <path d="m320.13 547.63-135.39-6.4199" fill="none" stroke="#003196" stroke-width="14"/>
+  <path d="m301.99 564.2-118.48-0.79346" fill="none" stroke="#003196" stroke-width="14"/>
+  <path d="m204.55 575.92v-53.865" fill="none" stroke="#003296" stroke-width="14"/>
+  <path d="m229.6 578.04v-53.865" fill="none" stroke="#003296" stroke-width="14"/>
+  <path d="m254.65 577.29v-53.865" fill="none" stroke="#003296" stroke-width="14"/>
+  <path d="m279.7 574.54v-53.865" fill="none" stroke="#003296" stroke-width="14"/>
+  <path d="m304.75 561.85v-39.483" fill="none" stroke="#003296" stroke-width="14"/>
+ </g>
+</svg>

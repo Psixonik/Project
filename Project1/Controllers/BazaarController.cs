@@ -31,19 +31,12 @@ namespace Project1.Controllers
 
         public ActionResult Buy(string id, string col)
         {
-            /*string MyCookieValue;
-            // сначала нам требуется проверить на null наличие cookie
-            if (Request.Cookies["MyCookieName"] != null)
-                MyCookieValue = Request.Cookies["MyCookieName"].Value;*/
-
-            //int mani;
             int maniForBuy;
             int maniOfShop;
             int idInBD = Convert.ToInt32(id);
             int colBuy = Convert.ToInt32(col);
 
 
-            //maniForBuy = db.Bazaar.Where(c => c.id == idInBD).FirstOrDefault().money * colBuy;
             maniForBuy = workBazaar.GetDetailDbId(idInBD).money * colBuy;
             maniOfShop = workMoney.GetMani()*colBuy;
             if (maniForBuy > maniOfShop)
@@ -72,6 +65,11 @@ namespace Project1.Controllers
 
 
             return Redirect("\\Bazaar\\Index");
+        }
+
+        public ActionResult Back()
+        {
+            return Redirect("/Home/Index");
         }
     }
 }

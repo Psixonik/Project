@@ -29,6 +29,7 @@ namespace Project1.Controllers
         public ActionResult Index()
         {
             creatSeachName();
+            ViewBag.element = " ";
             ViewBag.details = workInBDSklad.GetDeteilAll();
             return View(db.Details);
             //return View(db.Details);
@@ -38,16 +39,18 @@ namespace Project1.Controllers
         {
             ViewBag.ListName = "error";
             ViewBag.ListName = workInBDSklad.GetSeachMenu();
+
             //var axez = db.Database;
         }
 
         [HttpPost]
         public ActionResult Index(string dropdowntipo, string filtr)
         {
+            ViewBag.element = dropdowntipo;
             creatSeachName();
-            switch (filtr)
+            switch (dropdowntipo)
             {
-                case "all":
+                case "все":
                     {
                         ViewBag.details = workInBDSklad.GetDeteilAll();
                         return View(db.Details);

@@ -1,0 +1,60 @@
+/*Money*/
+html {
+
+}
+body {
+    background: url(../../../img/bank_fon.png) no-repeat;
+    background-size: cover;
+    background-position-y: 100px;
+    background-color: LightYellow;
+}
+.imeg {
+
+
+}
+table {
+    vertical-align: middle;
+    text-align: center;
+    width: 70%; /* Ширина таблицы */
+    margin: 200px auto; /* Выравниваем таблицу по центру */
+    border-collapse: collapse;
+    margin-top: 200px;
+    font-size: 20px;
+    color: black;
+    /*background-color:black;
+    opacity:0.8;*/
+}
+
+td {
+    border: 2px solid white; /* Рамка вокруг таблицы */
+    text-align: center; /* Выравниваем текст по центру ячейки */
+    color: gold;
+}
+
+th {
+    border: 2px solid white;
+    background-color: gray;
+    text-align: center;
+    color: gold;
+}
+
+h1 {
+    text-align: right;
+    color: gold;
+    margin-right: 50px;
+}
+
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+
+label {
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+.question {
+    color: gold;
+}
+

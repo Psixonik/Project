@@ -72,8 +72,13 @@ namespace Project1.BDWork
 
         public IEnumerable<string> GetSeachMenu()
         {
+
+            IEnumerable<string> concatenated= new List<string> { " " };
             IEnumerable<string> menu = (from c in db.Details select c.name).ToList().Distinct();
-            return menu;
+            concatenated = concatenated.Concat(menu);
+            concatenated = concatenated.Concat(new List<string> { "все" });
+
+            return concatenated;
         }
 
         public void UpdateForBuy(string type, int colBuy)

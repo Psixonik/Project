@@ -1,32 +1,15 @@
 ﻿@model IEnumerable<Project1.Models.Worker>
 
-<!--<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.colWorkers)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.colWorkers)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.id })
-        </td>
-    </tr>
-}
-
-</table>-->
-<link rel="stylesheet" href="~/Content/css/Workers.css">
+<link rel="stylesheet" href="~/Content/css/Workers/index.css">
 
 <form method="post" action="/Workers/Сhange">
     <div>
+        <label>Назад</label><br>
+        <a href='@Url.Action("Back","Bazaar")'>
+            <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+        </a>
+        <h1>Рабочие</h1>
         <div>
             <h2>
                 В цехе работают @ViewBag.worker человек<br>
@@ -36,13 +19,14 @@
         <div id="button">
             <div id="buttonAdd">
                 <label>Нанять рабочего<input style="margin-left:10px;" type="submit" name="change" value="add" id="addWorkers"></label>
-                
+
             </div>
             <div id="buttonMin">
-                <label>Уволить<input  style="margin-left:10px;" type="submit" name="change"
-                                     value="min" id="minWorkers" @((@ViewBag.worker <= 0) ? "disabled" : "")>
+                <label>
+                    Уволить<input style="margin-left:10px;" type="submit" name="change"
+                                  value="min" id="minWorkers" @((@ViewBag.worker <= 0) ? "disabled" : "")>
                 </label>
-                
+
             </div>
         </div>
     </div>
