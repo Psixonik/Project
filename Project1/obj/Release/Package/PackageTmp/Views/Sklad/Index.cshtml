@@ -4,47 +4,48 @@
 @{
     ViewBag.Title = "Склад";
 }
-<!--<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My page</title>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
-<!-- CSS dependencies
-    <link rel="stylesheet" href="../Content/bootstrap.min.css">
-    <link rel="stylesheet" href="../Content/MyStyle.css">
+<link rel="stylesheet" href="~/Content/css/Sklad/index.css">
 
-</head>
-    <body>-->
+<form name="axez" method="post" action="/Sklad/Index">
+    <label>Назад</label><br>
+    <a href='@Url.Action("Back","Bazaar")'>
+        <img src="~/img/arrow.png" runat="server" alt="Назад" id="arrow_img" />
+    </a>
+    <h1>Склад</h1>
 
-<form method="post" action="/Sklad/Index">
-    <h2>Склад</h2>
-
-    <div id="axez">
-        <select name="dropdowntipo" id="DropDown">
+    <div id="list">
+        <select name="dropdowntipo" id="DropDown", onchange = "SelectedIndexChanged(this)">
             @{
                 foreach (var item in ViewBag.ListName)
                 {
-                    <option value="@item">@item</option>
+                    {
+                        if (ViewBag.element == item)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                        else
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    }                   
                 }
             }
         </select>
-        <input type="submit" name="filtr" id="btnSearch" value="1">
-        <input type="submit" name="filtr" id="btnAll" value="all">
+        <!--<input type="submit" name="filtr" id="btnSearch" value="1">
+    <input type="submit" name="filtr" id="btnAll" value="all">-->
     </div>
 
 
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.name)
+                Наименование
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.type)
+                Тип
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.col)
+                Количество
             </th>
         </tr>
         @foreach (Detail item in ViewBag.details)
@@ -61,8 +62,14 @@
                 </td>
             </tr>
         }
+
     </table>
 </form>
- <!--   </body>
-</html>-->
+<script type="text/javascript">
+    function SelectedIndexChanged(txt) {
+        //Form post
+        //alert(txt.value);
+        document.forms["axez"].submit();
+    }
+</script>
 

@@ -1,23 +1,25 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
 <link rel="stylesheet" href="~/Content/css/Home/index.css">
+<div style="display:block;">
+    <ul class="hr">
+        <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Sklad")'><img src="~/img/sklad.png" runat="server" alt="Склад" id="sklad_img" /></a></li>
+        <li><a href='@Url.Action("AllZakaz", "Zakaz")'><img src="~/img/order.png" runat="server" alt="Заказы" id="order_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Money")'><img src="~/img/bank3.png" runat="server" alt="Банк" id="bank_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Workers")'><img src="~/img/works.png" runat="server" alt="Рабочие" id="works_img" /></a></li>
+        <li><a href='@Url.Action("Index", "NewDay")'><img src="~/img/NewDay.png" runat="server" alt="Новый День" id="newDay_img" /></a></li>
+    </ul>
+</div>
+<div class="axez" style="display:block;">
+    <ul class="hr">
+        <li><a href='@Url.Action("Regulations", "Home")'><img src="~/img/regulations.png" runat="server" alt="Правила" id="regulations_img" /></a></li>
+    </ul>
+</div>
+<div class="mani">
+    <img src="~/img/bank.png" runat="server" alt="Деньги" id="mani_img" style="margin-right:5%;">
+    <h1>Денег :@ViewBag.mani</h1>
+</div>
 
-<!--<ul class="hr">
-    <li style="color: white;">@Html.ActionLink("Базар", "Index", "Bazaar")</li>
-    <li>@Html.ActionLink("Склад", "Index", "Sklad")</li>
-    <li>@Html.ActionLink("Зыказы", "AllZakaz", "Zakaz")</li>
-    <li>@Html.ActionLink("Деньги", "Index", "Money")</li>
-    <li>@Html.ActionLink("Рабочии", "Index", "Workers")</li>
-    <li></li>
-    <li>@Html.ActionLink("Новый День", "Index", "NewDay")</li>
-</ul>-->
 
-<ul class="hr"> 
-    <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
-    <li><a href='@Url.Action("Index", "Sklad")'><img src="~/img/sklad.png" runat="server" alt="Склад" id="sklad_img" /></a></li>
-    <li><a href='@Url.Action("AllZakaz", "Zakaz")'><img src="~/img/order.png" runat="server" alt="Заказы" id="order_img" /></a></li>
-    <li><a href='@Url.Action("Index", "Money")'><img src="~/img/bank.png" runat="server" alt="Банк" id="bank_img" /></a></li>
-    <li><a href='@Url.Action("Index", "Workers")'><img src="~/img/works.png" runat="server" alt="Рабочие" id="bank_img" /></a></li>
-</ul>

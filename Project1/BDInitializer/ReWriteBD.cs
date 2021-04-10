@@ -29,12 +29,12 @@ namespace Project1.BDInitializer
             db.Credits.RemoveRange(db.Credits);
             db.SaveChanges();
 
-            Detail p1 = new Detail { name = "кузов", type = "МАЗ", col = 1 };
-            Detail p2 = new Detail { name = "кузов", type = "КрАЗ", col = 7 };
+            Detail p1 = new Detail { name = "кузов", type = "МАЗ", col = 10 };
+            Detail p2 = new Detail { name = "кузов", type = "КрАЗ", col = 10 };
             Detail p3 = new Detail { name = "кузов", type = "БТР", col = 10 };
-            Detail p4 = new Detail { name = "колесо", type = "260", col = 7 };
-            Detail p5 = new Detail { name = "колесо", type = "320", col = 30 };
-            Detail p6 = new Detail { name = "мотор", type = "Мотор для МАЗа", col = 1 };
+            Detail p4 = new Detail { name = "колесо", type = "260", col = 10 };
+            Detail p5 = new Detail { name = "колесо", type = "320", col = 10 };
+            Detail p6 = new Detail { name = "мотор", type = "Мотор для МАЗа", col = 10 };
             Detail p7 = new Detail { name = "мотор", type = "Мотор для КрАЗа", col = 10 };
             //Detail p8 = new Detail { name = "мотор", type = "Мотор для ЗИЛа", col = 1 };
             db.Details.Add(p1);
@@ -47,17 +47,17 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money {cash = 1000, credit = 0, dayForCredit = 0 };
+            Money money = new Money { cash = 100, credit = 0, dayForCredit = 0 };
             db.Moneys.Add(money);
             db.SaveChanges();
 
-            /*Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 100 };
-            Zakaz z2 = new Zakaz { name = "МАЗ", col = 1, money = 603 };
-            Zakaz z3 = new Zakaz { name = "БТР", col = 3, money = 98 };
+            Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 100 };
+            Zakaz z2 = new Zakaz { name = "МАЗ", col = 1, money = 200 };
+            Zakaz z3 = new Zakaz { name = "БТР", col = 1, money = 300 };
             db.Zakazs.Add(z1);
             db.Zakazs.Add(z2);
             db.Zakazs.Add(z3);
-            db.SaveChanges();*/
+            db.SaveChanges();
 
             TypeMashin t1 = new TypeMashin
             {
@@ -104,15 +104,15 @@ namespace Project1.BDInitializer
 
 
             Bazaar bazaar1 = new Bazaar { name = "кузов", type = "МАЗ", money = 10 };
-            Bazaar bazaar2 = new Bazaar { name = "кузов", type = "КрАЗ", money = 15 };
-            Bazaar bazaar3 = new Bazaar { name = "кузов", type = "БТР", money = 23 };
+            Bazaar bazaar2 = new Bazaar { name = "кузов", type = "КрАЗ", money = 20 };
+            Bazaar bazaar3 = new Bazaar { name = "кузов", type = "БТР", money = 30 };
 
-            Bazaar bazaar4 = new Bazaar { name = "колесо", type = "260", money = 5 };
-            Bazaar bazaar5 = new Bazaar { name = "колесо", type = "320", money = 7 };
+            Bazaar bazaar4 = new Bazaar { name = "колесо", type = "260", money = 10 };
+            Bazaar bazaar5 = new Bazaar { name = "колесо", type = "320", money = 20 };
 
-            Bazaar bazaar6 = new Bazaar { name = "мотор", type = "Мотор для МАЗа", money = 17 };
-            Bazaar bazaar7 = new Bazaar { name = "мотор", type = "Мотор для КрАЗа", money = 25 };
-            Bazaar bazaar8 = new Bazaar { name = "мотор", type = "Мотор для ЗИЛа", money = 10 };
+            Bazaar bazaar6 = new Bazaar { name = "мотор", type = "Мотор для МАЗа", money = 10 };
+            Bazaar bazaar7 = new Bazaar { name = "мотор", type = "Мотор для КрАЗа", money = 20 };
+            Bazaar bazaar8 = new Bazaar { name = "мотор", type = "Мотор для ЗИЛа", money = 30 };
 
             db.Bazaars.Add(bazaar1);
             db.Bazaars.Add(bazaar2);
@@ -134,7 +134,7 @@ namespace Project1.BDInitializer
             db.NameOfMashins.Add(nameOfMashin4);
             db.SaveChanges();
 
-            Worker workers = new Worker { colWorkers = 0, zp = 50 };
+            Worker workers = new Worker { colWorkers = 3, zp = 50 };
             db.Workers.Add(workers);
             db.SaveChanges();
 

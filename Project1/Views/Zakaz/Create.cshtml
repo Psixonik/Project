@@ -2,10 +2,18 @@
 @{
     ViewBag.Title = "Create";
 }
+<link rel="stylesheet" href="~/Content/css/Zakaz/Create.css">
 <form method="post" action="Zakaz/Create">
-    @foreach (string name in ViewBag.errorCrear)
-    {
-        <p style="font-size:20px">@name</p>
-        <br />
-    }
+    <label>Назад</label><br>
+    <a href='@Url.Action("Back","Bazaar")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
+    <div class="creat">
+        <ul>
+            @foreach (string name in ViewBag.errorCrear)
+            {
+                <li style="font-size:20px">@name</li>
+            }
+        </ul>
+    </div>
 </form>

@@ -35,7 +35,7 @@ th {
 h1 {
     text-align: right;
     color: red;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 #arrow_img {
@@ -48,6 +48,17 @@ label {
     color: red;
     font-size:20px;
 }
-
+.txtBlock {
+    margin-left:80px;
+}
+#addWorkers, #minWorkers {
+    background: url(../../../ikons/NotPressed/checked.png);
+}
+#addWorkers:hover, #minWorkers:hover {
+    background: url(../../../ikons/Pressed/checkedPressed.png) no-repeat 50% 50%;
+}
+input {
+    color: transparent;
+}
 
 

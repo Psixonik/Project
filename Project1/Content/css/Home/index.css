@@ -3,24 +3,54 @@ body {
     background: url(../../../img/plant.jpg);
     background-size: cover;
 }
-#bazaar_img, #sklad_img, #order_img {
+#bazaar_img, #sklad_img, #order_img, #regulations_img, #bank_img {
     width: 10%;
     height: 10%;
     margin-top: 20px;
 }
-#bank_img {
-    width: 6%;
+#works_img {
+    width: 7%;
+    height: 7%;
+    margin-top: 20px;
+}
+#newDay_img {
+    width: 5%;
     height: 6%;
     margin-top: 20px;
+}
+#mani_img {
+    width: 5%;
+    height: 6%;
 }
 li {
     list-style-type: none; /* Убираем маркеры */
 }
 ul.hr {
-    margin: 0; /* Обнуляем значение отступов */
+    margin: 0;  /*Обнуляем значение отступов */
     padding: 4px; /* Значение полей */
 }
 ul.hr li {
-    display: inline; /* Отображать как строчный элемент */
-    margin-right: 35px; /* Отступ слева */
+    display: inline; /* Отображать как строчный элемент */  
+} 
+
+.hr {
+    position: relative;
+}
+.hr > li {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 35px; /* Отступ слева*/
+}
+/*.hr > li:last-child {
+    margin-left:30%;
+}*/
+.axez {
+    position: relative;
+    top: -120px;
+    left: 80%;
+}
+.mani {
+    margin-right:5%;
+    text-align:right;
+    color:gold;
 }

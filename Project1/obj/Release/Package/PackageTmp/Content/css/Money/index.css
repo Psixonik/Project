@@ -1,0 +1,97 @@
+/*Money*/
+html {
+    height:85%;
+}
+body {
+    background: url(../../../img/bank_fon.png) no-repeat;
+    background-size: cover;
+    background-position-y: 100px;
+    background-color: LightYellow;
+
+}
+.imeg {
+
+
+}
+table {
+    vertical-align: middle;
+    text-align: center;
+    width: 70%; /* Ширина таблицы */
+    margin: 200px auto; /* Выравниваем таблицу по центру */
+    border-collapse: collapse;
+    margin-top: 200px;
+    font-size: 20px;
+    color: black;
+    /*background-color:black;
+    opacity:0.8;*/
+}
+
+td {
+    border: 2px solid white; /* Рамка вокруг таблицы */
+    text-align: center; /* Выравниваем текст по центру ячейки */
+    color: gold;
+}
+
+th {
+    border: 2px solid white;
+    background-color: gray;
+    text-align: center;
+    color: gold;
+}
+
+h1 {
+    text-align: right;
+    color: gold;
+    margin-right: 50px;
+}
+
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+
+label {
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+#credit {
+    background: url(../../../ikons/NotPressed/finance.png) no-repeat 50% 50%;
+}
+
+#credit:hover {
+    background: url(../../../ikons/Pressed/financePressed.png) no-repeat 50% 50%;
+}
+
+input {
+    border-radius: 30px;
+    color: transparent;
+    width: 42px;
+    height: 42px;
+}
+
+.question {
+    border-radius: 30px;
+    color: transparent;
+    width: 30px;
+    height: 30px;
+    margin-top: 7px;
+}
+
+.question {
+    background: url(../../../ikons/NotPressed/checked.png) no-repeat 50% 50%;
+}
+
+.question:hover {
+    background: url(../../../ikons/Pressed/checkedPressed.png) no-repeat 50% 50%;
+}
+#getCredit {
+    text-align: center;
+    margin: 200px auto;
+}
+

@@ -1,0 +1,21 @@
+/*Zakaz*/
+body {
+    background: url(../../../img/rabota_fon1.png);
+    background-size: cover;   
+}
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+
+label {
+    margin-top: 20px;
+    color: goldenrod;
+}
+.creat {
+    display:inline;
+    text-align:left;
+    background-color:azure;
+}
+
+

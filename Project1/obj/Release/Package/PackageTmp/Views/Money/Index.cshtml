@@ -4,96 +4,114 @@
 
     ViewBag.Title = "Index";
 }
-<link rel="stylesheet" href="~/Content/css/money.css">
+<link rel="stylesheet" href="~/Content/css/Money/index.css">
 
 <form method="post" action="~/Money/Credit">
-    <h2>Деньги</h2>
 
-    <table class="table">
-        <tr>
-            <th>
-                Наличьность
-            </th>
-            <th>
-                Кредит
-            </th>
-            <th>
-                Дней до погашения кредита
-            </th>
-        </tr>
-        <tr>
-            <td>
-                @ViewBag.mani
-            </td>
-            <td>
-                @ViewBag.credit
-            </td>
-            <td>
-                @ViewBag.day
-            </td>
-        </tr>
-    </table>
-    @{
-        if (ViewBag.day != 0)
-        {
-            <label>У Вас уже есть кредит</label>
-        }
-        else
-        {
-            <label>Взять кредит<input style="margin-left:10px;" id="credit"></label>
-        }
-    }
+    <label>Назад</label><br>
+    <a href='@Url.Action("Back","Bazaar")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
+    <h1>Деньги</h1>
+    <div class="imeg">
+        <div id="table">
+            <table class="table">
+                <tr>
+                    <th>
+                        Наличьность
+                    </th>
+                    <th>
+                        Кредит
+                    </th>
+                    <th>
+                        Дней до погашения кредита
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @ViewBag.mani
+                    </td>
+                    <td>
+                        @ViewBag.credit
+                    </td>
+                    <td>
+                        @ViewBag.day
+                    </td>
+                </tr>
+            </table>
+        </div>
 
-    <div id="content" style="display:none;">
-        <table>
-            <tr>
-                <th>
-                    Сумма
-                </th>
-                <th>
-                    Время
-                </th>
-                <th>
+        <div id="content" style="display:none;">
+            <table>
+                <tr>
+                    <th>
+                        Сумма
+                    </th>
+                    <th>
+                        Время
+                    </th>
+                    <th>
 
-                </th>
-            </tr>
+                    </th>
+                </tr>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr class="cheart+@item.id">
+                            <td>
+                                @item.cash
+                            </td>
+                            <td>
+                                @item.day
+                            </td>
+                            <td>
+                                <text style="visibility:visible;width:30px;color:transparent" id="id+@item.id">@item.id</text>
+                                <text style="visibility:visible;width:30px;color:transparent" id="cash+@item.id">@item.cash</text>
+                                <text style="visibility:visible;width:30px;color:transparent" id="day+@item.id">@item.day</text>
+                                <input class="question" value="@item.id" onclick="test(this)">
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+        <div id="getCredit" style="display:none;">
+            <label>Вы уверены, что хотите взять кредит</label><br>
+            <label>в размере @Html.Hidden("cash", "") сроком на @Html.Hidden("day", "") дней?</label><br>
+            <label>Да<input type="submit" class="question" name="filtr" value="" id="btnYes"></label>
+            <label>Нет<input type="submit" class="question" name="filtr" value="no"></label>
+
+        </div>
+
+        <div id="DoYuoWont">
             @{
-                foreach (var item in Model)
+                if (ViewBag.day != 0)
                 {
-                    <tr class="cheart+@item.id">
-                        <td>
-                            @item.cash
-                        </td>
-                        <td>
-                            @item.day
-                        </td>
-                        <td>
-                            <text style="visibility:visible;width:30px;" id="id+@item.id">@item.id</text>
-                            <text style="visibility:visible;width:30px;" id="cash+@item.id">@item.cash</text>
-                            <text style="visibility:visible;width:30px;" id="day+@item.id">@item.day</text>
-                            <input class="question" value="@item.id" onclick="test(this)">
-                        </td>
-                    </tr>
+                    <label>У Вас уже есть кредит</label>
+                }
+                else
+                {
+                    <label>Взять кредит<input style="margin-left:10px;" id="credit"></label>
                 }
             }
-        </table>
-    </div>
-
-    <div id="getCredit" style="display:none;">
-        <label>Вы уверены, что хотите взять кредит</label><br>
-        <label>в размере @Html.Hidden("cash", "") сроком на @Html.Hidden("day", "") дней?</label><br>
-        <label>Да<input type="submit" class="question" name="filtr" value="" id="btnYes"></label>
-        <label>Нет<input type="submit" class="question" name="filtr" value="no"></label>
-
+        </div>
     </div>
 </form>
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jquery")
 
 <script type="text/javascript">
     $('#credit').click(function () {
-        if ($("#content").is(":hidden")) {
+        if ($("#content").is(":hidden"))
+        {
+            $("#table").hide("slow");
+            $("#DoYuoWont").hide("slow");
             $("#content").show("slow");
         } else {
             $("#content").hide("slow");
+            $("#table").show("slow");
+
         }
     });
 </script>
@@ -109,4 +127,5 @@
         document.getElementById('btnYes').value = cash + " " + day;
     }
 </script>
+
 

@@ -7,47 +7,39 @@
 <link rel="stylesheet" href="~/Content/css/Money/index.css">
 
 <form method="post" action="~/Money/Credit">
-    
+
     <label>Назад</label><br>
     <a href='@Url.Action("Back","Bazaar")'>
         <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
     </a>
     <h1>Деньги</h1>
     <div class="imeg">
-        <table class="table">
-            <tr>
-                <th>
-                    Наличьность
-                </th>
-                <th>
-                    Кредит
-                </th>
-                <th>
-                    Дней до погашения кредита
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    @ViewBag.mani
-                </td>
-                <td>
-                    @ViewBag.credit
-                </td>
-                <td>
-                    @ViewBag.day
-                </td>
-            </tr>
-        </table>
-        @{
-            if (ViewBag.day != 0)
-            {
-                <label class="question">У Вас уже есть кредит</label>
-            }
-            else
-            {
-                <label class="question">Взять кредит<input style="margin-left:10px;" id="credit"></label>
-            }
-        }
+        <div id="table">
+            <table class="table">
+                <tr>
+                    <th>
+                        Наличьность
+                    </th>
+                    <th>
+                        Кредит
+                    </th>
+                    <th>
+                        Дней до погашения кредита
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        @ViewBag.mani
+                    </td>
+                    <td>
+                        @ViewBag.credit
+                    </td>
+                    <td>
+                        @ViewBag.day
+                    </td>
+                </tr>
+            </table>
+        </div>
 
         <div id="content" style="display:none;">
             <table>
@@ -91,15 +83,35 @@
             <label>Нет<input type="submit" class="question" name="filtr" value="no"></label>
 
         </div>
+
+        <div id="DoYuoWont">
+            @{
+                if (ViewBag.day != 0)
+                {
+                    <label>У Вас уже есть кредит</label>
+                }
+                else
+                {
+                    <label>Взять кредит<input style="margin-left:10px;" id="credit"></label>
+                }
+            }
+        </div>
     </div>
 </form>
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/jquery")
 
 <script type="text/javascript">
     $('#credit').click(function () {
-        if ($("#content").is(":hidden")) {
+        if ($("#content").is(":hidden"))
+        {
+            $("#table").hide("slow");
+            $("#DoYuoWont").hide("slow");
             $("#content").show("slow");
         } else {
             $("#content").hide("slow");
+            $("#table").show("slow");
+
         }
     });
 </script>
@@ -115,4 +127,5 @@
         document.getElementById('btnYes').value = cash + " " + day;
     }
 </script>
+
 

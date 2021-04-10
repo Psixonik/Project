@@ -31,7 +31,7 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money { cash = 1000, credit = 0, dayForCredit = 0 };
+            Money money = new Money { cash = 100, credit = 0, dayForCredit = 0 };
             db.Moneys.Add(money);      
             db.SaveChanges();
 
@@ -98,7 +98,7 @@ namespace Project1.BDInitializer
             db.Workers.Add(workers);
             db.SaveChanges();
 
-            Credit credit1 = new Credit { cash=5000, day = 5 };
+            Credit credit1 = new Credit { cash = 5000, day = 5 };
             Credit credit2 = new Credit { cash = 10000, day = 10 };
             Credit credit3 = new Credit { cash = 15000, day = 15 };
             db.Credits.Add(credit1);

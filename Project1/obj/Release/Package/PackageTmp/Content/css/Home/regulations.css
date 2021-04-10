@@ -1,0 +1,27 @@
+/*Regulations*/
+html {
+    height: 100%;
+}
+body {
+    background: url(../../../img/regulations_fon.png);
+    background-size: 100% 100%;
+    background-color:aquamarine;
+    
+}
+.regulations {
+    margin:20px 0 0 40px;
+}
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+
+label {
+    margin-top: 20px;
+    color: red;
+    font-size: 20px;
+}
+
+label {
+    font-size: 20px;
+}

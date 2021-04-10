@@ -10,12 +10,13 @@ namespace Project1.Context
 {
     public class BDContext: DbContext
     {
+        /*создание и наполнение БД
         static BDContext()
         {
             Database.SetInitializer<BDContext>(new Initializer());
-        }
-        public BDContext() : base("DefaultConnection")
-        { }
+        }*/
+        /*public BDContext() : base("DefaultConnection")
+        { }*/
         public DbSet<Detail> Details { get; set; }
         public DbSet<Zakaz> Zakazs  { get; set; }
         public DbSet<TypeMashin> TypeMashins { get; set; }

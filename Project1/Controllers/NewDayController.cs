@@ -37,7 +37,7 @@ namespace Project1.Controllers
             }
             else
             {
-                return View();
+                return Redirect("/Home/Index");
             }
         }
     }

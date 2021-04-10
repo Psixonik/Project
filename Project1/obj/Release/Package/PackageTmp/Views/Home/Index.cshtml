@@ -1,33 +1,25 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<!--<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<link rel="stylesheet" href="~/Content/css/Home/index.css">
+<div style="display:block;">
+    <ul class="hr">
+        <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Sklad")'><img src="~/img/sklad.png" runat="server" alt="Склад" id="sklad_img" /></a></li>
+        <li><a href='@Url.Action("AllZakaz", "Zakaz")'><img src="~/img/order.png" runat="server" alt="Заказы" id="order_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Money")'><img src="~/img/bank3.png" runat="server" alt="Банк" id="bank_img" /></a></li>
+        <li><a href='@Url.Action("Index", "Workers")'><img src="~/img/works.png" runat="server" alt="Рабочие" id="works_img" /></a></li>
+        <li><a href='@Url.Action("Index", "NewDay")'><img src="~/img/NewDay.png" runat="server" alt="Новый День" id="newDay_img" /></a></li>
+    </ul>
+</div>
+<div class="axez" style="display:block;">
+    <ul class="hr">
+        <li><a href='@Url.Action("Regulations", "Home")'><img src="~/img/regulations.png" runat="server" alt="Правила" id="regulations_img" /></a></li>
+    </ul>
+</div>
+<div class="mani">
+    <img src="~/img/bank.png" runat="server" alt="Деньги" id="mani_img" style="margin-right:5%;">
+    <h1>Денег :@ViewBag.mani</h1>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>-->
-<!---->
+

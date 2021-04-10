@@ -15,12 +15,12 @@ namespace Project1.Controllers
 {
 
     public class HomeController : Controller
-    {
-        
-
+    {      
+        WorkInBDMoney workMani = new WorkInBDMoney();
         public ActionResult Index()
         {
-            ViewBag.Day = Static.Day.day;
+            int mani = workMani.GetMani();
+            ViewBag.mani = mani;
             return View();
         }
         public ActionResult NewGame()

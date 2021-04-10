@@ -52,7 +52,7 @@ namespace Project1.Controllers
                 workInBDZakaz.UpdateSklad(zakaz, newMashin);
                 workInBDZakaz.deletZacaz(zakaz.id);
                 money.AddMoney(zakaz);
-                errorCrear.Add("Сборка заказа завершена");
+                errorCrear.Add("Сборка заказа завершена. Вы получили "+zakaz.money +" $");
             }
             ViewBag.errorCrear = errorCrear;            
             return View();

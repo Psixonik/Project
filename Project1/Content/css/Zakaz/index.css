@@ -10,7 +10,7 @@ form {
 table {
     vertical-align: middle;
     text-align: center;
-    width: 90%; /* Ширина таблицы */
+    width: 80%; /* Ширина таблицы */
     margin: 200px auto; /* Выравниваем таблицу по центру */
     border-collapse: collapse;
     margin-top: 220px;

@@ -1,86 +1,67 @@
 ﻿@model IEnumerable<Project1.Models.Bazaar>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Базар";
 }
 
+<link rel="stylesheet" href="~/Content/css/Bazaar/index.css">
 
+<label>Назад</label><br>
+    <a href='@Url.Action("Back","Bazaar")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
 
-<h2>Базар</h2>
-<!--<form method="post" action="Buy">-->
-<form>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.money)
-            </th>
-            <th></th>
-        </tr>
+<h1>Базар</h1>
+    <form>
 
-        @foreach (var item in Model)
-        {
+        <table class="table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.money)
-                </td>
-                <td>
-                    <!--<input id="numeric" name="col" type="number" step="1" min="0" max="100"
-                           required placeholder="0" value="" class="insert" onchange="test(this);" onclick="alert(this.parentNode.name.value)">-->
-
-                    @Html.EditorFor(Count => item.name, new
-                   {
-                       htmlAttributes = new
-                       {
-                           type = "number",
-                           min = "1",
-                           max = "100",
-                           Name = "numeric" + @item.id,
-                           id = "numeric" + @item.id
-                       }
-                   })
-
-                    <!--@Html.ActionLink("Купить", "Buy", new { id = item.id })-->
-
-                    @Html.ActionLink("Купить", "Buy", new { id = item.id }, new { onclick = "this.href += '?col=' + document.getElementById('numeric"+@item.id+"').value;" })
-
-                </td>
+                <th>
+                    Наименование товара
+                </th>
+                <th>
+                    Тип
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th>
+                    Сколько?
+                </th>
             </tr>
-        }
 
-    </table>
-   <!--<script>
-        function test(txt) {
-            alert("1");
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.money)
+                    </td>
+                    <td>
+                        @Html.EditorFor(Count => item.name, new
+                       {
+                           htmlAttributes = new
+                           {
+                               type = "number",
+                               min = "1",
+                               max = "100",
+                               Name = "numeric" + @item.id,
+                               id = "numeric" + @item.id
+                           }
+                       })
+                        @Html.ActionLink(  "Купить"
+                                            ,"Buy"
+                                            ,new { id = item.id}
+                                            ,new { onclick = "this.href += '?col=' + document.getElementById('numeric"+@item.id+"').value;",@class="aLink"}
+                                            )
 
-            var val = document.getElementById("numeric").value;
-
-            Text = "<div class= 'container' >Name = " + Projects[i].Name + " ;</div>"});
-            @{               
-                // проверка на существование cookie
-                if (Request.Cookies["MyCookieName"] != null)
-                {
-                    // установка срока
-                    Response.Cookies["MyCookieName"].Expires = DateTime.Now.AddDays(-1);
-                }
-
-                // создаем cookie
-                Response.Cookies["MyCookieName"].Value = "12";
-                }
-                document.getElementById("numeric").value;
-            alert("2");
-        };
-    </script>-->
-
-</form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </form>
