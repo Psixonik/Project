@@ -1,8 +1,10 @@
 ﻿using Project1.BDWork;
 using Project1.Context;
+using Project1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,34 +15,45 @@ namespace Project1.Controllers
         BDContext db = new BDContext();
         WorkInBDWorkes workWorkes = new WorkInBDWorkes();
 
-        // GET: Workers
-        public ActionResult Index()
+        // GET: Home
+        public ActionResult Index(int? zp)
         {
+
             ViewBag.worker = workWorkes.GetColWorkes();
-            ViewBag.zp = workWorkes.GetZP() * ViewBag.worker;
+            if (zp != null)
+            {
+                ViewBag.allZP = zp * ViewBag.worker;
+                ViewBag.zp = zp;
+                workWorkes.ChenchZP((int)zp);
+            }
+            else
+            {
+                ViewBag.allZP = workWorkes.GetZP() * ViewBag.worker;
+                ViewBag.zp = workWorkes.GetZP();
+            }
             return View(db.Workers);
         }
 
-        [HttpPost]
-        public ActionResult Сhange(string change)
+        public PartialViewResult WorkesPartial(string change)
         {
-            workWorkes.ChenchWorker(change);
-            /*switch (change)
+            ViewBag.ColWorcers = workWorkes.GetColWorkes();
+            
+            if (ViewBag.ColWorcers >0 || change=="add")
             {
-                case "add":
-                    {
-                        workWorkes.ChenchWorker(+1);
-                        //workWorkes.AddWorker();
-                        break;
-                    }
-                case "min":
-                    {
-                        workWorkes.ChenchWorker(-1);
-                        //workWorkes.MinWorker();
-                        break;
-                    }
-            }*/
-            return Redirect("/Workers/Index");
+                workWorkes.ChenchWorker(change);
+                //ViewBag.allZP = workWorkes.GetColWorkes() * workWorkes.GetZP();
+                workWorkes.changAllZp();
+            }
+            //Thread.Sleep(1000);
+            return PartialView("WorkesPartial", db.Workers);
+        }
+
+        public PartialViewResult ZpPartial(int zp)
+        {
+            workWorkes.ChenchZP(zp);
+            workWorkes.changAllZp();
+            //Thread.Sleep(1000);
+            return PartialView("ZpPartial", db.Workers);
         }
     }
 }

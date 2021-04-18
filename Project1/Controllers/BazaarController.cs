@@ -24,7 +24,6 @@ namespace Project1.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewBag.Day = Static.Day.day;
             return View(db.Bazaars);
         }
 

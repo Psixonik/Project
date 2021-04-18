@@ -1,7 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<link rel="stylesheet" href="~/Content/css/Home/index.css">
+@{
+    if (Project1.Static.Strike.strike)
+    {
+        <link rel="stylesheet" href="~/Content/css/Home/indexStrike.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/css/Home/index.css">
+    }
+}
+
 <div style="display:block;">
     <ul class="hr">
         <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
@@ -12,7 +22,7 @@
         <li><a href='@Url.Action("Index", "NewDay")'><img src="~/img/NewDay.png" runat="server" alt="Новый День" id="newDay_img" /></a></li>
     </ul>
 </div>
-<div class="axez" style="display:block;">
+<div class="axez">
     <ul class="hr">
         <li><a href='@Url.Action("Regulations", "Home")'><img src="~/img/regulations.png" runat="server" alt="Правила" id="regulations_img" /></a></li>
     </ul>
@@ -20,6 +30,12 @@
 <div class="mani">
     <img src="~/img/bank.png" runat="server" alt="Деньги" id="mani_img" style="margin-right:5%;">
     <h1>Денег :@ViewBag.mani</h1>
+</div>
+<div class="strike">
+    <!--@Html.Partial("StrikePartial")-->
+    <p>Забастовка продлится еще @ViewBag.DayOfStrike</p>
+    <p>Чего хотят люди? Конечно-же повышения зарплаты!</p>
+    <p>Вы можете либо ждать конча забастовки, либо поднять рабочим зарплату.</p>
 </div>
 
 

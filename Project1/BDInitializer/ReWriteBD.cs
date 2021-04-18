@@ -47,7 +47,7 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money { cash = 100, credit = 0, dayForCredit = 0 };
+            Money money = new Money { cash = 1000, credit = 0, dayForCredit = 0 };
             db.Moneys.Add(money);
             db.SaveChanges();
 
@@ -145,6 +145,8 @@ namespace Project1.BDInitializer
             db.Credits.Add(credit2);
             db.Credits.Add(credit3);
             db.SaveChanges();
+
+            Project1.Static.Strike.strike = false;
         }
     }
 }

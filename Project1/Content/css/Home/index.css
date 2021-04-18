@@ -48,9 +48,16 @@ ul.hr li {
     position: relative;
     top: -120px;
     left: 80%;
+    display:block;
 }
 .mani {
     margin-right:5%;
     text-align:right;
     color:gold;
+}
+.strike {
+    color:red;
+    text-align:center;
+    font-size:30px;
+    display: none;
 }

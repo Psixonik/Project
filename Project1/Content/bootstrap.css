@@ -2263,7 +2263,7 @@ th {
 .table {
   /*width: 100%;*/
   max-width: 100%;
-  /*margin-bottom: 20px;*/
+  margin-bottom: 20px;
 }
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -4164,13 +4164,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
 }
 .navbar {
-    /*position: relative;*/
-    position: absolute;
-    left: 30px;
-    top: 30px;
-    min-height: 50px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -4254,7 +4251,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  /*position: fixed;*/
+  position: fixed;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -4266,7 +4263,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-fixed-top {
-  top: 0px;
+  top: 0;
   border-width: 0 0 1px;
 }
 .navbar-fixed-bottom {
@@ -4592,8 +4589,8 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-    background-color: #222;
-    border-color: #080808;
+  background-color: #222;
+  border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -6752,7 +6749,7 @@ button.close {
     display: inline-block !important;
   }
 }
-/*@media print {
+@media print {
   .hidden-print {
     display: none !important;
   }

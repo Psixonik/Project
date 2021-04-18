@@ -31,7 +31,7 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money { cash = 100, credit = 0, dayForCredit = 0 };
+            Money money = new Money { cash = 1000, credit = 0, dayForCredit = 0 };
             db.Moneys.Add(money);      
             db.SaveChanges();
 
@@ -94,7 +94,7 @@ namespace Project1.BDInitializer
             db.NameOfMashins.Add(nameOfMashin4);
             db.SaveChanges();
 
-            Worker workers = new Worker { colWorkers=3,zp=50 };
+            Worker workers = new Worker { colWorkers = 2, zp = 50, al = 100, dayOfStrike = 0 };
             db.Workers.Add(workers);
             db.SaveChanges();
 
@@ -106,7 +106,7 @@ namespace Project1.BDInitializer
             db.Credits.Add(credit3);
             db.SaveChanges();
 
-
+            Project1.Static.Strike.strike = false;
         }
     }
 }

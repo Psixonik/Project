@@ -12,13 +12,22 @@ namespace Project1.Controllers
     {
         WorkInBDZakaz workZakaz = new WorkInBDZakaz();
         WorkInBDMoney workMoney = new WorkInBDMoney();
-
+        WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         // GET: NewDay
         public ActionResult Index()
         {
             workZakaz.DeletAllZakaz();
             workZakaz.CreatedNewZakaz();
             workMoney.MinManiEndOfDay();
+
+            if (Project1.Static.Strike.strike)
+            {
+                workWorkers.MinDayOfStrike();
+            }
+            else
+            {
+                workWorkers.CheckForStrike();
+            }
             int mani = workMoney.GetCredit();
             int day;
             if (mani > 0)

@@ -17,7 +17,7 @@ namespace Project1
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                //defaults: new { controller = "Zakaz", action = "AllZakaz", id = UrlParameter.Optional }
+                //defaults: new { controller = "Workers", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Users",

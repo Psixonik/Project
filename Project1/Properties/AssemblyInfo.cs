@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Project1")]
-[assembly: AssemblyCopyright("© , 2020")]
+[assembly: AssemblyCopyright("© , 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для ID библиотеки типов typelib, если этот проект видим для COM
-[assembly: Guid("b2d79df2-14ad-4b06-a725-8da6c9bed12c")]
+[assembly: Guid("26d08902-1509-4d32-a43c-a679302fcf3e")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

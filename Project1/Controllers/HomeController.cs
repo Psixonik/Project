@@ -17,16 +17,28 @@ namespace Project1.Controllers
     public class HomeController : Controller
     {      
         WorkInBDMoney workMani = new WorkInBDMoney();
+        WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         public ActionResult Index()
         {
             int mani = workMani.GetMani();
             ViewBag.mani = mani;
+            if (Project1.Static.Strike.strike)
+            {
+                //workWorkers.MinDayOfStrike();
+                ViewBag.DayOfStrike = workWorkers.GetDayOfStrike();
+            }
+            if (ViewBag.DayOfStrike == 0)
+            {
+                Project1.Static.Strike.strike = false;
+            }
             return View();
         }
+
         public ActionResult NewGame()
         {
             return View();
         }
+
         public ActionResult GameOver(string ansver)
         {
             switch (ansver)
@@ -55,9 +67,15 @@ namespace Project1.Controllers
                     }
             }
         }
+
         public ActionResult Regulations()
         {
             return View();
+        }
+
+        public PartialViewResult StrikePartial()
+        {
+            return PartialView("StrikePartial");
         }
     }
 }

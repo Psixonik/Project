@@ -10,11 +10,11 @@ namespace Project1.Context
 {
     public class BDContext: DbContext
     {
-        /*создание и наполнение БД
+        /*создание и наполнение БД*/
         static BDContext()
         {
             Database.SetInitializer<BDContext>(new Initializer());
-        }*/
+        }
         /*public BDContext() : base("DefaultConnection")
         { }*/
         public DbSet<Detail> Details { get; set; }
@@ -25,5 +25,7 @@ namespace Project1.Context
         public DbSet<NameOfMashin> NameOfMashins { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Credit> Credits { get; set; }
+
+        public System.Data.Entity.DbSet<Project1.Models.Order> Orders { get; set; }
     }
 }

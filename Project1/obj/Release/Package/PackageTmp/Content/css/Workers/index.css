@@ -1,18 +1,19 @@
-/*Workers*/
+п»ї/*Workers*/
 body {
     background: url(../../../img/works_fon.png) no-repeat;
-    background-size: 100% 165%;
-    background-color:cornflowerblue;
-    opacity:0.8;
+    background-size: 100% 250%;
+    background-color: cornflowerblue;
+    opacity: 0.8;
 }
-form {
 
+form {
 }
+
 table {
     vertical-align: middle;
     text-align: center;
-    width: 100%; /* Ширина таблицы */
-    margin: 200px auto; /* Выравниваем таблицу по центру */
+    width: 100%;
+    margin: 200px auto; 
     border-collapse: collapse;
     margin-top: 30px;
     font-size: 20px;
@@ -22,8 +23,8 @@ table {
 }
 
 td {
-    border: 2px solid green; /* Рамка вокруг таблицы */
-    text-align: center; /* Выравниваем текст по центру ячейки */
+    border: 2px solid green;
+    text-align: center; 
 }
 
 th {
@@ -32,6 +33,7 @@ th {
     text-align: center;
     color: orangered;
 }
+
 h1 {
     text-align: right;
     color: red;
@@ -46,19 +48,28 @@ h1 {
 label {
     margin-top: 70px;
     color: red;
-    font-size:20px;
+    font-size: 20px;
 }
+
 .txtBlock {
-    margin-left:80px;
+    margin-left: 80px;
 }
+
 #addWorkers, #minWorkers {
     background: url(../../../ikons/NotPressed/checked.png);
 }
+
 #addWorkers:hover, #minWorkers:hover {
     background: url(../../../ikons/Pressed/checkedPressed.png) no-repeat 50% 50%;
 }
+
 input {
     color: transparent;
+    border-radius: 30px;
+    color: transparent;
+    width: 42px;
+    height: 42px;
 }
-
-
+#labelBack {
+    margin-top:70px;
+}

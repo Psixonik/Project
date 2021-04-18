@@ -13,5 +13,8 @@ namespace Project1.Models
 
         public int zp { get; set; }
 
+        public int al { get; set; }
+
+        public int dayOfStrike { get; set; }
     }
 }
