@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/css/Payments/index.css">
+<div class="conteiner">
+    <div class="arrow">
+        <label>Назад</label><br>
+        <a href='@Url.Action("Index","Home")'>
+            <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+        </a>
+    </div>
+    <div class="txt">
+        <h2>Дневные затраты</h2>
+    </div>
+</div>
+<div class="conteiner">
+    <div class="imeg">
+        <img src="~/img/payments2.png" runat="server" alt="" />
+    </div>
+    <div class="list">
+        <table>
+            <tr>
+                <td>
+                    Зарплата рабочим
+                </td>
+                <td>
+                    @ViewBag.zp
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Стоимость газа
+                </td>
+                <td>
+                    @ViewBag.gas
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Стоимость воды
+                </td>
+                <td>
+                    @ViewBag.water
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Стоимость электричесва
+                </td>
+                <td>
+                    @ViewBag.electro
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Project1.Models.Utilits>
+<link rel="stylesheet" href="~/Content/css/Utilits/index.css">
+@{
+    ViewBag.Title = null;
+}
+
+<h2>Index</h2>
+
+<label>Назад</label><br>
+<a href='@Url.Action("Index","Home")'>
+    <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+</a>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Газ
+        </th>
+        <th>
+            Вада
+        </th>
+        <th>
+            Електричесво
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.gas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.water)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.electro)
+            </td>
+        </tr>
+    }
+</table>

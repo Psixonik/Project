@@ -4,17 +4,6 @@
 <script src="~/Content/js/jquery.min.js"></script>
 <script src="~/Content/js/workers/index.js"></script>
 
-
-@{
-    var ajaxOptions = new AjaxOptions
-    {
-        UpdateTargetId = "data",
-        InsertionMode = InsertionMode.Replace,
-        LoadingElementId = "loading",
-        OnBegin = "clear"
-    };
-}
-
 <label>
     Назад<br>
     <a href='@Url.Action("Back", "Bazaar")'>

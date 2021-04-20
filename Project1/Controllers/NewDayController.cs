@@ -13,6 +13,7 @@ namespace Project1.Controllers
         WorkInBDZakaz workZakaz = new WorkInBDZakaz();
         WorkInBDMoney workMoney = new WorkInBDMoney();
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
+        WorkInBDUtilits workUtilites = new WorkInBDUtilits();
         // GET: NewDay
         public ActionResult Index()
         {
@@ -46,6 +47,7 @@ namespace Project1.Controllers
             }
             else
             {
+                workUtilites.ChancItems();
                 return Redirect("/Home/Index");
             }
         }

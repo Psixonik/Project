@@ -106,6 +106,11 @@ namespace Project1.BDInitializer
             db.Credits.Add(credit3);
             db.SaveChanges();
 
+            Utilits utilits = new Utilits { gas = 100, water = 100, electro = 100 };
+            db.Utilits.Add(utilits);
+            db.SaveChanges();
+
+
             Project1.Static.Strike.strike = false;
         }
     }
