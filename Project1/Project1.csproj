@@ -130,15 +130,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BDInitializer\Initializer.cs" />
     <Compile Include="BDInitializer\ReWriteBD.cs" />
+    <Compile Include="BDWork\WorkInBDAuto.cs" />
     <Compile Include="BDWork\WorkInBDBazaar.cs" />
     <Compile Include="BDWork\WorkInBDCredit.cs" />
     <Compile Include="BDWork\WorkInBDMoney.cs" />
     <Compile Include="BDWork\WorkInBDSklad.cs" />
+    <Compile Include="BDWork\WorkInBDNameOfMashin.cs" />
     <Compile Include="BDWork\WorkInBDTypeMashin.cs" />
     <Compile Include="BDWork\WorkInBDUtilits.cs.cs" />
     <Compile Include="BDWork\WorkInBDWorkes.cs" />
     <Compile Include="BDWork\WorkInBDZakaz.cs" />
     <Compile Include="Context\BDContext.cs" />
+    <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\BazaarController.cs" />
     <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -152,9 +155,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auto.cs" />
     <Compile Include="Models\Bazaar.cs" />
     <Compile Include="Models\Credit.cs" />
     <Compile Include="Models\Detail.cs" />
+    <Compile Include="Models\KoofAuto.cs" />
     <Compile Include="Models\Money.cs" />
     <Compile Include="Models\NameOfMashin.cs" />
     <Compile Include="Models\Orders.cs" />
@@ -168,11 +173,17 @@
     <Compile Include="Static\Strike.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\Auto\index.css" />
     <Content Include="Content\css\Bazaar\index.css" />
+    <Content Include="Content\css\Home\indexStrike.css" />
     <Content Include="Content\css\Home\newGame.css" />
     <Content Include="Content\css\Home\regulations.css" />
     <Content Include="Content\css\Home\index.css" />
@@ -201,6 +212,7 @@
     <Content Include="ikons\Pressed\deletePressed.png" />
     <Content Include="ikons\Pressed\financePressed.png" />
     <Content Include="img\arrow.png" />
+    <Content Include="img\auto.png" />
     <Content Include="img\axez.png" />
     <Content Include="img\bank.png" />
     <Content Include="img\bank2.png" />
@@ -298,6 +310,8 @@
     <Content Include="Views\Workers\ZpPartial.cshtml" />
     <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\Utilites\Index.cshtml" />
+    <Content Include="Views\Auto\Index.cshtml" />
+    <Content Include="Views\Auto\PartialAuto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -308,9 +322,7 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

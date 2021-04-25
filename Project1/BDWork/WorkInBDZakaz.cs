@@ -20,7 +20,7 @@ namespace Project1.BDWork
         Detail threMotor;//количество моторов на складе
         WorkInBDSklad workInBDSklad = new WorkInBDSklad();
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
-        const int COL_MASHIN = 4;//магическое число. Количество машин
+        const int COL_MASHIN = 3;//магическое число. Количество машин
 
         /*static void SkladContext()
         {
@@ -79,7 +79,7 @@ namespace Project1.BDWork
             Zakaz zakaz = new Zakaz();
             Random rnd = new Random();
             colWorkers = workWorkers.GetColWorkes();
-            IEnumerable<string> nameOfMashin = (from c in db.NameOfMashins select c.name);
+            IEnumerable<string> nameOfMashin = (from c in db.Auto select c.nameAuto);
             var arrNameOfMashin = nameOfMashin.ToArray();
 
             for (int i = 0; i < colWorkers; i++)//Количество заказов.

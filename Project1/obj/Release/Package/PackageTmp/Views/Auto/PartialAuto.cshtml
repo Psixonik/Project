@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Project1.Models.Auto>
+@using Project1.Models
+<table class="table">
+    <tr>
+        <th>
+            Машина
+        </th>
+        <th>
+            Оказать услуги
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (Auto item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nameAuto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.services)
+            </td>
+            @{
+                if (item.broken == 1)
+                {
+                    <td>
+                        <a data-ajax="true"
+                           data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoWork?id=@item.id">
+                            Выполнить
+                        </a>
+                    </td>
+                }
+                else if (item.broken == -1)
+                {
+                    <td>
+                        @item.content
+                    </td>
+                    <td>
+                        <a data-ajax="true"
+                           data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoRepair?id=@item.id">
+                            Ремонт
+                        </a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        Насегодня работа закончена
+                    </td>
+                }
+            }
+        </tr>
+    }
+
+</table>

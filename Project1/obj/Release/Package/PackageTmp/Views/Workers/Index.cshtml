@@ -1,33 +1,58 @@
 ﻿@model IEnumerable<Project1.Models.Worker>
 
-
 <link rel="stylesheet" href="~/Content/css/Workers/index.css">
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/workers/index.js"></script>
 
-<form method="post" action="/Workers/Сhange">
-    <div class="txtBlock">
-        <label id="labelBack">Назад</label><br>
-        <a href='@Url.Action("Back","Bazaar")'>
-            <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
-        </a>
-        <h1>Рабочие</h1>
-        <div>
-            <h2>
-                В цехе работают @ViewBag.worker человек<br>
-                с общей зарплатой  @ViewBag.zp
-            </h2>
-        </div>
-        <div id="button">
-            <div id="buttonAdd">
-                <label>Нанять рабочего<input style="margin-left:10px;" type="submit" name="change" value="add" id="addWorkers"></label>
+<label>
+    Назад<br>
+    <a href='@Url.Action("Back", "Bazaar")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
+</label>
+<table class="table">
+    <tr>
+        <th>
+            Количество рабочих
+        </th>
+        <th>
+            Зарплата одгого рабочего
+        </th>
+        <th>
+            Итого
+        </th>
+    </tr>
+    <tbody id="data">
+        @Html.Partial("WorkesPartial", Model)
+    </tbody>
 
-            </div>
-            <div id="buttonMin">
-                <label>
-                    Уволить<input style="margin-left:10px;" type="submit" name="change"
-                                  value="min" id="minWorkers" @((@ViewBag.worker <= 0) ? "disabled" : "")>
-                </label>
-
-            </div>
-        </div>
+</table>
+<p id="loading" hidden>Загрузка...</p>
+<div class="conteiner">
+    <div class="button">
+        <label>
+            Нанять рабочего
+            <a data-ajax="true" data-ajax-begin="clear" data-ajax-loading="#loading"
+               data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Workers/WorkesPartial?change=add">
+                <input />
+            </a>
+        </label><br>
+        <label>
+            Уволить
+            <a data-ajax="true" data-ajax-begin="clear" data-ajax-loading="#loading"
+               data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Workers/WorkesPartial?change=min">
+                <input />
+            </a>
+        </label>
     </div>
-</form>
+    <div class="salary">
+        <Label id="beReplaced">
+            Зарплата
+            <input class="target" id="intZp" type="number" value="@ViewBag.zp" prevval="@ViewBag.zp" min="0"/>
+            <a id="linkZp" href="@Url.Action("ZpPartial","Workers")">ZP</a>
+        </Label>
+    </div>
+</div>
+
+
+

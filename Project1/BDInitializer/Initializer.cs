@@ -31,7 +31,7 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money { cash = 1000, credit = 0, dayForCredit = 0 };
+            Money money = new Money { cash = 100000, credit = 0, dayForCredit = 0 };
             db.Moneys.Add(money);      
             db.SaveChanges();
 
@@ -61,8 +61,6 @@ namespace Project1.BDInitializer
             db.TypeMashins.Add(t4);
             db.SaveChanges();
 
-
-
             Bazaar bazaar1 = new Bazaar { name = "кузов", type = "МАЗ", money = 10 };
             Bazaar bazaar2 = new Bazaar { name = "кузов", type = "КрАЗ", money = 20 };
             Bazaar bazaar3 = new Bazaar { name = "кузов", type = "БТР",  money = 30 };
@@ -84,16 +82,6 @@ namespace Project1.BDInitializer
             db.Bazaars.Add(bazaar8);
             db.SaveChanges();
 
-            NameOfMashin nameOfMashin1 = new NameOfMashin { name = "МАЗ" };
-            NameOfMashin nameOfMashin2 = new NameOfMashin { name = "КрАЗ" };
-            NameOfMashin nameOfMashin3 = new NameOfMashin { name = "БТР" };
-            NameOfMashin nameOfMashin4 = new NameOfMashin { name = "ЗИЛ" };
-            db.NameOfMashins.Add(nameOfMashin1);
-            db.NameOfMashins.Add(nameOfMashin2);
-            db.NameOfMashins.Add(nameOfMashin3);
-            db.NameOfMashins.Add(nameOfMashin4);
-            db.SaveChanges();
-
             Worker workers = new Worker { colWorkers = 2, zp = 50, al = 100, dayOfStrike = 0 };
             db.Workers.Add(workers);
             db.SaveChanges();
@@ -110,6 +98,32 @@ namespace Project1.BDInitializer
             db.Utilits.Add(utilits);
             db.SaveChanges();
 
+            NameOfMashin nameOfMashin1 = new NameOfMashin { nameAuto = "ЗИЛ", cost = 1000, services = 100, content = 1000 };
+            NameOfMashin nameOfMashin2 = new NameOfMashin { nameAuto = "МАЗ", cost = 5000, services = 150, content = 1500 };
+            NameOfMashin nameOfMashin3 = new NameOfMashin { nameAuto = "КрАЗ", cost = 25000, services = 300, content = 3000 };
+            db.Auto.Add(nameOfMashin1);
+            db.Auto.Add(nameOfMashin2);
+            db.Auto.Add(nameOfMashin3);
+            db.SaveChanges();
+
+            /*Auto auto1 = new Auto { nameAuto="ЗИЛ", cost = 1000, services=100, content=100, koofId=100 };
+            Auto auto2 = new Auto { nameAuto = "МАЗ", cost = 5000, services = 150, content = 150, koofId = 100 };
+            Auto auto3 = new Auto { nameAuto = "КрАЗ", cost = 25000, services = 300, content = 300, koofId = 100 };
+            db.Autos.Add(auto1);
+            db.Autos.Add(auto2);
+            db.Autos.Add(auto3);*/
+
+            //Auto auto1 = new Auto { nameAuto = "---", services = 0, content = 0, koofId = 0 };
+            Auto auto1 = new Auto { nameAuto = "ЗИЛ", services = 100,maxContent=1000, content = 0, broken=1 };
+            //Auto auto2 = new Auto { nameAuto = "МАЗ", services = 150, maxContent = 1500, content = 1000, broken = -1 };
+            //Auto auto3 = new Auto { nameAuto = "КрАЗ", services = 300, maxContent = 3000, content = 0, broken = 1 };
+            db.Autoes.Add(auto1);
+            //db.Autos.Add(auto2);
+            //db.Autos.Add(auto3);
+            db.SaveChanges();
+            Auto axez= db.Autoes.Where(c => c.id == 1).FirstOrDefault();
+            db.Autoes.Remove(axez);
+            db.SaveChanges();
 
             Project1.Static.Strike.strike = false;
         }

@@ -22,7 +22,7 @@ namespace Project1.BDInitializer
             db.SaveChanges();
             db.Bazaars.RemoveRange(db.Bazaars);
             db.SaveChanges();
-            db.NameOfMashins.RemoveRange(db.NameOfMashins);
+            db.Auto.RemoveRange(db.Auto);
             db.SaveChanges();
             db.Workers.RemoveRange(db.Workers);
             db.SaveChanges();
@@ -124,16 +124,6 @@ namespace Project1.BDInitializer
             db.Bazaars.Add(bazaar8);
             db.SaveChanges();
 
-            NameOfMashin nameOfMashin1 = new NameOfMashin { name = "МАЗ" };
-            NameOfMashin nameOfMashin2 = new NameOfMashin { name = "КрАЗ" };
-            NameOfMashin nameOfMashin3 = new NameOfMashin { name = "БТР" };
-            NameOfMashin nameOfMashin4 = new NameOfMashin { name = "ЗИЛ" };
-            db.NameOfMashins.Add(nameOfMashin1);
-            db.NameOfMashins.Add(nameOfMashin2);
-            db.NameOfMashins.Add(nameOfMashin3);
-            db.NameOfMashins.Add(nameOfMashin4);
-            db.SaveChanges();
-
             Worker workers = new Worker { colWorkers = 3, zp = 50 };
             db.Workers.Add(workers);
             db.SaveChanges();
@@ -144,6 +134,14 @@ namespace Project1.BDInitializer
             db.Credits.Add(credit1);
             db.Credits.Add(credit2);
             db.Credits.Add(credit3);
+            db.SaveChanges();
+
+            NameOfMashin nameOfMashin1 = new NameOfMashin { nameAuto = "ЗИЛ", cost = 1000, services = 100, content = 100 };
+            NameOfMashin nameOfMashin2 = new NameOfMashin { nameAuto = "МАЗ", cost = 5000, services = 150, content = 150 };
+            NameOfMashin nameOfMashin3 = new NameOfMashin { nameAuto = "КрАЗ", cost = 25000, services = 300, content = 300 };
+            db.Auto.Add(nameOfMashin1);
+            db.Auto.Add(nameOfMashin2);
+            db.Auto.Add(nameOfMashin3);
             db.SaveChanges();
 
             Project1.Static.Strike.strike = false;

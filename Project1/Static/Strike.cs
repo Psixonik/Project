@@ -16,7 +16,7 @@ namespace Project1.Static
         static Strike()
         {
             strike = false;
-            koof = 15;
+            koof = 10;
             dayOfStrike = 0;
         }
     }

@@ -14,13 +14,14 @@ namespace Project1.Controllers
         WorkInBDMoney workMoney = new WorkInBDMoney();
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         WorkInBDUtilits workUtilites = new WorkInBDUtilits();
+        WorkInBDAuto workAuto = new WorkInBDAuto();
         // GET: NewDay
         public ActionResult Index()
         {
             workZakaz.DeletAllZakaz();
             workZakaz.CreatedNewZakaz();
             workMoney.MinManiEndOfDay();
-
+            workAuto.ShowBrokenOrJobs();
             if (Project1.Static.Strike.strike)
             {
                 workWorkers.MinDayOfStrike();

@@ -21,6 +21,11 @@ namespace Project1.BDWork
             return (from c in db.Moneys select c.cash).FirstOrDefault();
         }
 
+        public Money GetManiOfRow()
+        {
+            return (from c in db.Moneys select c).FirstOrDefault();
+        }
+
         public void AddMoney(Zakaz zakaz)
         {
             int moneyForZakaz = zakaz.money;
@@ -119,6 +124,13 @@ namespace Project1.BDWork
                 }
             }
             // Сохранить изменения
+            db.SaveChanges();
+        }
+
+        public void AddMoney(int cash)
+        {
+            Money moneyUpdate = (from c in db.Moneys select c).FirstOrDefault();
+            moneyUpdate.cash += cash;
             db.SaveChanges();
         }
     }

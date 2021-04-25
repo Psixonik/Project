@@ -1,0 +1,58 @@
+/*Payment*/
+body {
+    /*background: url(../../../img/payments_fon.png);*/
+    background-size: cover;   
+}
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+label {
+    margin-top: 5px;
+    color: red;
+    font-size: 20px;
+}
+.conteiner {
+    position: relative;
+    width: 100%;
+    display: table;
+    margin-top: 5px;
+}
+.arrow {
+    border: 1px solid red;
+    display: table-cell;
+}
+.txt {
+    border: 1px solid red;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+h2 {
+    margin-top:100px;
+    margin-left:300px;
+}
+.imeg {
+    border: 1px solid red;
+    display: table-cell;
+    vertical-align: middle;
+    width:200px;
+}
+.list {
+    border: 1px solid red;
+    display: table-cell;
+}
+table {
+    vertical-align: middle;
+    text-align: center;
+    width: 40%; /* Ширина таблицы */
+    margin: 200px auto; /* Выравниваем таблицу по центру */
+    /*border-collapse: collapse;*/
+    margin-top: 30px;
+    font-size: 20px;
+    color: goldenrod;
+    border: 1px solid green;
+}
+td {
+    border: 1px solid black;
+}

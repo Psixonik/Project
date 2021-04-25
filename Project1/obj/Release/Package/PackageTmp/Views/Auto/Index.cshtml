@@ -1,0 +1,58 @@
+﻿@model dynamic
+@using Project1.Models
+
+
+@{
+    ViewBag.Title = "Машины";
+}
+
+<link rel="stylesheet" href="~/Content/css/Auto/index.css">
+
+<label>Назад</label><br>
+<a href='@Url.Action("Back","Bazaar")'>
+    <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+</a>
+<div id="atcMashin">
+    <h1>Цеховые машины</h1>
+
+        <div id="data">
+            @{ 
+                IEnumerable<Project1.Models.Auto> axez = Model.Auto;
+            }
+            @Html.Partial("PartialAuto", axez)
+        </div>
+    
+</div>
+<div id="allMashin">
+    <h1>Купить машину</h1>
+    <table class="table">
+        <tr>
+            <th>
+                Машина
+            </th>
+            <th>
+                Стоимость
+            </th>
+            <th></th>
+        </tr>
+        @{
+            foreach (NameOfMashin item in Model.NameOfMashin)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nameAuto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cost)
+                    </td>
+                    <td>
+                            <a data-ajax="true"
+                               data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAuto?id=@item.id">
+                                Купить
+                            </a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

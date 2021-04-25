@@ -24,13 +24,14 @@
 </div>-->
 <div class="conteiner">
     <div id="menu">
-        <div style="display:block;">
+        <div id="firstBlock">
             <fieldset style="margin-top:0px">
                 <legend align="left" style="width:35%;">Производство</legend>
                     <ul class="hr" id="workShow">
                         <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
                         <li><a href='@Url.Action("Index", "Sklad")'><img src="~/img/sklad.png" runat="server" alt="Склад" id="sklad_img" /></a></li>
                         <li><a href='@Url.Action("AllZakaz", "Zakaz")'><img src="~/img/order.png" runat="server" alt="Заказы" id="order_img" /></a></li>
+                        <li><a href='@Url.Action("index", "Auto")'><img src="~/img/auto.png" runat="server" alt="Машины" id="auto_img" /></a></li>
                     </ul>
             </fieldset>
         </div>
@@ -45,7 +46,7 @@
                 </ul>
             </fieldset>
         </div>
-        <div style="display:block;">
+        <div  id="threeBlock">
             <fieldset>
                 <legend align="left">Помощь</legend>
                 <ul class="hr" id="helpShow">
@@ -68,7 +69,6 @@
     </div>
 </div>
 <div class="strike">
-    <!--@Html.Partial("StrikePartial")-->
     <p>Забастовка продлится еще @ViewBag.DayOfStrike</p>
     <p>Чего хотят люди? Конечно-же повышения зарплаты!</p>
     <p>Вы можете либо ждать конча забастовки, либо поднять рабочим зарплату.</p>

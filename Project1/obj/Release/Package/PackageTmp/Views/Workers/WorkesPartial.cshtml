@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Project1.Models.Worker>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.colWorkers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.al)
+        </td>
+    </tr>
+}
+
