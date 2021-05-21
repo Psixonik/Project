@@ -1,7 +1,8 @@
 /*Zakaz*/
 body {
     background: url(../../../img/rabota_fon1.png);
-    background-size: cover;   
+    background-size: cover;
+    background-color: #BA55D3;
 }
 #arrow_img {
     width: 50px;
@@ -16,6 +17,7 @@ label {
     display:inline;
     text-align:left;
     background-color:azure;
+    color:white;
 }
 
 

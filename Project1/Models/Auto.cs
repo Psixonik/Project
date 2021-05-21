@@ -9,6 +9,8 @@ namespace Project1.Models
     {
         public int id { get; set; }
 
+        public int userId { get; set; }
+
         public string nameAuto { get; set;}
 
         public int services { get; set; }

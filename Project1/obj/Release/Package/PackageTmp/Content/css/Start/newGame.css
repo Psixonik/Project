@@ -1,0 +1,88 @@
+/*NewGame*/
+html {
+    height:120%;
+}
+body {
+    background: url(../../../img/fon.png) no-repeat;
+    background-size: 100% 100%;
+    color:gold;
+}
+div {
+    text-align:center;
+}
+
+#btnYes {
+    background: url(../../../ikons/NotPressed/checked.png);
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+}
+    #btnYes:hover {
+        background: url(../../../ikons/Pressed/checkedPressed.png);
+    }
+#btnNo {
+    background: url(../../../ikons/NotPressed/delete.png);
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+}
+
+    #btnNo:hover {
+        background: url(../../../ikons/Pressed/deletePressed.png);
+    }
+ul {
+    list-style-type:none;
+    margin-top:100px;
+}
+ul li {
+    display: inline-block; /* расположить пункты горизонтально */
+    margin-right:100px;
+}
+/*a {
+    border-radius: 30px;
+    width: 42px;
+    height: 42px;
+    color: transparent;
+}
+
+#btnYes {
+    background: url(../../../ikons/NotPressed/checked.png);
+}
+
+#btnYes:hover {
+    background: url(../../../ikons/Pressed/addPressed.png);
+}
+
+#btnNo {
+    background: url(../../../ikons/NotPressed/delete.png) no-repeat 50% 50%;
+    margin-left: 10px;
+}
+
+#btnNo:hover {
+    background: url(../../../ikons/Pressed/deletePressed.png) no-repeat 50% 50%;
+}
+
+input,
+input:active,
+input:focus {
+    outline: none;
+}
+
+.btn {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    font-size: 20px;
+}
+
+.list {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#labelNo {
+    margin-left: 50px;
+}*/  

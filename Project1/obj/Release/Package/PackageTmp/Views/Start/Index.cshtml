@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    if (ViewBag.strike)
+    {
+        <link rel="stylesheet" href="~/Content/css/Start/indexStrike.css">
+    }
+    else
+    {
+        <link rel="stylesheet" href="~/Content/css/Start/index.css">
+    }
+}
+<div id="mainMenu">
+    <ul>
+        <li><a href='@Url.Action("Index", "Home")'>Регистрация нового пользователя</a></li>
+        <li><a href='@Url.Action("Enter", "Home")'>Сменить пользователя</a></li>
+        <li><a href='@Url.Action("Exit", "Home")'>Выход</a></li>
+    </ul>
+</div>
+<div id="NameText">
+     <label>@ViewBag.name</label>  
+</div>
+
+ <div class="conteiner">
+            <div id="menu">
+                <div id="firstBlock">
+                    <fieldset style="margin-top:0px">
+                        <legend align="left">Производство</legend>
+
+                        <ul class="hr">
+                            <li><a href='@Url.Action("Index", "Bazaar")'><img src="~/img/signboard_bazaar.png" runat="server" alt="Базар" id="bazaar_img" /></a></li>
+                            <li><a href='@Url.Action("Index", "Sklad")'><img src="~/img/sklad.png" runat="server" alt="Склад" id="sklad_img" /></a></li>
+                        </ul>
+                        <ul class="hr">
+                            <li><a href='@Url.Action("Index", "Money")'><img src="~/img/bank3.png" runat="server" alt="Банк" id="bank_img" /></a></li>                            
+                            <li><a href='@Url.Action("index", "Auto")'><img src="~/img/auto.png" runat="server" alt="Машины" id="auto_img" /></a></li>
+                        </ul>
+                        <div id="strike">
+                            <p>Забастовка продлится еще @ViewBag.DayOfStrike</p>
+                            <p>Чего хотят люди? Конечно-же повышения зарплаты!</p>
+                            <p>Вы можете либо ждать конца забастовки,<br> либо поднять рабочим зарплату.</p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="axez">
+                </div>
+                <div id="secondBlock">
+                    <fieldset>
+                        <legend align="left">Деньги</legend>
+                        <ul class="hr">
+                            <li><a href='@Url.Action("AllZakaz", "Zakaz")'><img src="~/img/order.png" runat="server" alt="Заказы" id="order_img" /></a></li>
+                            <li><a href='@Url.Action("Index", "Workers")'><img src="~/img/works.png" runat="server" alt="Рабочие" id="works_img" /></a></li>
+                        </ul>
+                        <ul class="hr">
+                            <!--<li><a href='@Url.Action("Index", "Utilites")'><img src="~/img/utilities.png" runat="server" alt="Камунальные" id="utilities_img" /></a></li>-->
+                            <li><a href='@Url.Action("Index", "Payments")'><img src="~/img/dollar.jpg" runat="server" alt="Платежи" id="payments_img" /></a></li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div id="axez2">
+                </div>
+                <div id="fourBlock">
+                    <fieldset style="background-color: #CA5357;">
+                        <legend align="left" style="background-color: #CA5357;">axez</legend>
+                        <ul class="hr" style="background-color: #CA5357">
+                            <li style="color:#F8F45D;font-size:20px">Наличьность: @ViewBag.mani</li>
+                            <li><a href='@Url.Action("Index", "NewDay")'><img src="~/img/NewDay.png" runat="server" alt="Новый День" id="newDay_img" /></a></li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div id="axez3">
+                </div>
+            </div>
+            <div id="threeBlock">
+                <fieldset>
+                    <legend align="left">Помощь</legend>
+                    <ul class="hr">
+                        <li><a href='@Url.Action("Regulations", "Start")'><img src="~/img/regulations.png" runat="server" alt="Правила" id="regulations_img" style="margin-right:30px" /></a></li>
+                        <li><a href='#'><img src="~/img/autors.png" runat="server" alt="Авторы" id="regulations_img" style="margin-right:30px" /></a></li>
+                        <li><a href='@Url.Action("Liders", "Start")'><img src="~/img/liders.png" runat="server" alt="Лидеры" id="liders_img" style="margin-right:30px" /></a></li>
+                        <li><a href='@Url.Action("NewGame", "Start")'><img src="~/img/newGame.png" runat="server" alt="Заново" id="newGame_img" style="margin-right:30px" /></a></li>
+                    </ul>
+                </fieldset>
+            </div>
+            <!--  <div id="second">
+                <div class="NewDay">
+                    <ul class="hr">
+                        <li><a href='@Url.Action("Index", "NewDay")'><img src="~/img/NewDay.png" runat="server" alt="Новый День" id="newDay_img" /></a></li>
+                    </ul>
+                </div>
+            <div class="mani">
+            <img src="~/img/bank.png" runat="server" alt="Деньги" id="mani_img" style="margin-right:5%;">
+            <h1>Денег :@ViewBag.mani</h1>
+        </div>
+    </div>-->
+        </div>
+
+
+<script src="~/Content/js/Home/index.js"></script>
+

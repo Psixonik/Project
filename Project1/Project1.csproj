@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -137,6 +138,7 @@
     <Compile Include="BDWork\WorkInBDSklad.cs" />
     <Compile Include="BDWork\WorkInBDNameOfMashin.cs" />
     <Compile Include="BDWork\WorkInBDTypeMashin.cs" />
+    <Compile Include="BDWork\WorkInBDUsers.cs" />
     <Compile Include="BDWork\WorkInBDUtilits.cs.cs" />
     <Compile Include="BDWork\WorkInBDWorkes.cs" />
     <Compile Include="BDWork\WorkInBDZakaz.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Controllers\NewDayController.cs" />
     <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\SkladController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UtilitesController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
@@ -155,22 +158,33 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105181708227_MigrateDB.cs" />
+    <Compile Include="Migrations\202105181708227_MigrateDB.designer.cs">
+      <DependentUpon>202105181708227_MigrateDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Auto.cs" />
     <Compile Include="Models\Bazaar.cs" />
     <Compile Include="Models\Credit.cs" />
     <Compile Include="Models\Detail.cs" />
     <Compile Include="Models\KoofAuto.cs" />
+    <Compile Include="Models\Liders.cs" />
     <Compile Include="Models\Money.cs" />
     <Compile Include="Models\NameOfMashin.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\TypeMashin.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\Utilits.cs" />
     <Compile Include="Models\Worker.cs" />
     <Compile Include="Models\Zakaz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Static\Day.cs" />
     <Compile Include="Static\ImageActionLinkHelper.cs" />
+    <Compile Include="Static\Items.cs" />
+    <Compile Include="Static\NewGame.cs" />
+    <Compile Include="Static\NewUser.cs" />
     <Compile Include="Static\Strike.cs" />
+    <Compile Include="Static\UserGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Database.mdf" />
@@ -183,10 +197,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\Auto\index.css" />
     <Content Include="Content\css\Bazaar\index.css" />
+    <Content Include="Content\css\Home\index.css" />
     <Content Include="Content\css\Home\indexStrike.css" />
     <Content Include="Content\css\Home\newGame.css" />
     <Content Include="Content\css\Home\regulations.css" />
-    <Content Include="Content\css\Home\index.css" />
+    <Content Include="Content\css\Regulations\index.css" />
+    <Content Include="Content\css\Start\gameOver.css" />
+    <Content Include="Content\css\Start\liders.css" />
+    <Content Include="Content\css\Start\indexStrike.css" />
+    <Content Include="Content\css\Start\newGame - Копировать.css" />
+    <Content Include="Content\css\Start\newGame.css" />
+    <Content Include="Content\css\Start\regulations.css" />
+    <Content Include="Content\css\Start\index.css" />
     <Content Include="Content\css\Money\index.css" />
     <Content Include="Content\css\Payments\index.css" />
     <Content Include="Content\css\Sklad\index.css" />
@@ -197,6 +219,7 @@
     <Content Include="Content\js\Bazaar\index.js" />
     <Content Include="Content\js\Home\index.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\Regulations\index.js" />
     <Content Include="Content\js\workers\index.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -213,6 +236,7 @@
     <Content Include="ikons\Pressed\financePressed.png" />
     <Content Include="img\arrow.png" />
     <Content Include="img\auto.png" />
+    <Content Include="img\autors.png" />
     <Content Include="img\axez.png" />
     <Content Include="img\bank.png" />
     <Content Include="img\bank2.png" />
@@ -223,11 +247,16 @@
     <Content Include="img\bazaar.jpg" />
     <Content Include="img\bazaar_fon.png" />
     <Content Include="img\credit-card-3186085_1280.png" />
+    <Content Include="img\div_fon.png" />
     <Content Include="img\dollar.jpg" />
+    <Content Include="img\fon.png" />
+    <Content Include="img\fon_auto.png" />
+    <Content Include="img\liders.png" />
     <Content Include="img\list_fon.png" />
     <Content Include="img\list_fon2.png" />
     <Content Include="img\lost.png" />
     <Content Include="img\NewDay.png" />
+    <Content Include="img\newGame.png" />
     <Content Include="img\order.png" />
     <Content Include="img\order.svg" />
     <Content Include="img\payments2.png" />
@@ -241,6 +270,7 @@
     <Content Include="img\signboard_bazaar.png" />
     <Content Include="img\sklad.png" />
     <Content Include="img\sklad_fon.jpg" />
+    <Content Include="img\strike.png" />
     <Content Include="img\utilities.png" />
     <Content Include="img\works.png" />
     <Content Include="img\works_fon.png" />
@@ -296,14 +326,11 @@
     <Content Include="Views\Zakaz\AllZakaz.cshtml" />
     <Content Include="Views\Zakaz\Create.cshtml" />
     <Content Include="Views\Sklad\SkladOld.cshtml" />
-    <Content Include="Views\Home\Zakaz.cshtml" />
     <Content Include="Views\Sklad\Index.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Money\Index.cshtml" />
     <Content Include="Views\NewDay\Index.cshtml" />
     <Content Include="Views\Money\Partial.cshtml" />
-    <Content Include="Views\Home\NewGame.cshtml" />
-    <Content Include="Views\Home\Regulations.cshtml" />
     <Content Include="Views\Workers\Index.cshtml" />
     <Content Include="Views\Bazaar\Index.cshtml" />
     <Content Include="Views\Workers\WorkesPartial.cshtml" />
@@ -312,6 +339,13 @@
     <Content Include="Views\Utilites\Index.cshtml" />
     <Content Include="Views\Auto\Index.cshtml" />
     <Content Include="Views\Auto\PartialAuto.cshtml" />
+    <Content Include="Views\Start\Index.cshtml" />
+    <Content Include="Views\Start\GameOver.cshtml" />
+    <Content Include="Views\Start\Regulations.cshtml" />
+    <Content Include="Views\Start\Zakaz.cshtml" />
+    <Content Include="Views\Home\Enter.cshtml" />
+    <Content Include="Views\Start\NewGame.cshtml" />
+    <Content Include="Views\Start\Liders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -322,7 +356,11 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105181708227_MigrateDB.resx">
+      <DependentUpon>202105181708227_MigrateDB.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

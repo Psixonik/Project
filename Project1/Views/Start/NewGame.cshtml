@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "NewGame";
+}
+<link rel="stylesheet" href="~/Content/css/Start/newGame.css">
+
+<div>
+    <h1>Вы уверены, что хотите начать игру заново?</h1>
+    <ul>
+        <li><a href='@Url.Action("CreateNewGame", "Start")' class="btn" id="btnYes"></a></li>
+        <li><a href='@Url.Action("Index", "Start")' class="btn" id="btnNo"></a></li>
+    </ul>
+</div>
+

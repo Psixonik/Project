@@ -1,8 +1,7 @@
 /*Auto*/
 body {
-
-    background-size: 100% 100%;
-    background-color:SteelBlue;
+    background: url(../../../img/fon_auto.png) no-repeat;
+    background-size: 100% 200%;
 }
 table {
     vertical-align: middle;
@@ -46,4 +45,7 @@ label {
 }
 a {
     color:red;
+}
+h1 {
+    color:white;
 }

@@ -19,10 +19,10 @@ namespace Project1.Controllers
         public ActionResult Index()
         {
             workZakaz.DeletAllZakaz();
-            workZakaz.CreatedNewZakaz();
-            workMoney.MinManiEndOfDay();
-            workAuto.ShowBrokenOrJobs();
-            if (Project1.Static.Strike.strike)
+            workZakaz.CreatedNewZakaz(Static.UserGame.userId);
+            workMoney.MinManiEndOfDay(Static.UserGame.userId);
+            workAuto.ShowBrokenOrJobs(Static.UserGame.userId);
+            if (workWorkers.GetStrik(Static.UserGame.userId))
             {
                 workWorkers.MinDayOfStrike();
             }
@@ -30,26 +30,28 @@ namespace Project1.Controllers
             {
                 workWorkers.CheckForStrike();
             }
-            int mani = workMoney.GetCredit();
+            int mani = workMoney.GetCredit(Static.UserGame.userId);
             int day;
             if (mani > 0)
             {
-                workMoney.MinDayForCredit();
-                day = workMoney.GetDayForCredit();
+                workMoney.MinDayForCredit(Static.UserGame.userId);
+                day = workMoney.GetDayForCredit(Static.UserGame.userId);
                 if (day == 0)
                 {
-                    workMoney.minMani(workMoney.GetCredit());
+                    workMoney.minMani(workMoney.GetCredit(Static.UserGame.userId), Static.UserGame.userId);
+                    workMoney.MinCredit(Static.UserGame.userId);
                 }
             }
-            if (workMoney.GetMani() <= 0)
+            if (workMoney.GetMani(Static.UserGame.userId) <= 0)
             {
                 //MessageBox.Show("Game Over");
-                return Redirect("/Home/NewGame");
+                //return Redirect("/Start/GameOver");
+                return View("~/Views/Start/GameOver.cshtml");
             }
             else
             {
-                workUtilites.ChancItems();
-                return Redirect("/Home/Index");
+                workUtilites.ChancItems(Static.UserGame.userId);
+                return Redirect("/Start/Index");
             }
         }
     }

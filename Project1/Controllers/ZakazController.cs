@@ -49,9 +49,9 @@ namespace Project1.Controllers
           
             if (fl)
             {
-                workInBDZakaz.UpdateSklad(zakaz, newMashin);
+                workInBDZakaz.UpdateSklad(zakaz, newMashin,Static.UserGame.userId);
                 workInBDZakaz.deletZacaz(zakaz.id);
-                money.AddMoney(zakaz);
+                money.AddMoney(zakaz, Static.UserGame.userId);
                 errorCrear.Add("Сборка заказа завершена. Вы получили "+zakaz.money +" $");
             }
             ViewBag.errorCrear = errorCrear;            
@@ -60,17 +60,17 @@ namespace Project1.Controllers
 
         private void Kyzov(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
-            threKyzov = workInBDZakaz.Kyzov(newMashin);
+            threKyzov = workInBDZakaz.Kyzov(newMashin,Static.UserGame.userId);
             BildZakaz(threKyzov,zakaz, "кузов", newMashin.colKyzov);
         }
         private void Koleso(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
-            threKoleso = workInBDZakaz.Koleso(newMashin);
+            threKoleso = workInBDZakaz.Koleso(newMashin, Static.UserGame.userId);
             BildZakaz(threKoleso, zakaz, "колесо", newMashin.colKoleso);
         }
         private void Motor(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         { 
-            threMotor = workInBDZakaz.Motor(newMashin);
+            threMotor = workInBDZakaz.Motor(newMashin, Static.UserGame.userId);
             BildZakaz(threMotor, zakaz, "мотор", newMashin.colMotor);
         }
 

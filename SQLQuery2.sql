@@ -1,80 +1,102 @@
-﻿Create table Details( id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-					name nvarchar(50) not null,
-					type nvarchar(50) not null,
-					col int);
-insert into Details values (N'кузов', N'МАЗ',3),
-						(N'кузов', N'КрАЗ',7),
-						(N'кузов', N'БТР',10),
-						(N'колесо', N'260',7),
-						(N'колесо', N'320',30),
-						(N'мотор', N'Мотор для МАЗа',0),
-						(N'мотор', N'Мотор для КрАЗа',10),
-						(N'мотор', N'Мотор для ЗИЛа',1);
+﻿
+CREATE TABLE [dbo].[users] (
+    [id]    INT           IDENTITY (1, 1) NOT NULL,
+    [email] NVARCHAR (50) NOT NULL,
+    [name]  NVARCHAR (50) NOT NULL,
+    [pas]   NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
 
-Create table Zakazs( id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-					name nvarchar(50) not null,
-					col int,
-					money int,
-					typeMashiID int);
-insert into Zakazs values (N'КрАЗ', 1,100,1),
-						(N'МАЗ', 7,70,2),
-						(N'БТР', 3,10,4);
+CREATE TABLE [dbo].[Autoes] (
+    [id]         INT           IDENTITY (1, 1) NOT NULL,
+    [nameAuto]   NVARCHAR (50) NOT NULL,
+    [services]   INT           NULL,
+    [maxContent] INT           NULL,
+    [content]    INT           NULL,
+    [broken]     INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+CREATE TABLE [dbo].[Bazaars] (
+    [id]    INT           IDENTITY (1, 1) NOT NULL,
+    [name]  NVARCHAR (50) NOT NULL,
+    [type]  NVARCHAR (50) NOT NULL,
+    [money] INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+CREATE TABLE [dbo].[Credits] (
+    [id]   INT IDENTITY (1, 1) NOT NULL,
+    [cash] INT NULL,
+    [day]  INT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+CREATE TABLE [dbo].[Details] (
+    [id]     INT           IDENTITY (1, 1) NOT NULL,
+    [userId] INT           NOT NULL,
+    [name]   NVARCHAR (50) NOT NULL,
+    [type]   NVARCHAR (50) NOT NULL,
+    [col]    INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[Moneys] (
+    [id]           INT IDENTITY (1, 1) NOT NULL,
+    [userid]       INT NOT NULL,
+    [cash]         INT NULL,
+    [credit]       INT NULL,
+    [dayForCredit] INT NULL,
+    CONSTRAINT [PK_dbo.Moneys] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[NameOfMashins] (
+    [id]       INT           IDENTITY (1, 1) NOT NULL,
+    [nameAuto] NVARCHAR (50) NOT NULL,
+    [cost]     INT           NULL,
+    [services] INT           NULL,
+    [content]  INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+CREATE TABLE [dbo].[Orders] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Product]  NVARCHAR (MAX) NULL,
+    [Customer] NVARCHAR (MAX) NULL,
+    [Quantity] INT            NOT NULL,
+    CONSTRAINT [PK_dbo.Orders] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[TypeMashins] (
+    [id]        INT           IDENTITY (1, 1) NOT NULL,
+    [kyzov]     NVARCHAR (50) NOT NULL,
+    [colKyzov]  INT           NULL,
+    [koleso]    NVARCHAR (50) NOT NULL,
+    [colKoleso] INT           NULL,
+    [motor]     NVARCHAR (50) NOT NULL,
+    [colMotor]  INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[Utilits] (
+    [id]      INT IDENTITY (1, 1) NOT NULL,
+    [gas]     INT NULL,
+    [water]   INT NULL,
+    [electro] INT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[Workers] (
+    [id]          INT IDENTITY (1, 1) NOT NULL,
+    [userId]      INT NOT NULL,
+    [colWorkers]  INT NULL,
+    [zp]          INT NULL,
+    [al]          INT NULL,
+    [dayOfStrike] INT NULL,
+    [strik]       BIT NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
 
 
-Create table TypeMashins( id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-					kyzov nvarchar(50) not null,
-					colKyzov int,
-					koleso nvarchar(50) not null,
-					colKoleso int,
-					motor nvarchar(50) not null,
-					colMotor int);
-
-
-insert into TypeMashins values (N'КрАЗ',1, N'320',6,N'Мотор для КрАЗа',1),
-						(N'МАЗ',1, N'260',4,N'Мотор для МАЗа',1),
-						(N'ЗИЛ',1, N'260',4,N'Мотор для ЗИЛа',1),
-						(N'БТР',1, N'320',8,N'Мотор для КрАЗа',2);
-
-Create table Moneys( id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-					cash int,
-					credit int,
-					dayForCredit int);
-insert into Moneys values (100,0,0);
-
-Create table Bazaars (	id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-						name nvarchar(50) not null,
-						type nvarchar(50) not null,
-						money int);
-Insert into Bazaars values (N'кузов',N'МАЗ',10),
-							(N'кузов',N'КрАЗ',15),
-							(N'кузов',N'БТР',23),
-							(N'колесо',N'260',5),
-							(N'колесо',N'320',7),
-							(N'мотор',N'Мотор для МАЗа',17),
-							(N'мотор',N'Мотор для КрАЗа',25),
-							(N'мотор',N'Мотор для ЗИЛа',10);
-
-Create table NameOfMashins (	id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-								name nvarchar(50) not null);
-Insert into NameOfMashins values	(N'МАЗ'),
-									(N'КрАЗ'),
-									(N'ЗИЛ'),
-									(N'БТР');
-Create table Workers (id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-						colWorkers int,
-						zp int);
-Insert into Workers values (3,50);
-
-Create table Credits (id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
-						cash int,
-						day int);
-insert into Credits values (1000,5),
-							(1500,10),
-							(2000,15);
-
-drop table Details;
-drop table Zakazs;
-drop table TypeMashins;
-drop table Moneys;
-drop table Bazaars;
-drop table NameOfMashins;
+CREATE TABLE [dbo].[Zakazs] (
+    [id]    INT           IDENTITY (1, 1) NOT NULL,
+    [name]  NVARCHAR (50) NOT NULL,
+    [col]   INT           NULL,
+    [money] INT           NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);

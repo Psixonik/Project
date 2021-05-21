@@ -7,10 +7,12 @@
 <link rel="stylesheet" href="~/Content/css/Sklad/index.css">
 
 <form name="axez" method="post" action="/Sklad/Index">
-    <label>Назад</label><br>
-    <a href='@Url.Action("Back","Bazaar")'>
-        <img src="~/img/arrow.png" runat="server" alt="Назад" id="arrow_img" />
-    </a>
+    <div id="arrow">
+        <label>Назад</label><br>
+        <a href='@Url.Action("Index","Start")'>
+            <img src="~/img/arrow.png" runat="server" alt="Назад" id="arrow_img" />
+        </a>
+    </div>
     <h1>Склад</h1>
 
     <div id="list">

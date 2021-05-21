@@ -1,0 +1,49 @@
+/*Liders*/
+body {
+    background: url(../../../img/fon.png) no-repeat;
+    background-size:100% 300%;
+    color:white;
+}
+h2 {
+    text-align: right;
+    color: goldenrod;
+    text-align:center;
+}
+
+#arrow_img {
+    width: 50px;
+    height: 40px;
+    margin-left: 30px;
+}
+
+label {
+    margin-top: 20px;
+    margin-left: 35px;
+    color: goldenrod;
+}
+table {
+    vertical-align: middle;
+    text-align: center;
+    width: 70%; /* Ширина таблицы */
+    margin: 200px auto; /* Выравниваем таблицу по центру */
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 20px;
+    color: goldenrod;
+}
+
+td {
+    border: 3px solid darkgreen; /* Рамка вокруг таблицы */
+    text-align: center; /* Выравниваем текст по центру ячейки */
+}
+
+tr {
+    height: 20px;
+}
+
+th {
+    border: 2px solid black;
+    background-color: darkgrey;
+    text-align: center;
+    color: gold;
+}

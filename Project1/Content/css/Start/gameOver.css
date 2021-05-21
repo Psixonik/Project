@@ -1,0 +1,63 @@
+/*Start*/
+body {
+    background: url(../../../img/fon.png) no-repeat;
+    background-size: 100% 200%;
+    color: gold;
+}
+#conteiner {
+    /*text-align: center;
+    display: table;*/
+    display: flex;
+}
+#imeg {
+    min-width: 50px;
+    height: 50px;
+    margin-left:200px;
+    margin-top:200px;
+    /*display: table-cell;
+    border:1px solid red;*/
+}
+#list {
+    text-align: center;
+    color: goldenrod;
+    margin-left: 300px;
+    margin-top: 300px;
+    border: 1px solid red;
+    /*display: table-cell;
+    border: 1px solid red;*/
+}
+#btnYes {
+    font-size:30px;
+    color:transparent;
+    background: url(../../../ikons/NotPressed/checked.png);
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+}
+
+    #btnYes:hover {
+        background: url(../../../ikons/Pressed/checkedPressed.png);
+    }
+
+#btnNo {
+    font-size: 30px;
+    color: transparent;
+    background: url(../../../ikons/NotPressed/delete.png) no-repeat;
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+}
+
+    #btnNo:hover {
+        background: url(../../../ikons/Pressed/deletePressed.png);
+    }
+
+ul {
+    list-style-type: none;
+    margin-top: 100px;
+}
+
+    ul li {
+        display: inline-block; /* расположить пункты горизонтально */
+        margin-right: 100px;
+    }

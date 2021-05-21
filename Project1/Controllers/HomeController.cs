@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Windows.Forms;
@@ -15,67 +17,89 @@ namespace Project1.Controllers
 {
 
     public class HomeController : Controller
-    {      
-        WorkInBDMoney workMani = new WorkInBDMoney();
-        WorkInBDWorkes workWorkers = new WorkInBDWorkes();
+    {
+        WorkInBDUsers workUser = new WorkInBDUsers();
+        List<string> error = new List<string>();
+        bool reg = true;
         public ActionResult Index()
         {
-            int mani = workMani.GetMani();
-            ViewBag.mani = mani;
-            if (Project1.Static.Strike.strike)
+            ViewBag.error = "";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(string email,string name, string psw,string psw_repeat)
+        {
+            error.Clear();
+            reg = true;
+            ErrorPsw(psw, psw_repeat);
+            if (reg)
             {
-                //workWorkers.MinDayOfStrike();
-                ViewBag.DayOfStrike = workWorkers.GetDayOfStrike();
+                psw=Hash(psw);
             }
-            if (ViewBag.DayOfStrike == 0)
+            ErrorName(name);
+            ViewBag.error = error;
+            if (reg)
             {
-                Project1.Static.Strike.strike = false;
+                User user = new User(Static.UserGame.userId, email, name, psw);
+                workUser.SaveUser(user);
+                Static.NewUser.CreatNewUser(user.id);
+                error.Add("Юзер добавлен");
             }
             return View();
         }
 
-        public ActionResult NewGame()
+        private void ErrorPsw(string psw, string psw_repeat)
         {
-            return View();
-        }
-
-        public ActionResult GameOver(string ansver)
-        {
-            switch (ansver)
+            if (psw != psw_repeat)
             {
-                case ("No"):
-                    {
-                        Environment.Exit(0);
-                        return Redirect("/Home/index");
-                        
-                    }
-                case ("Yes"):
-                    {
-                        /*Initializer init = new Initializer();
-                        Database.SetInitializer<BDContext>(new Initializer());
-                        BDContext db = new BDContext();
-                        init.InitializeDatabase(db);*/
-                        BDContext db = new BDContext();
-                        ReWriteBD re = new ReWriteBD();
-                        re.re();
-                        return Redirect("/Home/index");
-                    }
-                default:
-                    {
-                        MessageBox.Show("Что-то пошло не так");
-                        return Redirect("/Home/index");
-                    }
+                error.Add("Пароль и его подтверждение не совпадают");
+                reg = false;
             }
         }
 
-        public ActionResult Regulations()
+        private void ErrorName(string name)
+        {
+            if (workUser.Name(name))
+            {
+                error.Add("Такой пользователь уже есть");
+                reg = false;
+            }
+        }
+        private string Hash(string psw)
+        {
+            byte[] data = Encoding.Default.GetBytes(psw);
+            SHA1 sha = new SHA1CryptoServiceProvider();
+            byte[] result = sha.ComputeHash(data);
+            psw = Convert.ToBase64String(result);
+            return psw;
+        }
+        public ActionResult Enter()
         {
             return View();
         }
-
-        public PartialViewResult StrikePartial()
+        [HttpPost]
+        public ActionResult Enter(string name, string psw)
         {
-            return PartialView("StrikePartial");
+            psw=Hash(psw);
+            string ansver = workUser.SearchUser(name, psw);
+            try
+            {
+                int id = Convert.ToInt32(ansver);
+                Static.UserGame.userId = id;
+
+                return Redirect("/Start/Index");
+            }
+            catch (Exception e)
+            {
+                ViewBag.ansver = ansver;
+                return View();
+            }
+
+        }
+        public void Exit()
+        {
+            Environment.Exit(0);
         }
     }
 }

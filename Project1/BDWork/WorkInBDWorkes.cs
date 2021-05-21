@@ -1,5 +1,6 @@
 ﻿using Project1.Context;
 using Project1.Models;
+using Project1.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,55 +8,60 @@ using System.Web;
 
 namespace Project1.BDWork
 {
-    
+
     public class WorkInBDWorkes
     {
         BDContext db = new BDContext();
         const int DAY_OF_STRIKE = 5;
 
-        public int GetColWorkes()
+        public int GetColWorkes(int userId)
         {
-            return (from c in db.Workers select c.colWorkers).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            return workers.colWorkers;
         }
 
-        public int GetZP()
+        public int GetZP(int userId)
         {
-            return (from c in db.Workers select c.zp).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            return workers.zp;
         }
 
-        public int GetAll()
+        public int GetAll(int userId)
         {
             //int colWorkerw= (from c in db.Workers select c.colWorkers).FirstOrDefault();
             //int colZP= (from c in db.Workers select c.zp).FirstOrDefault();
             //return colWorkerw * colZP;
-            return (from c in db.Workers select c.al).FirstOrDefault();
+            Worker worker = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            return worker.al;
         }
 
         public int GetDayOfStrike()
         {
-            return (from c in db.Workers select c.dayOfStrike).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
+            return workers.dayOfStrike;
         }
 
-        public void SetDayOfStrike()
+        public void SetDayOfStrike(int userId)
         {
-            Worker workers = (from c in db.Workers select c).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             workers.dayOfStrike = DAY_OF_STRIKE;
             db.SaveChanges();
         }
 
-        public void changAllZp()
+        public void changAllZp(int userId)
         {
-            int colWorkerw = (from c in db.Workers select c.colWorkers).FirstOrDefault();
-            int colZP = (from c in db.Workers select c.zp).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            int colWorkerw = workers.colWorkers;
+            int colZP = workers.zp;
             int AllZp = colWorkerw * colZP;
-            Worker workers = (from c in db.Workers select c).FirstOrDefault();
+            //Worker workers = (from c in db.Workers select c).FirstOrDefault();
             workers.al = AllZp;
             db.SaveChanges();
         }
 
-        public void ChenchWorker(string chanch)
+        public void ChenchWorker(string chanch, int userId)
         {
-            Worker workers = (from c in db.Workers select c).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             // Внести изменения
             switch (chanch)
             {
@@ -74,41 +80,92 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void ChenchZP(int zp)
+        public void ChenchZP(int zp, int userId)
         {
-            Worker workers = (from c in db.Workers select c).FirstOrDefault();
+            int oldZp;
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            oldZp = workers.zp;
             workers.zp = zp;
             db.SaveChanges();
-            workers.dayOfStrike = 0;
-            db.SaveChanges();
-            Project1.Static.Strike.dayOfStrike = 0;
-            Project1.Static.Strike.strike = false;
+            if (oldZp < zp)
+            {
+                workers.dayOfStrike = 0;
+                workers.strik = false;
+                db.SaveChanges();
+            }
+            /*
+            //WebApplication1.Static.Strike.dayOfStrike = 0;
+            workers.strik = false;
+            db.SaveChanges();*/
         }
 
         public void CheckForStrike()
         {
-                int zp = GetZP();
-                int koof = Project1.Static.Strike.koof;
-                //koof = zp;
-                Random rnd = new Random();
-                int value = rnd.Next(zp + 1);
-                if (value >= koof)
-                {
-                Project1.Static.Strike.strike = false;
-                }
-                else
-                {
-                Project1.Static.Strike.strike = true;
-                    SetDayOfStrike();
-
-                }
+            Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
+            if (workers.colWorkers == 0) return;
+            int zp = GetZP(Static.UserGame.userId);
+            int koof = Static.Strike.koof;
+            //koof = zp;
+            Random rnd = new Random();
+            int value = rnd.Next(zp + 1);
+            
+            if (value >= koof)
+            {
+                workers.strik = false;
+                db.SaveChanges();
+            }
+            else
+            {
+                workers.strik = true;
+                SetDayOfStrike(Static.UserGame.userId);
+                db.SaveChanges();
+            }
         }
 
         public void MinDayOfStrike()
         {
-            Worker workers = (from c in db.Workers select c).FirstOrDefault();
+            Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
             workers.dayOfStrike -= 1;
+            if (workers.dayOfStrike == 0)
+            {
+                DeletOfStrik();
+            }
             db.SaveChanges();
+        }
+
+        public void СreateNewUser(int userId, int colWorkers, int zp, int al, int dayOfStrike, bool strike)
+        {
+            Worker worker = new Worker(userId, colWorkers, zp, al, dayOfStrike, strike);
+            db.Workers.Add(worker);
+            db.SaveChanges();
+        }
+
+        public bool GetStrik(int userId)
+        {
+            Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
+            return workers.strik;
+        }
+
+        public void DeletOfStrik()
+        {
+            Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
+            workers.strik = false;
+            db.SaveChanges();
+        }
+
+        public void DeletUserAndCreateNew(int userId)
+        {
+            IList<Worker> workers = db.Workers.Where(c => c.userId == userId).ToArray();
+
+            if (workers != null)
+            {
+                for (int i = 0; i < workers.Count(); i++)
+                {
+                    db.Workers.Remove(workers[i]);
+                    db.SaveChanges();
+                }
+            }
+            СreateNewUser(userId, UserGame.colWorkers, UserGame.zp, UserGame.al, UserGame.dayOfStrike, UserGame.strike);
         }
     }
 }

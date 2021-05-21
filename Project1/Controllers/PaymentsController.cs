@@ -18,12 +18,12 @@ namespace Project1.Controllers
         // GET: Payments
         public ActionResult Index()
         {
-            ViewBag.zp = workWorkers.GetAll();
+            ViewBag.zp = workWorkers.GetAll(Static.UserGame.userId);
 
-            ViewBag.gas = workUtilits.GetGas();
-            ViewBag.water = workUtilits.GetWater();
-            ViewBag.electro = workUtilits.GetElectro();
-
+            ViewBag.gas = workUtilits.GetGas(Static.UserGame.userId);
+            ViewBag.water = workUtilits.GetWater(Static.UserGame.userId);
+            ViewBag.electro = workUtilits.GetElectro(Static.UserGame.userId);
+            ViewBag.all = ViewBag.zp + ViewBag.gas + ViewBag.water + ViewBag.electro;
             return View();
         }
     }

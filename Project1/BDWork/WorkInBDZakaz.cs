@@ -28,32 +28,32 @@ namespace Project1.BDWork
         }*/
         BDContext db = new BDContext();
 
-        public Detail Kyzov(TypeMashin newMashin)
+        public Detail Kyzov(TypeMashin newMashin, int userId)
         {
             threKyzov = db.Details
-                        .Where(b => b.type == newMashin.kyzov)
+                        .Where(b => (b.type == newMashin.kyzov && b.userId == userId))
                         .FirstOrDefault();
             return threKyzov;
         }
-        public Detail Koleso(TypeMashin newMashin)
+        public Detail Koleso(TypeMashin newMashin, int userId)
         {
 
             threKoleso = db.Details
-                         .Where(b => b.type == newMashin.koleso)
+                         .Where(b => (b.type == newMashin.koleso && b.userId == userId))
                          .FirstOrDefault();
             return threKoleso;
         }
-        public Detail Motor(TypeMashin newMashin)
+        public Detail Motor(TypeMashin newMashin, int userId)
         {
             threMotor = db.Details
-                        .Where(b => b.type == newMashin.motor)
+                        .Where(b => (b.type == newMashin.motor && b.userId == userId))
                         .FirstOrDefault();
             return threMotor;
         }
 
-        public void UpdateSklad(Zakaz zakaz, TypeMashin newMashin)
+        public void UpdateSklad(Zakaz zakaz, TypeMashin newMashin,int userId)
         {
-            workInBDSklad.UpdateSklad(zakaz, newMashin, threKyzov, threKoleso, threMotor);
+            workInBDSklad.UpdateSklad(zakaz, newMashin, threKyzov, threKoleso, threMotor,userId);
         }
 
         public void deletZacaz(int id)
@@ -73,13 +73,13 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void CreatedNewZakaz()
+        public void CreatedNewZakaz(int userId)
         {
             int colWorkers;//Количество рабочих
             Zakaz zakaz = new Zakaz();
             Random rnd = new Random();
-            colWorkers = workWorkers.GetColWorkes();
-            IEnumerable<string> nameOfMashin = (from c in db.Auto select c.nameAuto);
+            colWorkers = workWorkers.GetColWorkes(userId);
+            IEnumerable<string> nameOfMashin = (from c in db.TypeMashins select c.nameAuto);
             var arrNameOfMashin = nameOfMashin.ToArray();
 
             for (int i = 0; i < colWorkers; i++)//Количество заказов.

@@ -27,6 +27,7 @@ namespace Project1.Context
         public DbSet<Credit> Credits { get; set; }
         public DbSet<Utilits> Utilits { get; set; }
         public DbSet<Auto> Autoes { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public System.Data.Entity.DbSet<Project1.Models.Order> Orders { get; set; }
     }

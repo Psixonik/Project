@@ -1,7 +1,7 @@
 /*Sklad*/
 body {
-    background: url(../../../img/sklad_fon.jpg);
-    background-size: cover;
+    background: url(../../../img/sklad_fon.jpg) no-repeat;
+    background-size: 100% 300%;
     
 }
 form {
@@ -10,7 +10,7 @@ form {
 table {
     vertical-align: middle;
     text-align: center;
-    width: 100%; /* Ширина таблицы */
+    width: 80%; /* Ширина таблицы */
     margin: 200px auto; /* Выравниваем таблицу по центру */
     border-collapse: collapse;
     margin-top: 30px;
@@ -42,8 +42,9 @@ h1 {
     height: 30px;
 }
 
-label {
+#arrow {
     margin-top: 20px;
+    margin-left:140px;
     color: red;
     font-size:20px;
 }

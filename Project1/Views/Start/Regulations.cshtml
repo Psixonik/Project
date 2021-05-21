@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Regulations";
+}
+<link rel="stylesheet" href="~/Content/css/Regulations/index.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+
+<div class="regulations">
+    <label>Назад</label><br>
+    <a href='@Url.Action("Index","Start")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
+
+    <div id="tabs">
+        <ul class="hr">
+            <li onclick="test(this)" value="1"><a href="#tabs-1">Общие</a></li>
+            <li onclick="test(this)" value="2"><a href="#tabs-2">Машины</a></li>
+            <li onclick="test(this)" value="3"><a href="#tabs-3">Рабочие</a></li>
+            <li onclick="test(this)" value="4"><a href="#tabs-4">Базар</a></li>
+            <li onclick="test(this)" value="5"><a href="#tabs-5">Склад</a></li>
+            <li onclick="test(this)" value="6"><a href="#tabs-6">Банк</a></li>
+            <li onclick="test(this)" value="7"><a href="#tabs-7">Платежи</a></li>
+        </ul>
+    </div>
+    <div id="regulat">
+        <div id="tabs1">
+            <ul id="start">
+                <li style="list-style-type: circle">Вы являетесь начальником Автотранспортного Цеха</li>
+                <li style="list-style-type: circle">На Вашем балансе есть некоторая сумма денег</li>
+                <li style="list-style-type: circle">Зарабатывайте, выполняя заказы или оказывая услуги</li>
+                <li style="list-style-type: circle">Ваша цель - заработать 1 000 000 $</li>
+            </ul>
+        </div>
+        <div id="tabs2">
+            <ul>
+                <li style="list-style-type: circle">"Машины" - Вы можете приобрести (или продать) машины</li>
+                <li style="list-style-type: circle">Цеховые машины могут выполнять заявки и тем самым зарабатывать деньги</li>
+                <li style="list-style-type: circle">Но учтите - машины иногда ломаются, и их ремонт стоит денег</li>
+                <li style="list-style-type: circle">Машин может быть не больше трех штук</li>
+            </ul>
+        </div>
+        <div id="tabs3">
+            <ul>
+                <li style="list-style-type: circle">Вы можете нанимать (и увольнять) рабочих для выполнения заказов</li>
+                <li style="list-style-type: circle">Чем больше у Вас рабочих - тем больше заказов Вы можете выполнить</li>
+                <li style="list-style-type: circle">Но людям надо платить зарплату!</li>
+                <li style="list-style-type: circle">Если рабочие будит недовольны зарплатой - они могут выйти на забастовку.</li>
+            </ul>
+        </div>
+        <div id="tabs4">
+            <ul>
+                <li style="list-style-type: circle">На базаре можно покупать необходимые детали</li>
+            </ul>
+        </div>
+        <div id="tabs5">
+            <ul>
+                <li style="list-style-type: circle">Посмотреть запасы на складе - вкладка "Склад"</li>
+                <li style="list-style-type: circle">Для выполнение некоторых заказов, у Вас просто может не быть необходимых деталей<br>их можно купить на Базаре</li>
+            </ul>
+        </div>
+        <div id="tabs6">
+            <ul>
+                <li style="list-style-type: circle">Здесь Вы можете оформить беспроцентный кредит</li>
+                <li style="list-style-type: circle">Банк всегда заберет свои деньги</li>
+            </ul>
+        </div>
+        <div id="tabs7">
+            <ul>
+                <li style="list-style-type: circle">Для работы цеха необходимы газ, вода и электричество</li>
+                <li style="list-style-type: circle">Эти ресурсы стоят денег. Каждый день Вы оплачиваете стоимость этих ресурсов</li>
+                <li style="list-style-type: circle">Стоимость каждый день меняется</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="~/Content/js/Regulations/index.js"></script>

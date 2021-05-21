@@ -1,11 +1,10 @@
 /*Money*/
 html {
-    height:85%;
+
 }
 body {
     background: url(../../../img/bank_fon.png) no-repeat;
-    background-size: cover;
-    background-position-y: 100px;
+    background-size: 100% 140%;
     background-color: LightYellow;
 
 }
@@ -17,7 +16,7 @@ table {
     vertical-align: middle;
     text-align: center;
     width: 70%; /* Ширина таблицы */
-    margin: 200px auto; /* Выравниваем таблицу по центру */
+    margin: 150px auto; /* Выравниваем таблицу по центру */
     border-collapse: collapse;
     margin-top: 200px;
     font-size: 20px;

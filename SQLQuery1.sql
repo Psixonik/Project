@@ -95,7 +95,7 @@ Create table Moneys( id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
 					cash int,
 					credit int,
 					dayForCredit int);
-insert into Moneys values (10000,0,0);
+insert into Moneys values (100000,0,0);
 
 Create table Autoes(	id int PRIMARY KEY IDENTITY (1,1) NOT NULL,
 				nameAuto nvarchar(50) not null,

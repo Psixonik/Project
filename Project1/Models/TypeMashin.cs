@@ -9,6 +9,8 @@ namespace Project1.Models
     {
         public int id { get; set; }
 
+        public string nameAuto { get; set; }
+
         public string kyzov { set; get; }
 
         public int colKyzov { set; get; }

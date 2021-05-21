@@ -3,13 +3,15 @@
 <link rel="stylesheet" href="~/Content/css/Workers/index.css">
 <script src="~/Content/js/jquery.min.js"></script>
 <script src="~/Content/js/workers/index.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 
-<label>
-    Назад<br>
-    <a href='@Url.Action("Back", "Bazaar")'>
-        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+<div id="arrow">
+    <label>Назад</label><br>
+    <a href='@Url.Action("Index","Start")'>
+        <img src="~/img/arrow.png" runat="server" alt="Назад" id="arrow_img" />
     </a>
-</label>
+</div>
 <table class="table">
     <tr>
         <th>
@@ -28,6 +30,15 @@
 
 </table>
 <p id="loading" hidden>Загрузка...</p>
+@{
+    var ajaxOptions = new AjaxOptions
+    {
+        UpdateTargetId = "data",
+        InsertionMode = InsertionMode.Replace,
+        LoadingElementId = "loading",
+        OnBegin = "clear"
+    };
+}
 <div class="conteiner">
     <div class="button">
         <label>
@@ -48,11 +59,17 @@
     <div class="salary">
         <Label id="beReplaced">
             Зарплата
-            <input class="target" id="intZp" type="number" value="@ViewBag.zp" prevval="@ViewBag.zp" min="0"/>
+            <input class="target" id="intZp" type="number" value="@ViewBag.zp" prevval="@ViewBag.zp" min="0" />
             <a id="linkZp" href="@Url.Action("ZpPartial","Workers")">ZP</a>
         </Label>
     </div>
 </div>
+
+<script>
+    function clear() {
+        document.querySelector("#data").innerHTML = "";
+    }
+</script>
 
 
 

@@ -1,0 +1,167 @@
+/*Start*/
+body {
+    background: url(../../../img/plant.jpg) no-repeat;
+    background-size:100% 120%;
+
+}
+
+#menu {
+    display: table;
+    width: auto;
+}
+#firstBlock {
+    width: 35%;
+    height: 250px;
+    display: table-cell;
+}
+#axez {
+    width: 5%;
+    height: 250px;
+    display: table-cell;
+}
+#secondBlock {
+    width: 35%;
+    height: 250px;
+    display: table-cell;
+}
+#axez2 {
+    width: 5%;
+    height: 250px;
+    display: table-cell;
+}
+#fourBlock {
+    width: 400px;
+    height: 350px;
+    display: table-cell;
+    background-color: #CA5357;
+    border-radius: 10px;
+}
+#threeBlock {
+    width: 600px;
+    height: 100px;
+    margin-top:10px;
+}
+
+#bazaar_img, #order_img, #regulations_img, #bank_img,
+#payments_img, #works_img, #utilities_img {
+    width: 35%;
+    height: 35%;
+    margin-top: 20px;
+}
+#auto_img, #sklad_img {
+    width: 35%;
+    height: 35%;
+    margin-top: 12px;
+}
+#newDay_img {
+    margin-left:20px;
+}
+#regulations_img, #autors_img, #newGame_img, #liders_img {
+    width: 15%;
+    height: 65%;
+}
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+ul.hr {
+    margin: 0;  /*Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+}
+ul.hr li {
+    display: inline; /* Отображать как строчный элемент */  
+}
+
+.hr {
+    position: relative;
+    /*display:none;*/
+}
+.hr > li {
+    display: inline;
+    /*vertical-align: middle;*/
+    margin-left: 35px; /* Отступ слева*/
+}
+
+.strike {
+    color:red;
+    text-align:center;
+    font-size:30px;
+    display: none;
+}
+#firstBlock fieldset, #secondBlock fieldset {
+    margin-top: 40px;
+    border: solid 5px white;
+    background: url(../../../img/div_fon.png);
+    /*border: solid 5px #801893;*/
+}
+fieldset legend {
+    padding: 0 1em;
+
+}
+#firstBlock fieldset legend {
+    width: 260px;
+    font-size: 30px
+}
+#secondBlock fieldset legend {
+    width: 160px;
+    font-size: 30px
+}
+#fourBlock fieldset legend {
+    color: #CA5357;
+}
+#threeBlock fieldset {
+    width: 900px;
+    height: 180px;
+}
+
+#threeBlock fieldset {
+    border: solid 5px white;
+}
+#threeBlock fieldset legend {
+    padding: 0 1em;
+}
+
+#threeBlock legend {
+    width: 170px;
+    font-size: 30px;
+}
+legend {
+    color: white;
+}
+label {
+    color:white;
+    font-size:60px;
+}
+#NameText {
+    text-align:center;
+}
+#mainMenu > ul {
+    list-style-type: none;
+    margin-top: 100px;
+    vertical-align: middle;
+}
+
+    #mainMenu > ul li {
+        display: inline-block; /* расположить пункты горизонтально */
+        margin-right: 100px;
+    }
+#mainMenu {
+    color: white;
+    margin-top: -100px;
+    background-color: black;
+    height: 40px;
+    
+}
+a {
+    color: white;
+}
+a:hover {
+    color: red;
+}
+#strike {
+    visibility: hidden;
+    color: red;
+    font-size: 20px;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 150px;
+    left: 15px;
+}

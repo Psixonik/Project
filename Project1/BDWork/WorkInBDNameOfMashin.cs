@@ -27,6 +27,7 @@ namespace Project1.BDWork
         public List<NameOfMashin> GetSeachMenuAll()
         {
             //List<NameOfMashin> arr2 = db.NameOfMashins.ToList();
+            var axez= db.Auto.ToList();
             return db.Auto.ToList();
         }
 

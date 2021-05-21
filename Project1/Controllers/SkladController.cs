@@ -18,19 +18,12 @@ namespace Project1.Controllers
         WorkInBDSklad workInBDSklad = new WorkInBDSklad();
         BDContext db = new BDContext();
 
-        // асинхронный метод
-        /*public async Task<ActionResult> Index()
-        {
-            creatSeachName();
-            ViewBag.details = await (from c in db.Details select c).ToListAsync();
-            return View(db.Details);
-        }*/
         // синхронный метод
         public ActionResult Index()
         {
             creatSeachName();
             ViewBag.element = " ";
-            ViewBag.details = workInBDSklad.GetDeteilAll();
+            ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.userId);
             return View(db.Details);
             //return View(db.Details);
         }
@@ -52,12 +45,12 @@ namespace Project1.Controllers
             {
                 case "все":
                     {
-                        ViewBag.details = workInBDSklad.GetDeteilAll();
+                        ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.userId);
                         return View(db.Details);
                     }
                 default:
                     {
-                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo);
+                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.userId);
                         return View(ViewBag.details);
                     }
             }

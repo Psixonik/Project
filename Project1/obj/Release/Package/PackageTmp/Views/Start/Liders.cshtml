@@ -1,0 +1,48 @@
+﻿@using Project1.Models;
+@{
+    ViewBag.Title = "Liders";
+}
+<link rel="stylesheet" href="~/Content/css/Start/liders.css">
+<h2>Список лидеров</h2>
+<div>
+    <label>Назад</label><br>
+    <a href='@Url.Action("Index","Start")'>
+        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+    </a>
+</div>
+<div id="table">
+    @{
+        int number = 1;
+    <table class="table">
+        <tr>
+            <th>
+                №
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Деньги
+            </th>
+        </tr>
+        @foreach (Liders item in ViewData["liders"] as IList<Liders>)
+        {
+
+            <tr>
+            <td>
+                @number
+            </td>
+            <td>
+                @item.name
+            </td>
+            <td>
+                @item.cash
+            </td>
+            </tr>
+            number++;
+        }
+
+    </table>
+    }
+</div>
+

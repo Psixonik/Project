@@ -23,9 +23,9 @@ namespace Project1.Controllers
             ViewBag.Day = workCredit.GetDayOfCredits();
             ViewBag.Lengt = db.Credits.Count();*/
 
-            ViewBag.mani = workMoney.GetMani();
-            ViewBag.credit = workMoney.GetCredit();
-            ViewBag.day = workMoney.GetDayForCredit();
+            ViewBag.mani = workMoney.GetMani(Static.UserGame.userId);
+            ViewBag.credit = workMoney.GetCredit(Static.UserGame.userId);
+            ViewBag.day = workMoney.GetDayForCredit(Static.UserGame.userId);
 
             return View(db.Credits);
         }
@@ -37,7 +37,7 @@ namespace Project1.Controllers
                 string[] arr = filtr.Split(' ');
                 int cash = Convert.ToInt32(arr[0]);
                 int day = Convert.ToInt32(arr[1]);
-                workMoney.AddManiForCredit(cash, day);
+                workMoney.AddManiForCredit(cash, day, Static.UserGame.userId);
             }
             return Redirect("\\Money\\Index");
         }

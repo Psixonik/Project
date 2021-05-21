@@ -1,6 +1,6 @@
 ﻿/*Workers*/
 body {
-    background: url(../../../img/works_fon.png) no-repeat;
+    background: url(../../../img/fon.png) no-repeat;
     background-size: 100% 270%;
     background-color: cornflowerblue;
     opacity: 0.8;
@@ -113,4 +113,22 @@ p {
 }
 #linkZp:hover {
     background: url(../../../ikons/Pressed/checkedPressed.png) no-repeat 50% 50%;
+}
+.btn {
+    color:greenyellow;
+}
+#arrow_img {
+    width: 50px;
+    height: 30px;
+}
+
+#arrow {
+    margin-top: 20px;
+    margin-left: 140px;
+    color: red;
+    font-size: 20px;
+}
+
+#list {
+    text-align: center;
 }

@@ -6,7 +6,7 @@
 <div class="conteiner">
     <div class="arrow">
         <label>Назад</label><br>
-        <a href='@Url.Action("Index","Home")'>
+        <a href='@Url.Action("Index", "Start")'>
             <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
         </a>
     </div>
@@ -50,6 +50,14 @@
                 </td>
                 <td>
                     @ViewBag.electro
+                </td>
+            </tr>
+            <tr style="color:red;border-top:3px solid black;">
+                <td>
+                    Итого
+                </td>
+                <td>
+                        @ViewBag.all
                 </td>
             </tr>
         </table>

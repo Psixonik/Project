@@ -1,108 +1,61 @@
-/*Home*/
-body {
-    background: url(../../../img/plant.jpg);
+/*body {
+    background: url(../../../img/div_fon.png) no-repeat;
     background-size: cover;
-
-}
-#bazaar_img, #sklad_img, #order_img, #regulations_img, #bank_img, #auto_img {
-    width: 15%;
-    height: 15%;
-    margin-top: 20px;
-}
-#payments_img {
-    width: 22%;
-    height: 22%;
-    margin-top: 20px;
-}
-#works_img {
-    width: 12%;
-    height: 12%;
-    margin-top: 20px;
-}
-#utilities_img{
-    width: 22%;
-    height: 22%;
-    margin-top: 20px;
-}
-#newDay_img {
-    width: 15%;
-    height: 15%;
-    margin-top: 20px;
-}
-#mani_img {
-    width: 15%;
-    height: 15%;
-}
-li {
-    list-style-type: none; /* Убираем маркеры */
-}
-ul.hr {
-    margin: 0;  /*Обнуляем значение отступов */
-    padding: 4px; /* Значение полей */
-}
-ul.hr li {
-    display: inline; /* Отображать как строчный элемент */  
+}*/
+* {
+    box-sizing: border-box
 }
 
-.hr {
-    position: relative;
-    /*display:none;*/
+/* Add padding to containers */
+.container {
+    padding: 16px;
 }
-.hr > li {
-    display: inline;
-    vertical-align: middle;
-    margin-left: 35px; /* Отступ слева*/
-}
-.mani {
-    margin-right:5%;
-    text-align:right;
-    color:gold;
-}
-.strike {
-    color:red;
-    text-align:center;
-    font-size:30px;
-    display: none;
-}
-.conteiner {
-    position: relative;
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
     width: 100%;
-    display: table;
-    margin-top: 5px;
-}
-#menu {
-    display: table-cell;
-    vertical-align: middle;
-    width: 60%;
-}
-#second {
-    display: table-cell;
-    vertical-align: middle;
-    width: 40%;
-}
-.NewDay {
-    text-align: right;
-    margin-right:20px;
-}
-.mani {
-    margin-top:300px;
-    text-align: right;
-}
-fieldset {
-    margin-top:40px;
-    border: solid 5px white;
-}
-fieldset legend {
-    padding: 0 1em;
-}
-legend {
-    width: 20%;
-    font-size: 30px
-}
-#firstBlock {
-    display: block;
-}
-#threeBlock {
-    display: block;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    max-width:200px;
 }
 
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+    .registerbtn:hover {
+        opacity: 1;
+    }
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}

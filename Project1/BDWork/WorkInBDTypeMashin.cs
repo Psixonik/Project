@@ -15,7 +15,7 @@ namespace Project1.BDWork
         public TypeMashin GetTypeMashineByName(string name)
         {
             newMashin = db.TypeMashins
-                        .Where(b => b.kyzov == name)
+                        .Where(b => b.nameAuto == name)
                         .FirstOrDefault();
             return newMashin;
         }

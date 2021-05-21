@@ -35,9 +35,9 @@ namespace Project1.BDInitializer
             db.Moneys.Add(money);      
             db.SaveChanges();
 
-            Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 100 };
+            Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 200 };
             Zakaz z2 = new Zakaz { name = "МАЗ", col = 1, money = 200 };
-            Zakaz z3 = new Zakaz { name = "БТР", col = 1, money = 300 };
+            Zakaz z3 = new Zakaz { name = "БТР", col = 1, money = 200 };
             db.Zakazs.Add(z1);
             db.Zakazs.Add(z2);
             db.Zakazs.Add(z3);

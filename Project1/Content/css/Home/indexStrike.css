@@ -1,7 +1,7 @@
 /*Home*/
 body {
     background: url(../../../img/strike.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 #bazaar_img, #sklad_img, #order_img, #bank_img, #auto_img, #utilities_img, #payments_img {
     width: 0%;
@@ -9,24 +9,24 @@ body {
     margin-top: 20px;
 }
 #regulations_img {
-    width: 15%;
-    height: 15%;
+    width: 0%;
+    height: 0%;
     margin-top: 20px;
 }
 #works_img {
-    width: 12%;
-    height: 12%;
+    width: 0%;
+    height: 0%;
     margin-top: 20px;
 }
 #newDay_img {
-    width: 15%;
-    height: 15%;
+    width: 0%;
+    height: 0%;
     margin-top: 20px;
 }
 
 #mani_img {
-    width: 15%;
-    height: 15%;
+    width: 0%;
+    height: 0%;
 }
 li {
     list-style-type: none; /* Убираем маркеры */
@@ -71,12 +71,13 @@ ul.hr {
     text-align: center;
     font-size: 30px;
     display: block;
+    margin-top:500px;
 }
 
 .conteiner {
     position: relative;
-    width: 100%;
-    display: table;
+    width: 0%;
+    display: none;
     margin-top: 5px;
 }
 
@@ -98,7 +99,7 @@ ul.hr {
 }
 
 .mani {
-    margin-top: 300px;
+    margin-top: 100px;
     text-align: right;
 }
 
