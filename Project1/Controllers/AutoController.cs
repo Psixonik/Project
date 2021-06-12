@@ -17,15 +17,15 @@ namespace Project1.Controllers
         BDContext db = new BDContext();
         WorkInBDNameOfMashin workMashin = new WorkInBDNameOfMashin();
         WorkInBDAuto workAuto = new WorkInBDAuto();
-        WorkInBDMoney workMoney = new WorkInBDMoney(); 
+        WorkInBDMoney workMoney = new WorkInBDMoney();
 
         // GET: Auto
-        public ActionResult Index()
+        public ActionResult Index(string str)
         {
             dynamic mymodel = new ExpandoObject();
             mymodel.Auto = workAuto.GetAutoAll(Static.UserGame.userId);
             mymodel.NameOfMashin = workMashin.GetSeachMenuAll();
-
+            ViewBag.rezalt = str;
             return View(mymodel);
         }
         public ActionResult Sale(int id)
@@ -35,6 +35,7 @@ namespace Project1.Controllers
         }
         public PartialViewResult PartialAuto(int id)
         {
+            string str;
             var colAutoUser = workAuto.GetAutoAll(Static.UserGame.userId);
             if (colAutoUser.Count() >= 3)
             {

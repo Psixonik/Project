@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace Project1.Controllers
 {
@@ -28,7 +29,7 @@ namespace Project1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string email,string name, string psw,string psw_repeat)
+        public ActionResult Index(string name, string psw,string psw_repeat)
         {
             error.Clear();
             reg = true;
@@ -41,7 +42,7 @@ namespace Project1.Controllers
             ViewBag.error = error;
             if (reg)
             {
-                User user = new User(Static.UserGame.userId, email, name, psw);
+                User user = new User(Static.UserGame.userId, name, psw);
                 workUser.SaveUser(user);
                 Static.NewUser.CreatNewUser(user.id);
                 error.Add("Юзер добавлен");
@@ -57,7 +58,6 @@ namespace Project1.Controllers
                 reg = false;
             }
         }
-
         private void ErrorName(string name)
         {
             if (workUser.Name(name))

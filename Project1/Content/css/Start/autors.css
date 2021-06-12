@@ -1,0 +1,28 @@
+﻿/*autors*/
+body {
+    background: url(../../../img/fon.png);
+    background-size:cover;
+}
+#arrow_img {
+    width: 50px;
+    height: 30px;
+    margin-left:30px;
+}
+
+label {
+    margin-top: 20px;
+    color: goldenrod;
+    margin-left: 30px;
+}
+#txt {
+    margin-top:50px;
+    margin-left:50px;
+    color:goldenrod;
+    font-size:20px;
+}
+a {
+    color:greenyellow;
+}
+.colortext {
+    color: greenyellow; /* Красный цвет выделения */
+}

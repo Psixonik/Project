@@ -60,6 +60,9 @@ body {
     width: 15%;
     height: 65%;
 }
+#regulations_img, #autors_img {
+    margin-top:-5px;
+}
 li {
     list-style-type: none; /* Убираем маркеры */
 }

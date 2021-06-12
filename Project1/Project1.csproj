@@ -153,14 +153,15 @@
     <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UtilitesController.cs" />
+    <Compile Include="Controllers\VictoryController.cs" />
     <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="Controllers\ZakazController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105181708227_MigrateDB.cs" />
-    <Compile Include="Migrations\202105181708227_MigrateDB.designer.cs">
-      <DependentUpon>202105181708227_MigrateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202105251652575_MigrateDB.cs" />
+    <Compile Include="Migrations\202105251652575_MigrateDB.designer.cs">
+      <DependentUpon>202105251652575_MigrateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Auto.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Models\KoofAuto.cs" />
     <Compile Include="Models\Liders.cs" />
     <Compile Include="Models\Money.cs" />
+    <Compile Include="Models\MyViewModel.cs" />
     <Compile Include="Models\NameOfMashin.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\TypeMashin.cs" />
@@ -201,18 +203,20 @@
     <Content Include="Content\css\Home\indexStrike.css" />
     <Content Include="Content\css\Home\newGame.css" />
     <Content Include="Content\css\Home\regulations.css" />
-    <Content Include="Content\css\Regulations\index.css" />
-    <Content Include="Content\css\Start\gameOver.css" />
-    <Content Include="Content\css\Start\liders.css" />
-    <Content Include="Content\css\Start\indexStrike.css" />
-    <Content Include="Content\css\Start\newGame - Копировать.css" />
-    <Content Include="Content\css\Start\newGame.css" />
-    <Content Include="Content\css\Start\regulations.css" />
-    <Content Include="Content\css\Start\index.css" />
     <Content Include="Content\css\Money\index.css" />
     <Content Include="Content\css\Payments\index.css" />
+    <Content Include="Content\css\Regulations\index.css" />
     <Content Include="Content\css\Sklad\index.css" />
+    <Content Include="Content\css\Start\autors.css" />
+    <Content Include="Content\css\Start\gameOver.css" />
+    <Content Include="Content\css\Start\index.css" />
+    <Content Include="Content\css\Start\indexStrike.css" />
+    <Content Include="Content\css\Start\liders.css" />
+    <Content Include="Content\css\Start\newGame - Š®¯¨à®¢ âì.css" />
+    <Content Include="Content\css\Start\newGame.css" />
+    <Content Include="Content\css\Start\regulations.css" />
     <Content Include="Content\css\Utilits\index.css" />
+    <Content Include="Content\css\Victory\index.css" />
     <Content Include="Content\css\Workers\index.css" />
     <Content Include="Content\css\Zakaz\Create.css" />
     <Content Include="Content\css\Zakaz\index.css" />
@@ -223,6 +227,8 @@
     <Content Include="Content\js\workers\index.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Font\OFL.txt" />
+    <Content Include="Font\README.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ikons\NotPressed\checked.png" />
@@ -244,8 +250,10 @@
     <Content Include="img\bank_fon.png" />
     <Content Include="img\bank_fon2.png" />
     <Content Include="img\bank_fon3.png" />
+    <Content Include="img\bank_fon4.png" />
     <Content Include="img\bazaar.jpg" />
     <Content Include="img\bazaar_fon.png" />
+    <Content Include="img\bazaar_fon2.png" />
     <Content Include="img\credit-card-3186085_1280.png" />
     <Content Include="img\div_fon.png" />
     <Content Include="img\dollar.jpg" />
@@ -270,10 +278,14 @@
     <Content Include="img\signboard_bazaar.png" />
     <Content Include="img\sklad.png" />
     <Content Include="img\sklad_fon.jpg" />
+    <Content Include="img\sklad_fon.png" />
     <Content Include="img\strike.png" />
+    <Content Include="img\strike2.png" />
     <Content Include="img\utilities.png" />
+    <Content Include="img\viktory.png" />
     <Content Include="img\works.png" />
     <Content Include="img\works_fon.png" />
+    <Content Include="img\kybok.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
@@ -281,6 +293,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Font\Caveat-VariableFont_wght.ttf" />
+    <Content Include="fonts\Lobster-Regular.ttf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -325,16 +339,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Zakaz\AllZakaz.cshtml" />
     <Content Include="Views\Zakaz\Create.cshtml" />
-    <Content Include="Views\Sklad\SkladOld.cshtml" />
-    <Content Include="Views\Sklad\Index.cshtml" />
+    <Content Include="Views\Sklad\IndexOld.cshtml" />
     <Content Include="Views\Test\Test.cshtml" />
     <Content Include="Views\Money\Index.cshtml" />
     <Content Include="Views\NewDay\Index.cshtml" />
     <Content Include="Views\Money\Partial.cshtml" />
-    <Content Include="Views\Workers\Index.cshtml" />
     <Content Include="Views\Bazaar\Index.cshtml" />
-    <Content Include="Views\Workers\WorkesPartial.cshtml" />
-    <Content Include="Views\Workers\ZpPartial.cshtml" />
     <Content Include="Views\Payments\Index.cshtml" />
     <Content Include="Views\Utilites\Index.cshtml" />
     <Content Include="Views\Auto\Index.cshtml" />
@@ -346,6 +356,13 @@
     <Content Include="Views\Home\Enter.cshtml" />
     <Content Include="Views\Start\NewGame.cshtml" />
     <Content Include="Views\Start\Liders.cshtml" />
+    <Content Include="Views\Start\Autors.cshtml" />
+    <Content Include="Views\Sklad\SkladPartial.cshtml" />
+    <Content Include="Views\Sklad\Index.cshtml" />
+    <Content Include="Views\Victory\Index.cshtml" />
+    <Content Include="Views\Workers\Index.cshtml" />
+    <Content Include="Views\Workers\WorkesPartial.cshtml" />
+    <Content Include="Views\Workers\ZpPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -357,10 +374,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105181708227_MigrateDB.resx">
-      <DependentUpon>202105181708227_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105251652575_MigrateDB.resx">
+      <DependentUpon>202105251652575_MigrateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -39,7 +39,7 @@ namespace Project1.Controllers
         {
             ViewBag.ColWorcers = workWorkes.GetColWorkes(Static.UserGame.userId);
             IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
-            if (ViewBag.ColWorcers >= 3&& change== "add")
+            if (ViewBag.ColWorcers >= 3 && change == "add")
             {
                 return PartialView("WorkesPartial", workers);
             }

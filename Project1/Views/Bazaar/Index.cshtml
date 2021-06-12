@@ -5,17 +5,24 @@
 }
 
 <link rel="stylesheet" href="~/Content/css/Bazaar/index.css">
-
-<label>Назад</label><br>
-    <a href='@Url.Action("Index","Start")'>
-        <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
-    </a>
-
-<h1>Базар</h1>
+<div class="outer">
+    <div class="box">
+        <div>
+            <label>Назад</label><br>
+            <a href='@Url.Action("Index","Start")'>
+                <img src="~/img/arrow.png" runat="server" alt="" id="arrow_img" />
+            </a>
+        </div>
+        <div class="inner">
+            <h2>@ViewBag.rezalt</h2>
+        </div>
+    </div>
+</div>
+    <h1>Базар</h1>
     <form>
 
         <table class="table">
-            <tr>
+            <tr style="">
                 <th>
                     Наименование товара
                 </th>
@@ -44,16 +51,16 @@
                     </td>
                     <td>
                         @Html.EditorFor(Count => item.name, new
+                   {
+                       htmlAttributes = new
                        {
-                           htmlAttributes = new
-                           {
-                               type = "number",
-                               min = "1",
-                               max = "100",
-                               Name = "numeric" + @item.id,
-                               id = "numeric" + @item.id
-                           }
-                       })
+                           type = "number",
+                           min = "1",
+                           max = "100",
+                           Name = "numeric" + @item.id,
+                           id = "numeric" + @item.id
+                            }
+                        })
                         @Html.ActionLink(  "Купить"
                                             ,"Buy"
                                             ,new { id = item.id}

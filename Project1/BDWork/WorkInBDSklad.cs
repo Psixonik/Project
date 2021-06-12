@@ -90,7 +90,7 @@ namespace Project1.BDWork
         public void UpdateForBuy(string type, int colBuy, int userId)
         {
             Detail col;
-            col = db.Details.Where(c => c.type == type).FirstOrDefault();
+            col = db.Details.Where(c => c.type == type && c.userId == userId).FirstOrDefault();
             col.col += colBuy;
             db.SaveChanges();
         }

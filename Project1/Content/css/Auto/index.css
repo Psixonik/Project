@@ -1,13 +1,13 @@
-/*Auto*/
+п»ї/*Auto*/
 body {
     background: url(../../../img/fon_auto.png) no-repeat;
-    background-size: 100% 200%;
+    background-size: cover;
 }
 table {
     vertical-align: middle;
     text-align: center;
-    width: 80%; /* Ширина таблицы */
-    margin: 200px auto; /* Выравниваем таблицу по центру */
+    width: 80%; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin: 200px auto; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     border-collapse: collapse;
     margin-top: 30px;
     font-size: 20px;
@@ -15,8 +15,8 @@ table {
 }
 
 td {
-    border: 2px solid green; /* Рамка вокруг таблицы */
-    text-align: center; /* Выравниваем текст по центру ячейки */
+    border: 2px solid green; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    text-align: center; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 tr {
     height:20px;
@@ -36,12 +36,16 @@ input[type="number"] {
 }
 
 #arrow_img {
-    width:50px;
-    height:30px;
+    width: 50px;
+    height: 30px;
+margin-left:70px;
 }
+
 label {
-    margin-top: 20px;
-    color: goldenrod;
+    margin-top: 30px;
+    margin-left:70px;
+    color: red;
+    font-size: 20px;
 }
 a {
     color:red;

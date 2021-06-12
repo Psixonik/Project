@@ -1,4 +1,4 @@
-/*Zakaz*/
+п»ї/*Zakaz*/
 body {
     background: url(../../../img/fon.png);
     background-size: cover;
@@ -10,19 +10,19 @@ form {
 table {
     vertical-align: middle;
     text-align: center;
-    width: 80%; /* Ширина таблицы */
-    margin: 200px auto; /* Выравниваем таблицу по центру */
+    width: 80%; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin: 200px auto; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     border-collapse: collapse;
-    margin-top: 220px;
+    margin-top: 50px;
     font-size: 20px;
-    color: black;
+    color: goldenrod;
     /*background-color:black;
     opacity:0.8;*/
 }
 
 td {
-    border: 2px solid black; /* Рамка вокруг таблицы */
-    text-align: center; /* Выравниваем текст по центру ячейки */
+    border: 2px solid black; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    text-align: center; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
 th {
@@ -40,12 +40,15 @@ h1 {
 #arrow_img {
     width: 50px;
     height: 30px;
+margin-left:70px;
+
 }
 
 label {
     margin-top: 20px;
     color: red;
     font-size:20px;
+margin-left:70px;
 }
 #list {
     text-align: center;

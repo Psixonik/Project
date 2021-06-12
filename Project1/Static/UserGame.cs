@@ -22,5 +22,7 @@ namespace Project1.Static
         public static int al { get; set; } = 0;
         public static int dayOfStrike { get; set; } = 0;
         public static bool strike { get; set; } = false;
+
+        public static int maniForWin { get; set; } = 1000000;
     }
 }

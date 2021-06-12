@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/css/Victory/index.css">
+
+<form method="post" action="/Victory/Win">
+    <div id="conteiner">
+        <div id="blokOne">
+            <h2>Вы победили!</h2>
+        </div>
+        <div id="blokTwo">
+            <img src="~/img/viktory.png" runat="server" alt="Победа" id="viktory_img" />
+        </div>
+        <div class="break"></div>
+        <div id="blokThree">
+            <img src="~/img/kybok.png" runat="server" alt="Кубок" id="kybok_img" />
+        </div>
+        <div id="blokFour">
+            <h3>Сыграем еще раз?</h3><input style="margin-left:10px;" id="btnYes" type="submit">
+        </div>
+    </div>
+</form>
+

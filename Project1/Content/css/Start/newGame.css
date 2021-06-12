@@ -1,4 +1,4 @@
-/*NewGame*/
+п»ї/*NewGame*/
 html {
     height:120%;
 }
@@ -16,6 +16,8 @@ div {
     width: 42px;
     height: 42px;
     border-radius: 30px;
+font-size:30px;
+color: transparent;
 }
     #btnYes:hover {
         background: url(../../../ikons/Pressed/checkedPressed.png);
@@ -25,6 +27,8 @@ div {
     width: 42px;
     height: 42px;
     border-radius: 30px;
+font-size:30px;
+color: transparent;
 }
 
     #btnNo:hover {
@@ -35,7 +39,7 @@ ul {
     margin-top:100px;
 }
 ul li {
-    display: inline-block; /* расположить пункты горизонтально */
+    display: inline-block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     margin-right:100px;
 }
 /*a {

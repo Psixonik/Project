@@ -5,7 +5,8 @@ using System.Web;
 
 namespace Project1.Static
 {
-    public class Items
+    public static class Items
     {
+        public static string txt;
     }
 }

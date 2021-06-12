@@ -22,8 +22,9 @@ namespace Project1.Controllers
 
         // GET: Bazaar
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string str)
         {
+            ViewBag.rezalt = str;
             return View(db.Bazaars);
         }
 
@@ -32,15 +33,23 @@ namespace Project1.Controllers
         {
             int maniForBuy;
             int maniOfShop;
+            int colBuy;
+            string str;
             int idInBD = Convert.ToInt32(id);
-            int colBuy = Convert.ToInt32(col);
-
-
+            bool success = Int32.TryParse(col, out colBuy);
+            if (!success)
+            {
+                str = "Что-то пошло не так. Попробуйте снова.";
+                return Redirect("\\Bazaar\\Index?str=" + str);
+            }
+           
             maniForBuy = workBazaar.GetDetailDbId(idInBD).money * colBuy;
-            maniOfShop = workMoney.GetMani(Static.UserGame.userId) *colBuy;
+            //maniOfShop = workMoney.GetMani(Static.UserGame.userId) *colBuy;
+            maniOfShop = workMoney.GetMani(Static.UserGame.userId);
             if (maniForBuy > maniOfShop)
             {
                 //MessageBox.Show("Мало денег");
+                str= "Для покупки не хватает денег"; 
             }
             else
             {
@@ -60,10 +69,11 @@ namespace Project1.Controllers
                 }
                 workMoney.minMani(maniForBuy,Static.UserGame.userId);
                 //MessageBox.Show("Покупка совершена");
+                str = "Покупка совершена";
             }
 
 
-            return Redirect("\\Bazaar\\Index");
+            return Redirect("\\Bazaar\\Index?str="+str);
         }
 
         public ActionResult Back()

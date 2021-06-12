@@ -1,4 +1,4 @@
-/*Regulations*/
+п»ї/*Regulations*/
 body {
     background: url(../../../img/fon.png);
     background-size: cover;
@@ -19,16 +19,16 @@ label {
     font-size: 20px;
 }
 li {
-    list-style-type: none; /* Убираем маркеры */
+    list-style-type: none; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
 ul.hr {
-    margin: 50px; /*Обнуляем значение отступов */
-    padding: 4px; /* Значение полей */
+    margin: 50px; /*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
 }
 
     ul.hr li {
-        display: inline; /* Отображать как строчный элемент */
+        display: inline; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         font-size:30px;
         margin-left:40px;
     }
@@ -36,4 +36,7 @@ ul.hr {
 #regulat{
     color: white;
     font-size: 20px;
+}
+a {
+    color:greenyellow;
 }

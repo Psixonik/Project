@@ -22,6 +22,10 @@ namespace Project1.Controllers
         {
             ViewBag.Name = workUser.GetName(Static.UserGame.userId);
             ViewBag.mani = workMani.GetMani(Static.UserGame.userId);
+            if (workMani.GetMani(Static.UserGame.userId) > Static.UserGame.maniForWin)
+            {
+                return Redirect("/Victory/Index");
+            }
             int mani = workMani.GetMani(Static.UserGame.userId);
             if (mani < 0)
             {
@@ -91,7 +95,7 @@ namespace Project1.Controllers
                     }
                 default:
                     {
-                        MessageBox.Show("Что-то пошло не так");
+                        //MessageBox.Show("Что-то пошло не так");
                         return Redirect("/Home/index");
                     }
             }
@@ -140,6 +144,11 @@ namespace Project1.Controllers
                     }
                 }
             }
+        }
+
+        public ActionResult Autors()
+        {
+            return View();
         }
     }
 }

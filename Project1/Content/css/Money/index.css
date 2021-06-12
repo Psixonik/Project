@@ -1,9 +1,9 @@
-/*Money*/
+п»ї/*Money*/
 html {
 
 }
 body {
-    background: url(../../../img/bank_fon.png) no-repeat;
+    background: url(../../../img/bank_fon4.png) no-repeat;
     background-size: 100% 140%;
     background-color: LightYellow;
 
@@ -15,8 +15,8 @@ body {
 table {
     vertical-align: middle;
     text-align: center;
-    width: 70%; /* Ширина таблицы */
-    margin: 150px auto; /* Выравниваем таблицу по центру */
+    width: 70%; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin: 150px auto; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     border-collapse: collapse;
     margin-top: 200px;
     font-size: 20px;
@@ -26,8 +26,8 @@ table {
 }
 
 td {
-    border: 2px solid white; /* Рамка вокруг таблицы */
-    text-align: center; /* Выравниваем текст по центру ячейки */
+    border: 2px solid white; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    text-align: center; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     color: gold;
 }
 
@@ -43,19 +43,16 @@ h1 {
     color: gold;
     margin-right: 50px;
 }
-
 #arrow_img {
     width: 50px;
     height: 30px;
+margin-left:70px;
 }
 
 label {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left:70px;
     color: red;
-    font-size: 20px;
-}
-
-label {
     font-size: 20px;
 }
 
@@ -70,8 +67,8 @@ label {
 input {
     border-radius: 30px;
     color: transparent;
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
 }
 
 .question {

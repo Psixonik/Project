@@ -1,14 +1,14 @@
-/*Базар*/
+п»ї/*пїЅпїЅпїЅпїЅпїЅ*/
 body {
-    background: url(../../../img/div_fon.png) no-repeat;
+    background: url(../../../img/bazaar_fon2.png) no-repeat;
     background-size: cover;
     background-color:SteelBlue;
 }
 table {
     vertical-align: middle;
     text-align: center;
-    width: 70%; /* Ширина таблицы */
-    margin: 200px auto; /* Выравниваем таблицу по центру */
+    width: 70%; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    margin: 200px auto; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     border-collapse: collapse;
     margin-top: 30px;
     font-size: 20px;
@@ -16,11 +16,11 @@ table {
 }
 
 td {
-    border: 3px solid darkgreen; /* Рамка вокруг таблицы */
-    text-align: center; /* Выравниваем текст по центру ячейки */
+    border: 3px solid darkgreen; /* пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    text-align: center; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 tr {
-    height:20px;
+    height:70px;
 }
 th {
     border: 2px solid black;
@@ -44,12 +44,22 @@ h1 {
     margin-right:50px;
 }
 #arrow_img {
-    width:100px;
-    height:80px;
-    
+    width: 50px;
+    height: 30px;
+margin-left:35px;
+}
+
+#arrow {
+    margin-top: 50px;
+    margin-left:140px;
+    color: red;
+    font-size:20px;
 }
 label {
-    margin-top: 20px;
+    margin-top: 50px;
     margin-left:35px;
     color: goldenrod;
+}
+.inner {
+    color:goldenrod;
 }

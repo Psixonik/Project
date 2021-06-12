@@ -16,7 +16,6 @@
     <ul>
         <li><a href='@Url.Action("Index", "Home")'>Регистрация нового пользователя</a></li>
         <li><a href='@Url.Action("Enter", "Home")'>Сменить пользователя</a></li>
-        <li><a href='@Url.Action("Exit", "Home")'>Выход</a></li>
     </ul>
 </div>
 <div id="NameText">
@@ -78,7 +77,7 @@
                     <legend align="left">Помощь</legend>
                     <ul class="hr">
                         <li><a href='@Url.Action("Regulations", "Start")'><img src="~/img/regulations.png" runat="server" alt="Правила" id="regulations_img" style="margin-right:30px" /></a></li>
-                        <li><a href='#'><img src="~/img/autors.png" runat="server" alt="Авторы" id="regulations_img" style="margin-right:30px" /></a></li>
+                        <li><a href='@Url.Action("Autors", "Start")'><img src="~/img/autors.png" runat="server" alt="Авторы" id="regulations_img" style="margin-right:30px" /></a></li>
                         <li><a href='@Url.Action("Liders", "Start")'><img src="~/img/liders.png" runat="server" alt="Лидеры" id="liders_img" style="margin-right:30px" /></a></li>
                         <li><a href='@Url.Action("NewGame", "Start")'><img src="~/img/newGame.png" runat="server" alt="Заново" id="newGame_img" style="margin-right:30px" /></a></li>
                     </ul>

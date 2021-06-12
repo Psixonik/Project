@@ -48,6 +48,10 @@ namespace Project1.Controllers
                 //return Redirect("/Start/GameOver");
                 return View("~/Views/Start/GameOver.cshtml");
             }
+            else if (workMoney.GetMani(Static.UserGame.userId)>=Static.UserGame.maniForWin)
+            {
+                return Redirect("/Victory/Index");
+            }
             else
             {
                 workUtilites.ChancItems(Static.UserGame.userId);

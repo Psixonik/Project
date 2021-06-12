@@ -1,6 +1,6 @@
-/*Start*/
+п»ї/*Start*/
 body {
-    background: url(../../../img/strike.png) no-repeat;
+    background: url(../../../img/strike2.png) no-repeat;
     background-size: 100% 120%;
 }
 
@@ -75,16 +75,16 @@ body {
 }
 
 li {
-    list-style-type: none; /* Убираем маркеры */
+    list-style-type: none; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
 }
 
 ul.hr {
-    margin: 0; /*Обнуляем значение отступов */
-    padding: 4px; /* Значение полей */
+    margin: 0; /*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+    padding: 4px; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
 }
 
     ul.hr li {
-        display: inline; /* Отображать как строчный элемент */
+        display: inline; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     }
 
 .hr {
@@ -95,7 +95,7 @@ ul.hr {
     .hr > li {
         display: inline;
         /*vertical-align: middle;*/
-        margin-left: 35px; /* Отступ слева*/
+        margin-left: 35px; /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ*/
     }
 
 .strike {
@@ -168,7 +168,7 @@ label {
 }
 
     #mainMenu > ul li {
-        display: inline-block; /* расположить пункты горизонтально */
+        display: inline-block; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
         margin-right: 100px;
     }
 
@@ -190,7 +190,7 @@ a {
     visibility: visible;
     color: red;
     font-size: 20px;
-    position: absolute; /* Абсолютное позиционирование */
+    position: absolute; /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     top: 150px;
     left: 15px;
 }
