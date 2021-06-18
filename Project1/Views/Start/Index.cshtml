@@ -16,6 +16,16 @@
     <ul>
         <li><a href='@Url.Action("Index", "Home")'>Регистрация нового пользователя</a></li>
         <li><a href='@Url.Action("Enter", "Home")'>Сменить пользователя</a></li>
+        @{
+            if (!@ViewBag.emailBool)
+            {
+                <li><a href='@Url.Action("RegisterEmail", "Home",new { email=@ViewBag.emailString})'>Потдвердить Email</a></li>
+            }
+            else
+            {
+                <li>Email подтвержден</li>
+            }
+        }
     </ul>
 </div>
 <div id="NameText">

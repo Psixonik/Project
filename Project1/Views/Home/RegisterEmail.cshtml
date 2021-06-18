@@ -1,0 +1,23 @@
+﻿<!--RegisterEmail-->
+@{
+    ViewBag.Title = "RegisterEmail";
+}
+<link rel="stylesheet" href="~/Content/css/Home/RegisterEmail.css">
+
+<form method="post" action="correctEmail">
+
+    <div class="container">
+        <h1>На Ваш ящик оправлено письмо. Введите код из письма.</h1>
+        <hr>
+
+        <label for="name" ><b>Код :</b></label><br>
+        <input type="text" name="code" />
+
+        <hr>
+        <div class="btn">
+            <input id="btnEmail" type="submit" value="Подтвердить Email"/>
+            <input id="btnGame" type="button" value="Пропустить" onclick="location.href='@Url.Action("Enter", "Home")'" />
+        </div>
+    </div>
+
+</form>

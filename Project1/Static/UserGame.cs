@@ -9,6 +9,8 @@ namespace Project1.Static
     {
         public static int userId { get; set; }
 
+        public static int counaxez { get; set; } = 1;
+
         public static int cash { get; set; } = 10000;
         public static int credit { get; set; } = 0;
         public static int dayForCredit { get; set; } = 0;

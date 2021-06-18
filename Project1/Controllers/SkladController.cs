@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,7 @@ namespace Project1.Controllers
     public class SkladController : Controller
     {
         WorkInBDSklad workInBDSklad = new WorkInBDSklad();
+        WorkInBDWorkes workWorkes = new WorkInBDWorkes();
         BDContext db = new BDContext();
 
         // синхронный метод
@@ -24,7 +26,7 @@ namespace Project1.Controllers
             creatSeachName();
             ViewBag.element = " ";
             ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.userId);
-            return View(db.Details);
+            return View(ViewBag.details);
             //return View(db.Details);
         }
 
@@ -54,6 +56,15 @@ namespace Project1.Controllers
                         return View(ViewBag.details);
                     }
             }
+        }
+        public PartialViewResult SkladPartial(string dropdowntipo)
+        {
+            //Thread.Sleep(3000);
+            //Static.UserGame.counaxez++;
+            //Static.UserGame.userId = 1;
+            //dropdowntipo = "колесо";
+            ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.userId);
+            return PartialView("SkladPartial", ViewBag.details);
         }
     }
 }

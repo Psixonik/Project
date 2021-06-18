@@ -22,6 +22,8 @@ namespace Project1.Controllers
         {
             ViewBag.Name = workUser.GetName(Static.UserGame.userId);
             ViewBag.mani = workMani.GetMani(Static.UserGame.userId);
+            ViewBag.emailBool = workUser.GetEmailBool(Static.UserGame.userId);
+            ViewBag.emailString = workUser.GetEmailString(Static.UserGame.userId);
             if (workMani.GetMani(Static.UserGame.userId) > Static.UserGame.maniForWin)
             {
                 return Redirect("/Victory/Index");

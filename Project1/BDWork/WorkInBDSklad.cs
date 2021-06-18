@@ -65,14 +65,28 @@ namespace Project1.BDWork
 
         public IEnumerable<Detail> GetDeteilSomeBdByName(string name, int userId)
         {
-            IEnumerable<Detail> axez = db.Details.Where(c => (c.name == name && c.userId == userId));
+            IEnumerable<Detail> axez;
+            if (name == "все")
+            {
+                axez = GetDeteilAll(userId);
+            }
+            else
+            {
+                axez = db.Details.Where(c => (c.name == name && c.userId == userId));
+            }
 
-            return db.Details.Where(c => (c.name == name && c.userId == userId));
+            //return db.Details.Where(c => (c.name == name && c.userId == userId));
+            return axez;
         }
 
         public IEnumerable<Detail> GetDeteilAll(int userId)
         {
+            //IEnumerable<Detail> axez = db.Details.Where(c => c.userId == userId);
             IEnumerable<Detail> axez = db.Details.Where(c => c.userId == userId);
+            foreach (var item in axez)
+            {
+
+            }
             return axez;
         }
 

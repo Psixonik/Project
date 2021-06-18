@@ -13,6 +13,10 @@ namespace Project1.Models
 
         public string pas { get; set; }
 
+        public string email { get; set; }
+
+        public bool correctEmail { get; set; } 
+
         public User()
         { }
 
@@ -21,11 +25,13 @@ namespace Project1.Models
             this.name = name;
             this.pas = pas;
         }
-        public User(int id,string name, string pas)
+        public User(int id,string name, string pas, string email, bool correctEmail)
         {
             this.id = id;
             this.name = name;
             this.pas = pas;
+            this.email = email;
+            this.correctEmail = correctEmail;
         }
     }
 }

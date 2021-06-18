@@ -16,7 +16,7 @@ namespace Project1
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Enter", id = UrlParameter.Optional }
                 //defaults: new { controller = "Auto", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
@@ -24,6 +24,11 @@ namespace Project1
                 url: "Users/{action}/{id}",
                 defaults: new { action = "Buy", id = UrlParameter.Optional }
             );
+            /*routes.MapRoute(
+                name: "Home",
+                url: "Home/{action}/{id}",
+                defaults: new { action = "RegisterEmail", id = UrlParameter.Optional }
+            );*/
         }
     }
 }

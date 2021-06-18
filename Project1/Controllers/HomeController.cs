@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.Net;
 
 namespace Project1.Controllers
 {
@@ -21,6 +22,7 @@ namespace Project1.Controllers
     {
         WorkInBDUsers workUser = new WorkInBDUsers();
         List<string> error = new List<string>();
+        User user;
         bool reg = true;
         public ActionResult Index()
         {
@@ -29,20 +31,21 @@ namespace Project1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string name, string psw,string psw_repeat)
+        public ActionResult Index(string name, string psw, string psw_repeat, string email)
         {
             error.Clear();
             reg = true;
-            ErrorPsw(psw, psw_repeat);
+            ErrorPsw(psw, psw_repeat);           
             if (reg)
             {
-                psw=Hash(psw);
+                psw = Hash(psw);
             }
             ErrorName(name);
+            ErrorEmail(email);          
             ViewBag.error = error;
             if (reg)
             {
-                User user = new User(Static.UserGame.userId, name, psw);
+                user = new User(Static.UserGame.userId, name, psw, email, false);
                 workUser.SaveUser(user);
                 Static.NewUser.CreatNewUser(user.id);
                 error.Add("Юзер добавлен");
@@ -66,6 +69,14 @@ namespace Project1.Controllers
                 reg = false;
             }
         }
+        private void ErrorEmail(string email)
+        {
+            if (workUser.Email(email))
+            {
+                error.Add("Такой Email уже есть");
+                reg = false;
+            }
+        }
         private string Hash(string psw)
         {
             byte[] data = Encoding.Default.GetBytes(psw);
@@ -78,6 +89,67 @@ namespace Project1.Controllers
         {
             return View();
         }
+        public ActionResult ViewRegisterEmail()
+        {
+            ViewBag.user = workUser.GetLatest();
+            return View();
+        }
+        public ActionResult RegisterEmail(string email)
+        {
+
+            ViewBag.txt = "";
+            try
+            {
+                Random rnd = new Random();
+                Static.Items.correctEmail = rnd.Next(Static.Items.minRnd, Static.Items.maxRnd);
+                var fromAddress = new MailAddress("solovejv.1979@gmail.com");
+                var fromPassword = "oaxktugkzezmkiyd";
+                var toAddress = new MailAddress(email);
+
+
+                string subject = "Код подтверждения";
+                string body = Static.Items.correctEmail.ToString();
+
+                System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body
+                })
+
+                    smtp.Send(message);
+                ViewBag.txt = "Yes";
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString(), ex.Message);
+                ViewBag.txt = ex.Message.ToString();
+            }
+
+            return View();
+        }
+        public ActionResult correctEmail(string code)
+        {
+            try
+            {
+                if (Static.Items.correctEmail == Convert.ToInt32(code))
+                {
+                    workUser.SetEmailBool(Static.UserGame.userId);
+                }
+            }
+            catch { }
+            return Redirect("/Start/Index");
+        }
+
         [HttpPost]
         public ActionResult Enter(string name, string psw)
         {

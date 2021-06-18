@@ -7,6 +7,10 @@ namespace Project1.Static
 {
     public static class Items
     {
-        public static string txt;
+        public static int correctEmail { get; set; }
+
+        public static int minRnd { get; set; } = 10000;
+
+        public static int maxRnd { get; set; } = 20000;
     }
 }

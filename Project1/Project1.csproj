@@ -145,6 +145,7 @@
     <Compile Include="Context\BDContext.cs" />
     <Compile Include="Controllers\AutoController.cs" />
     <Compile Include="Controllers\BazaarController.cs" />
+    <Compile Include="Controllers\ForgotController.cs" />
     <Compile Include="Controllers\MoneyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NewDayController.cs" />
@@ -159,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105251652575_MigrateDB.cs" />
-    <Compile Include="Migrations\202105251652575_MigrateDB.designer.cs">
-      <DependentUpon>202105251652575_MigrateDB.cs</DependentUpon>
+    <Compile Include="Migrations\202106170753021_MigrateDB.cs" />
+    <Compile Include="Migrations\202106170753021_MigrateDB.designer.cs">
+      <DependentUpon>202106170753021_MigrateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Auto.cs" />
@@ -199,6 +200,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\Auto\index.css" />
     <Content Include="Content\css\Bazaar\index.css" />
+    <Content Include="Content\css\Forgot\index.css" />
+    <Content Include="Content\css\Home\RegisterEmail.css" />
+    <Content Include="Content\css\Home\ViewRegisterEmail.css" />
     <Content Include="Content\css\Home\index.css" />
     <Content Include="Content\css\Home\indexStrike.css" />
     <Content Include="Content\css\Home\newGame.css" />
@@ -224,6 +228,7 @@
     <Content Include="Content\js\Home\index.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\Regulations\index.js" />
+    <Content Include="Content\js\Sklad\index.js" />
     <Content Include="Content\js\workers\index.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -363,6 +368,9 @@
     <Content Include="Views\Workers\Index.cshtml" />
     <Content Include="Views\Workers\WorkesPartial.cshtml" />
     <Content Include="Views\Workers\ZpPartial.cshtml" />
+    <Content Include="Views\Home\ViewRegisterEmail.cshtml" />
+    <Content Include="Views\Home\RegisterEmail.cshtml" />
+    <Content Include="Views\Forgot\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -374,8 +382,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105251652575_MigrateDB.resx">
-      <DependentUpon>202105251652575_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106170753021_MigrateDB.resx">
+      <DependentUpon>202106170753021_MigrateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
