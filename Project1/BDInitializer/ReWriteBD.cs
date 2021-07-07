@@ -9,6 +9,7 @@ namespace Project1.BDInitializer
 {
     public class ReWriteBD
     {
+        //использовалось для тестирования
         BDContext db = new BDContext();
         public void re()
         {

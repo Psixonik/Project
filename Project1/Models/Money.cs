@@ -9,13 +9,13 @@ namespace Project1.Models
     {
         public int id { get; set; }
 
-        public int userId { get; set; }
+        public int userId { get; set; }//идентификатор игрока
 
-        public int cash { get; set; }
+        public int cash { get; set; }//наличьность игрока
 
-        public int credit { get; set; }
+        public int credit { get; set; }//сумма кредита
 
-        public int dayForCredit { get; set; }
+        public int dayForCredit { get; set; }//дней до погашения кредита
 
         public Money(int userId, int cash, int credit, int dayForCredit)
         {

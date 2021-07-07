@@ -18,6 +18,8 @@ namespace Project1.Controllers
         WorkInBDUsers workUser = new WorkInBDUsers();
         BDContext db = new BDContext();
 
+        //главное окно
+
         public ActionResult Index()
         {
             ViewBag.Name = workUser.GetName(Static.UserGame.userId);
@@ -37,7 +39,6 @@ namespace Project1.Controllers
             ViewBag.strike = workWorkers.GetStrik(Static.UserGame.userId);
             if (ViewBag.strike)
             {
-                //workWorkers.MinDayOfStrike();
                 ViewBag.DayOfStrike = workWorkers.GetDayOfStrike();
             }
             if (ViewBag.DayOfStrike == 0)
@@ -88,10 +89,6 @@ namespace Project1.Controllers
                     }
                 case ("Yes"):
                     {
-                        /*Initializer init = new Initializer();
-                        Database.SetInitializer<BDContext>(new Initializer());
-                        BDContext db = new BDContext();
-                        init.InitializeDatabase(db);*/
                         CreateNewGame();
                         return Redirect("/Start/index");
                     }
@@ -115,7 +112,6 @@ namespace Project1.Controllers
 
         public ActionResult Liders()
         {
-            //Liders liders = new Liders();
             IList<Liders> arrLiders = new List<Liders>();
             int cash;
             string name;

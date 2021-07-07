@@ -7,15 +7,16 @@ namespace Project1.Models
 {
     public class User
     {
-        public int id { get; set; }
+        public int id { get; set; }//primary key
 
-        public string name { get; set; }
+        public string name { get; set; }//имя игрока
 
-        public string pas { get; set; }
+        public string pas { get; set; }//пароль игрока
 
-        public string email { get; set; }
+        public string email { get; set; }//Email игрока
 
-        public bool correctEmail { get; set; } 
+        public bool correctEmail { get; set; }//подтвержден или нет Email
+
 
         public User()
         { }

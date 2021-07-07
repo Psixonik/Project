@@ -13,13 +13,14 @@
         <hr>
 
         <label for="name"><b>Имя</b></label>
-        <input type="text" placeholder="Имя" name="name" required >
+        <input type="text" placeholder="Имя" name="name" required>
 
         <label for="psw"><b>Пароль</b></label>
-        <input type="password" placeholder="Пароль" name="psw" required >
+        <input type="password" placeholder="Пароль" name="psw" required>
 
         <hr>
         <button type="submit" class="registerbtn">Войти</button>
+        <button type="submit" class="registerbtn" onclick="location.href='/forgot/index';">Забыл</button>
     </div>
     <div>
         @ViewBag.ansver;

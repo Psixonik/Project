@@ -9,8 +9,8 @@ namespace Project1.Models
     {
         public int id { get; set; }
 
-        public int cash { get; set; }
+        public int cash { get; set; }//сумма кредита
 
-        public int day { get; set; }
+        public int day { get; set; }//дней до погашения кредита
     }
 }

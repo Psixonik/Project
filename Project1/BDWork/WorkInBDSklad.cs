@@ -57,13 +57,13 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public Detail GetDeteilSomeBdByType(string type, int userId)
+        public Detail GetDeteilSomeBdByType(string type, int userId)//получить деталь по типу
         {
             Detail axez = db.Details.Where(c => (c.type == type && c.userId == userId)).FirstOrDefault();
             return axez;
         }
 
-        public IEnumerable<Detail> GetDeteilSomeBdByName(string name, int userId)
+        public IEnumerable<Detail> GetDeteilSomeBdByName(string name, int userId)//получить деталь по названию
         {
             IEnumerable<Detail> axez;
             if (name == "все")
@@ -74,23 +74,16 @@ namespace Project1.BDWork
             {
                 axez = db.Details.Where(c => (c.name == name && c.userId == userId));
             }
-
-            //return db.Details.Where(c => (c.name == name && c.userId == userId));
             return axez;
         }
 
-        public IEnumerable<Detail> GetDeteilAll(int userId)
+        public IEnumerable<Detail> GetDeteilAll(int userId)//получить все детали игрока
         {
-            //IEnumerable<Detail> axez = db.Details.Where(c => c.userId == userId);
             IEnumerable<Detail> axez = db.Details.Where(c => c.userId == userId);
-            foreach (var item in axez)
-            {
-
-            }
             return axez;
         }
 
-        public IEnumerable<string> GetSeachMenu()
+        public IEnumerable<string> GetSeachMenu()//создать меню поиска
         {
 
             IEnumerable<string> concatenated = new List<string> { " " };
@@ -101,7 +94,7 @@ namespace Project1.BDWork
             return concatenated;
         }
 
-        public void UpdateForBuy(string type, int colBuy, int userId)
+        public void UpdateForBuy(string type, int colBuy, int userId)//изменить количество при покупке
         {
             Detail col;
             col = db.Details.Where(c => c.type == type && c.userId == userId).FirstOrDefault();
@@ -109,7 +102,7 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void newDetail(string newName, string newType, int newCol, int userId)
+        public void newDetail(string newName, string newType, int newCol, int userId)//новая деталь
         {
             // Создать новую деталь
             Detail newDetail = new Detail
@@ -127,9 +120,8 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void СreateNewUser(int userId)
+        public void СreateNewUser(int userId)//новый игрок 
         {
-            // Создать новую деталь
             Detail newDetail = new Detail
             {
                 userId = userId,
@@ -145,9 +137,8 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void DeletUserAndCreateNew(int userId)
+        public void DeletUserAndCreateNew(int userId)//играть заново
         {
-            //Detail detail = db.Details.Where(c => c.userId == userId).FirstOrDefault();
             IList<Detail> details = db.Details.Where(c => c.userId == userId).ToArray();
             
             if (details != null)
@@ -158,7 +149,6 @@ namespace Project1.BDWork
                     db.SaveChanges();
                 }
             }
-            //СreateNewUser(userId);
         }
     }
 }

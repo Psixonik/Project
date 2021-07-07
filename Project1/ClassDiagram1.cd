@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project1.Models.User" Collapsed="true">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAQAAAAAgAAAAAAAAAAAEAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Bazaar" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAEgA=</HashCode>
+      <FileName>Models\Bazaar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Detail" Collapsed="true">
+    <Position X="1.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAQAAAAAFAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Detail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Money" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAACAAAAQAAAAAAAAEAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Money.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Worker" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAACAABAAAAAAgAAAACBAgA=</HashCode>
+      <FileName>Models\Worker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Zakaz" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAEgA=</HashCode>
+      <FileName>Models\Zakaz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Auto" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAQAAAAAAAECAAAAAAAAAAAAAAAAAAAAIAAAgA=</HashCode>
+      <FileName>Models\Auto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.NameOfMashin" Collapsed="true">
+    <Position X="8" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAAIAAAgA=</HashCode>
+      <FileName>Models\NameOfMashin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Utilits" Collapsed="true">
+    <Position X="1.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAACAAAAAAAAAAIAAAAIAAAAAAAAgA=</HashCode>
+      <FileName>Models\Utilits.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.Credit" Collapsed="true">
+    <Position X="3.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\Credit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project1.Models.TypeMashin" Collapsed="true">
+    <Position X="6" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAACAAQgAAAAAABAAQAAAAgAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\TypeMashin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

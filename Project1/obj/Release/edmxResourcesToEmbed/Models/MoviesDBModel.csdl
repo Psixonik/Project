@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Autoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="services" Type="Int32" />
+    <Property Name="maxContent" Type="Int32" />
+    <Property Name="content" Type="Int32" />
+    <Property Name="broken" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Bazaars">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="money" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Credits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cash" Type="Int32" />
+    <Property Name="day" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="col" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Moneys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="cash" Type="Int32" />
+    <Property Name="credit" Type="Int32" />
+    <Property Name="dayForCredit" Type="Int32" />
+  </EntityType>
+  <EntityType Name="NameOfMashins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cost" Type="Int32" />
+    <Property Name="services" Type="Int32" />
+    <Property Name="content" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TypeMashins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kyzov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="colKyzov" Type="Int32" />
+    <Property Name="koleso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="colKoleso" Type="Int32" />
+    <Property Name="motor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="colMotor" Type="Int32" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="correctEmail" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Utilits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="gas" Type="Int32" />
+    <Property Name="water" Type="Int32" />
+    <Property Name="electro" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="colWorkers" Type="Int32" />
+    <Property Name="zp" Type="Int32" />
+    <Property Name="al" Type="Int32" />
+    <Property Name="dayOfStrike" Type="Int32" />
+    <Property Name="strik" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakazs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="col" Type="Int32" />
+    <Property Name="money" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Autoes" EntityType="Self.Autoes" />
+    <EntitySet Name="Bazaars" EntityType="Self.Bazaars" />
+    <EntitySet Name="Credits" EntityType="Self.Credits" />
+    <EntitySet Name="Details" EntityType="Self.Details" />
+    <EntitySet Name="Moneys" EntityType="Self.Moneys" />
+    <EntitySet Name="NameOfMashins" EntityType="Self.NameOfMashins" />
+    <EntitySet Name="TypeMashins" EntityType="Self.TypeMashins" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <EntitySet Name="Utilits" EntityType="Self.Utilits" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" />
+    <EntitySet Name="Zakazs" EntityType="Self.Zakazs" />
+  </EntityContainer>
+</Schema>

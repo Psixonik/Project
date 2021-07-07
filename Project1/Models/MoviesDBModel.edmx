@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Autoes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="services" Type="int" />
+          <Property Name="maxContent" Type="int" />
+          <Property Name="content" Type="int" />
+          <Property Name="broken" Type="int" />
+        </EntityType>
+        <EntityType Name="Bazaars">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="money" Type="int" />
+        </EntityType>
+        <EntityType Name="Credits">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cash" Type="int" />
+          <Property Name="day" Type="int" />
+        </EntityType>
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="col" Type="int" />
+        </EntityType>
+        <EntityType Name="Moneys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="cash" Type="int" />
+          <Property Name="credit" Type="int" />
+          <Property Name="dayForCredit" Type="int" />
+        </EntityType>
+        <EntityType Name="NameOfMashins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cost" Type="int" />
+          <Property Name="services" Type="int" />
+          <Property Name="content" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeMashins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="kyzov" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="colKyzov" Type="int" />
+          <Property Name="koleso" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="colKoleso" Type="int" />
+          <Property Name="motor" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="colMotor" Type="int" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="pas" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="correctEmail" Type="bit" />
+        </EntityType>
+        <EntityType Name="Utilits">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="gas" Type="int" />
+          <Property Name="water" Type="int" />
+          <Property Name="electro" Type="int" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="colWorkers" Type="int" />
+          <Property Name="zp" Type="int" />
+          <Property Name="al" Type="int" />
+          <Property Name="dayOfStrike" Type="int" />
+          <Property Name="strik" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zakazs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="col" Type="int" />
+          <Property Name="money" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Хранилище DatabaseModelContainer">
+          <EntitySet Name="Autoes" EntityType="Self.Autoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bazaars" EntityType="Self.Bazaars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Credits" EntityType="Self.Credits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Moneys" EntityType="Self.Moneys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NameOfMashins" EntityType="Self.NameOfMashins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeMashins" EntityType="Self.TypeMashins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Utilits" EntityType="Self.Utilits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Zakazs" EntityType="Self.Zakazs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Autoes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="services" Type="Int32" />
+          <Property Name="maxContent" Type="Int32" />
+          <Property Name="content" Type="Int32" />
+          <Property Name="broken" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Bazaars">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="money" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Credits">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cash" Type="Int32" />
+          <Property Name="day" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="col" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Moneys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="cash" Type="Int32" />
+          <Property Name="credit" Type="Int32" />
+          <Property Name="dayForCredit" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NameOfMashins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cost" Type="Int32" />
+          <Property Name="services" Type="Int32" />
+          <Property Name="content" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TypeMashins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameAuto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="kyzov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="colKyzov" Type="Int32" />
+          <Property Name="koleso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="colKoleso" Type="Int32" />
+          <Property Name="motor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="colMotor" Type="Int32" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pas" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="correctEmail" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Utilits">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="gas" Type="Int32" />
+          <Property Name="water" Type="Int32" />
+          <Property Name="electro" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="colWorkers" Type="Int32" />
+          <Property Name="zp" Type="Int32" />
+          <Property Name="al" Type="Int32" />
+          <Property Name="dayOfStrike" Type="Int32" />
+          <Property Name="strik" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Zakazs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="col" Type="Int32" />
+          <Property Name="money" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Autoes" EntityType="Self.Autoes" />
+          <EntitySet Name="Bazaars" EntityType="Self.Bazaars" />
+          <EntitySet Name="Credits" EntityType="Self.Credits" />
+          <EntitySet Name="Details" EntityType="Self.Details" />
+          <EntitySet Name="Moneys" EntityType="Self.Moneys" />
+          <EntitySet Name="NameOfMashins" EntityType="Self.NameOfMashins" />
+          <EntitySet Name="TypeMashins" EntityType="Self.TypeMashins" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <EntitySet Name="Utilits" EntityType="Self.Utilits" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" />
+          <EntitySet Name="Zakazs" EntityType="Self.Zakazs" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DatabaseModelContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Autoes">
+            <EntityTypeMapping TypeName="DatabaseModel.Autoes">
+              <MappingFragment StoreEntitySet="Autoes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+                <ScalarProperty Name="services" ColumnName="services" />
+                <ScalarProperty Name="maxContent" ColumnName="maxContent" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="broken" ColumnName="broken" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bazaars">
+            <EntityTypeMapping TypeName="DatabaseModel.Bazaars">
+              <MappingFragment StoreEntitySet="Bazaars">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="money" ColumnName="money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Credits">
+            <EntityTypeMapping TypeName="DatabaseModel.Credits">
+              <MappingFragment StoreEntitySet="Credits">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cash" ColumnName="cash" />
+                <ScalarProperty Name="day" ColumnName="day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="DatabaseModel.Details">
+              <MappingFragment StoreEntitySet="Details">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="col" ColumnName="col" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Moneys">
+            <EntityTypeMapping TypeName="DatabaseModel.Moneys">
+              <MappingFragment StoreEntitySet="Moneys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="cash" ColumnName="cash" />
+                <ScalarProperty Name="credit" ColumnName="credit" />
+                <ScalarProperty Name="dayForCredit" ColumnName="dayForCredit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NameOfMashins">
+            <EntityTypeMapping TypeName="DatabaseModel.NameOfMashins">
+              <MappingFragment StoreEntitySet="NameOfMashins">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="services" ColumnName="services" />
+                <ScalarProperty Name="content" ColumnName="content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeMashins">
+            <EntityTypeMapping TypeName="DatabaseModel.TypeMashins">
+              <MappingFragment StoreEntitySet="TypeMashins">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+                <ScalarProperty Name="kyzov" ColumnName="kyzov" />
+                <ScalarProperty Name="colKyzov" ColumnName="colKyzov" />
+                <ScalarProperty Name="koleso" ColumnName="koleso" />
+                <ScalarProperty Name="colKoleso" ColumnName="colKoleso" />
+                <ScalarProperty Name="motor" ColumnName="motor" />
+                <ScalarProperty Name="colMotor" ColumnName="colMotor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="DatabaseModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pas" ColumnName="pas" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="correctEmail" ColumnName="correctEmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utilits">
+            <EntityTypeMapping TypeName="DatabaseModel.Utilits">
+              <MappingFragment StoreEntitySet="Utilits">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="gas" ColumnName="gas" />
+                <ScalarProperty Name="water" ColumnName="water" />
+                <ScalarProperty Name="electro" ColumnName="electro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers">
+            <EntityTypeMapping TypeName="DatabaseModel.Workers">
+              <MappingFragment StoreEntitySet="Workers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="colWorkers" ColumnName="colWorkers" />
+                <ScalarProperty Name="zp" ColumnName="zp" />
+                <ScalarProperty Name="al" ColumnName="al" />
+                <ScalarProperty Name="dayOfStrike" ColumnName="dayOfStrike" />
+                <ScalarProperty Name="strik" ColumnName="strik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zakazs">
+            <EntityTypeMapping TypeName="DatabaseModel.Zakazs">
+              <MappingFragment StoreEntitySet="Zakazs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="col" ColumnName="col" />
+                <ScalarProperty Name="money" ColumnName="money" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -10,6 +10,7 @@ namespace Project1.Context
 {
     public class BDContext: DbContext
     {
+        //использовалось при тестировании
         /*создание и наполнение БД
         static BDContext()
         {
@@ -29,6 +30,6 @@ namespace Project1.Context
         public DbSet<Auto> Autoes { get; set; }
         public DbSet<User> Users { get; set; }
 
-        public System.Data.Entity.DbSet<Project1.Models.Order> Orders { get; set; }
+        //public System.Data.Entity.DbSet<Project1.Models.Order> Orders { get; set; }
     }
 }

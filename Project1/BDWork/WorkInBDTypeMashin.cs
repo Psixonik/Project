@@ -12,14 +12,14 @@ namespace Project1.BDWork
         BDContext db = new BDContext();
         TypeMashin newMashin;//машина в заказе
 
-        public TypeMashin GetTypeMashineByName(string name)
+        public TypeMashin GetTypeMashineByName(string name)//получить машину в заказе по имени
         {
             newMashin = db.TypeMashins
                         .Where(b => b.nameAuto == name)
                         .FirstOrDefault();
             return newMashin;
         }
-        public TypeMashin GetTypeMashineById(int id)
+        public TypeMashin GetTypeMashineById(int id)//получить машину в заказе по id
         {
             newMashin = db.TypeMashins
                         .Where(b => b.id == id)

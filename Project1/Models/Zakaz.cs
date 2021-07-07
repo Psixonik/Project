@@ -10,11 +10,11 @@ namespace Project1.Models
         
         public int id { get; set; }
 
-        public string name { get; set; }
+        public string name { get; set; }//какую машину надо собрать?
 
-        public int col { get; set; }
+        public int col { get; set; }//сколько таких машин нужно собрать?
 
-        public int money { get; set; }
+        public int money { get; set; }//сколько заплатят?
 
     }
 }

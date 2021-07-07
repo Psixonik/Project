@@ -7,6 +7,9 @@ namespace Project1.Static
 {
     public static class UserGame
     {
+
+        //данные нового игрока
+
         public static int userId { get; set; }
 
         public static int counaxez { get; set; } = 1;

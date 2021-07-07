@@ -14,13 +14,13 @@ namespace Project1.BDWork
         BDContext db = new BDContext();
         const int DAY_OF_STRIKE = 5;
 
-        public int GetColWorkes(int userId)
+        public int GetColWorkes(int userId)//получить количество рабочих
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             return workers.colWorkers;
         }
 
-        public int GetZP(int userId)
+        public int GetZP(int userId)//получить зп одного рабочего
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             return workers.zp;
@@ -28,38 +28,34 @@ namespace Project1.BDWork
 
         public int GetAll(int userId)
         {
-            //int colWorkerw= (from c in db.Workers select c.colWorkers).FirstOrDefault();
-            //int colZP= (from c in db.Workers select c.zp).FirstOrDefault();
-            //return colWorkerw * colZP;
             Worker worker = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             return worker.al;
         }
 
-        public int GetDayOfStrike()
+        public int GetDayOfStrike()//получить количество дней забастовки
         {
             Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
             return workers.dayOfStrike;
         }
 
-        public void SetDayOfStrike(int userId)
+        public void SetDayOfStrike(int userId)//задать количество дней забастовки
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             workers.dayOfStrike = DAY_OF_STRIKE;
             db.SaveChanges();
         }
 
-        public void changAllZp(int userId)
+        public void changAllZp(int userId)//изменить общую зп
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             int colWorkerw = workers.colWorkers;
             int colZP = workers.zp;
             int AllZp = colWorkerw * colZP;
-            //Worker workers = (from c in db.Workers select c).FirstOrDefault();
             workers.al = AllZp;
             db.SaveChanges();
         }
 
-        public void ChenchWorker(string chanch, int userId)
+        public void ChenchWorker(string chanch, int userId)//изменить количество рабочих
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             // Внести изменения
@@ -80,7 +76,7 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void ChenchZP(int zp, int userId)
+        public void ChenchZP(int zp, int userId)//изменить зп рабочих при забастовке
         {
             int oldZp;
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
@@ -93,19 +89,14 @@ namespace Project1.BDWork
                 workers.strik = false;
                 db.SaveChanges();
             }
-            /*
-            //WebApplication1.Static.Strike.dayOfStrike = 0;
-            workers.strik = false;
-            db.SaveChanges();*/
         }
 
-        public void CheckForStrike()
+        public void CheckForStrike()//Забостуют или нет?
         {
             Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
             if (workers.colWorkers == 0) return;
             int zp = GetZP(Static.UserGame.userId);
             int koof = Static.Strike.koof;
-            //koof = zp;
             Random rnd = new Random();
             int value = rnd.Next(zp + 1);
             
@@ -122,7 +113,7 @@ namespace Project1.BDWork
             }
         }
 
-        public void MinDayOfStrike()
+        public void MinDayOfStrike()//уменьшить количество дней забастовки
         {
             Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
             workers.dayOfStrike -= 1;
@@ -133,27 +124,27 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void СreateNewUser(int userId, int colWorkers, int zp, int al, int dayOfStrike, bool strike)
+        public void СreateNewUser(int userId, int colWorkers, int zp, int al, int dayOfStrike, bool strike)//новый игрок
         {
             Worker worker = new Worker(userId, colWorkers, zp, al, dayOfStrike, strike);
             db.Workers.Add(worker);
             db.SaveChanges();
         }
 
-        public bool GetStrik(int userId)
+        public bool GetStrik(int userId)//Забостовка или нет?
         {
             Worker workers = db.Workers.Where(c => c.userId == userId).FirstOrDefault();
             return workers.strik;
         }
 
-        public void DeletOfStrik()
+        public void DeletOfStrik()//забостовка закончена
         {
             Worker workers = db.Workers.Where(c => c.userId == Static.UserGame.userId).FirstOrDefault();
             workers.strik = false;
             db.SaveChanges();
         }
 
-        public void DeletUserAndCreateNew(int userId)
+        public void DeletUserAndCreateNew(int userId)//заново
         {
             IList<Worker> workers = db.Workers.Where(c => c.userId == userId).ToArray();
 

@@ -10,19 +10,13 @@ namespace Project1.BDWork
     {
         BDContext db = new BDContext();
 
-        public IEnumerable<int> GetCredits()
+        public IEnumerable<int> GetCredits()//получить возможные кредиты
         {
-            //IEnumerable<int> axez = (from c in db.Credits select c.cash).ToList();
             return (from c in db.Credits select c.cash).ToList();
         }
-        public IEnumerable<int> GetDayOfCredits()
+        public IEnumerable<int> GetDayOfCredits()//получить дни до погашения
         {
-            //IEnumerable<int> axez = (from c in db.Credits select c.cash).ToList();
             return (from c in db.Credits select c.day).ToList();
-        }
-        public int GetCount()
-        {
-            return 0;
         }
     }
 }

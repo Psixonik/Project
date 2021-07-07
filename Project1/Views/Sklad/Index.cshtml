@@ -48,17 +48,12 @@
             }
         }
     </select>
-    <div id="axez2">
-        @Ajax.ActionLink("Лучшая книга", "SkladPartial", new { dropdowntipo = "" }, new AjaxOptions { UpdateTargetId = "data" },new { id = "EditLink" })
-    </div>
+        @Ajax.ActionLink("Искать", "SkladPartial", new { dropdowntipo = "" }, new AjaxOptions { UpdateTargetId = "data" },new { id = "EditLink" })
 </div>
 
 
 <table class="table">
     <tr>
-        <th>
-            UserId
-        </th>
         <th>
             Наименование
         </th>

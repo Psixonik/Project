@@ -22,20 +22,16 @@ namespace Project1.BDWork
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         const int COL_MASHIN = 3;//магическое число. Количество машин
 
-        /*static void SkladContext()
-        {
-            Database.SetInitializer<BDContext>(new Initializer());
-        }*/
         BDContext db = new BDContext();
 
-        public Detail Kyzov(TypeMashin newMashin, int userId)
+        public Detail Kyzov(TypeMashin newMashin, int userId)//получить количество кузовов машины в заказе
         {
             threKyzov = db.Details
                         .Where(b => (b.type == newMashin.kyzov && b.userId == userId))
                         .FirstOrDefault();
             return threKyzov;
         }
-        public Detail Koleso(TypeMashin newMashin, int userId)
+        public Detail Koleso(TypeMashin newMashin, int userId)//получить количество колес машины в заказе
         {
 
             threKoleso = db.Details
@@ -43,7 +39,7 @@ namespace Project1.BDWork
                          .FirstOrDefault();
             return threKoleso;
         }
-        public Detail Motor(TypeMashin newMashin, int userId)
+        public Detail Motor(TypeMashin newMashin, int userId)//получить количество моторов машины в заказе
         {
             threMotor = db.Details
                         .Where(b => (b.type == newMashin.motor && b.userId == userId))
@@ -51,12 +47,12 @@ namespace Project1.BDWork
             return threMotor;
         }
 
-        public void UpdateSklad(Zakaz zakaz, TypeMashin newMashin,int userId)
+        public void UpdateSklad(Zakaz zakaz, TypeMashin newMashin,int userId)//изменить количество деталей на складе
         {
             workInBDSklad.UpdateSklad(zakaz, newMashin, threKyzov, threKoleso, threMotor,userId);
         }
 
-        public void deletZacaz(int id)
+        public void deletZacaz(int id)//убрать заказ
         {
             Zakaz forDelet = db.Zakazs
                             .Where(o => o.id == id)
@@ -65,15 +61,14 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void DeletAllZakaz()
+        public void DeletAllZakaz()//убрать все заказы
         {
-            //db.Zakaz.ExecuteSqlCommand("delete from Zakaz");
             foreach (var entity in db.Zakazs)
                 db.Zakazs.Remove(entity);
             db.SaveChanges();
         }
 
-        public void CreatedNewZakaz(int userId)
+        public void CreatedNewZakaz(int userId)//создать новый заказ
         {
             int colWorkers;//Количество рабочих
             Zakaz zakaz = new Zakaz();

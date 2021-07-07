@@ -12,25 +12,22 @@ namespace Project1.BDWork
     {
         BDContext db = new BDContext();
 
-        public int GetGas(int userId)
+        public int GetGas(int userId)//получить цену газа
         {
-            //Utilits utilits = new Utilits();
             Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
             return utilits.gas;
         }
-        public int GetWater(int userId)
+        public int GetWater(int userId)//получить цену воды
         {
-            //Utilits utilits = new Utilits();
             Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
             return utilits.water;
         }
-        public int GetElectro(int userId)
+        public int GetElectro(int userId)//получить цену света
         {
-            //Utilits utilits = new Utilits();
-            Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();//"Магическое число"
+            Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
             return utilits.electro;
         }
-        public void ChancItems(int userId)
+        public void ChancItems(int userId)//новые чены
         {
             Random rnd = new Random();
 
@@ -47,14 +44,14 @@ namespace Project1.BDWork
             db.SaveChanges();
         }
 
-        public void CreatNewUser(int userId, int gas, int water, int electro)
+        public void CreatNewUser(int userId, int gas, int water, int electro)//новый пользователь
         {
             Utilits utilits = new Utilits(userId,gas,water,electro);
             db.Utilits.Add(utilits);
             db.SaveChanges();
         }
 
-        public void DeletUserAndCreateNew(int userId)
+        public void DeletUserAndCreateNew(int userId)//удалить игрока
         {
             IList<Utilits> utilits = db.Utilits.Where(c => c.userId == userId).ToArray();
 

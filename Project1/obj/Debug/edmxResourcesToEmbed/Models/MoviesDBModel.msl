@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DatabaseModelContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="Autoes">
+      <EntityTypeMapping TypeName="DatabaseModel.Autoes">
+        <MappingFragment StoreEntitySet="Autoes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+          <ScalarProperty Name="services" ColumnName="services" />
+          <ScalarProperty Name="maxContent" ColumnName="maxContent" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="broken" ColumnName="broken" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bazaars">
+      <EntityTypeMapping TypeName="DatabaseModel.Bazaars">
+        <MappingFragment StoreEntitySet="Bazaars">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="money" ColumnName="money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Credits">
+      <EntityTypeMapping TypeName="DatabaseModel.Credits">
+        <MappingFragment StoreEntitySet="Credits">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="day" ColumnName="day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Details">
+      <EntityTypeMapping TypeName="DatabaseModel.Details">
+        <MappingFragment StoreEntitySet="Details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="col" ColumnName="col" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moneys">
+      <EntityTypeMapping TypeName="DatabaseModel.Moneys">
+        <MappingFragment StoreEntitySet="Moneys">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="cash" ColumnName="cash" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+          <ScalarProperty Name="dayForCredit" ColumnName="dayForCredit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NameOfMashins">
+      <EntityTypeMapping TypeName="DatabaseModel.NameOfMashins">
+        <MappingFragment StoreEntitySet="NameOfMashins">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="services" ColumnName="services" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeMashins">
+      <EntityTypeMapping TypeName="DatabaseModel.TypeMashins">
+        <MappingFragment StoreEntitySet="TypeMashins">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nameAuto" ColumnName="nameAuto" />
+          <ScalarProperty Name="kyzov" ColumnName="kyzov" />
+          <ScalarProperty Name="colKyzov" ColumnName="colKyzov" />
+          <ScalarProperty Name="koleso" ColumnName="koleso" />
+          <ScalarProperty Name="colKoleso" ColumnName="colKoleso" />
+          <ScalarProperty Name="motor" ColumnName="motor" />
+          <ScalarProperty Name="colMotor" ColumnName="colMotor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="DatabaseModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pas" ColumnName="pas" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="correctEmail" ColumnName="correctEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utilits">
+      <EntityTypeMapping TypeName="DatabaseModel.Utilits">
+        <MappingFragment StoreEntitySet="Utilits">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="gas" ColumnName="gas" />
+          <ScalarProperty Name="water" ColumnName="water" />
+          <ScalarProperty Name="electro" ColumnName="electro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="DatabaseModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="colWorkers" ColumnName="colWorkers" />
+          <ScalarProperty Name="zp" ColumnName="zp" />
+          <ScalarProperty Name="al" ColumnName="al" />
+          <ScalarProperty Name="dayOfStrike" ColumnName="dayOfStrike" />
+          <ScalarProperty Name="strik" ColumnName="strik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zakazs">
+      <EntityTypeMapping TypeName="DatabaseModel.Zakazs">
+        <MappingFragment StoreEntitySet="Zakazs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="col" ColumnName="col" />
+          <ScalarProperty Name="money" ColumnName="money" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

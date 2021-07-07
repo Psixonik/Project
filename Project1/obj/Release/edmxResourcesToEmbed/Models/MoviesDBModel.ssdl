@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="services" Type="int" />
+    <Property Name="maxContent" Type="int" />
+    <Property Name="content" Type="int" />
+    <Property Name="broken" Type="int" />
+  </EntityType>
+  <EntityType Name="Bazaars">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="money" Type="int" />
+  </EntityType>
+  <EntityType Name="Credits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cash" Type="int" />
+    <Property Name="day" Type="int" />
+  </EntityType>
+  <EntityType Name="Details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="col" Type="int" />
+  </EntityType>
+  <EntityType Name="Moneys">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="cash" Type="int" />
+    <Property Name="credit" Type="int" />
+    <Property Name="dayForCredit" Type="int" />
+  </EntityType>
+  <EntityType Name="NameOfMashins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cost" Type="int" />
+    <Property Name="services" Type="int" />
+    <Property Name="content" Type="int" />
+  </EntityType>
+  <EntityType Name="TypeMashins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameAuto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="kyzov" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="colKyzov" Type="int" />
+    <Property Name="koleso" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="colKoleso" Type="int" />
+    <Property Name="motor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="colMotor" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pas" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="correctEmail" Type="bit" />
+  </EntityType>
+  <EntityType Name="Utilits">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" />
+    <Property Name="gas" Type="int" />
+    <Property Name="water" Type="int" />
+    <Property Name="electro" Type="int" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userId" Type="int" Nullable="false" />
+    <Property Name="colWorkers" Type="int" />
+    <Property Name="zp" Type="int" />
+    <Property Name="al" Type="int" />
+    <Property Name="dayOfStrike" Type="int" />
+    <Property Name="strik" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Zakazs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="col" Type="int" />
+    <Property Name="money" Type="int" />
+  </EntityType>
+  <EntityContainer Name="Хранилище DatabaseModelContainer">
+    <EntitySet Name="Autoes" EntityType="Self.Autoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bazaars" EntityType="Self.Bazaars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Credits" EntityType="Self.Credits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Details" EntityType="Self.Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Moneys" EntityType="Self.Moneys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NameOfMashins" EntityType="Self.NameOfMashins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeMashins" EntityType="Self.TypeMashins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Utilits" EntityType="Self.Utilits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zakazs" EntityType="Self.Zakazs" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

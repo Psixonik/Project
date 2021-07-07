@@ -20,7 +20,7 @@ namespace Project1.Controllers
         WorkInBDMoney workMoney = new WorkInBDMoney();
 
         // GET: Auto
-        public ActionResult Index(string str)
+        public ActionResult Index(string str)//показ машин цеха + показ машин для покупки
         {
             dynamic mymodel = new ExpandoObject();
             mymodel.Auto = workAuto.GetAutoAll(Static.UserGame.userId);
@@ -28,12 +28,12 @@ namespace Project1.Controllers
             ViewBag.rezalt = str;
             return View(mymodel);
         }
-        public ActionResult Sale(int id)
+        public ActionResult Sale(int id)//продать машину
         {
             workAuto.SaleAuto(id, Static.UserGame.userId);
             return PartialView("PartialAuto", workAuto.GetAutoAll(Static.UserGame.userId));
         }
-        public PartialViewResult PartialAuto(int id)
+        public PartialViewResult PartialAuto(int id)//частичьное представление. Показать машины цеха + покупка новой машины
         {
             string str;
             var colAutoUser = workAuto.GetAutoAll(Static.UserGame.userId);
@@ -45,42 +45,12 @@ namespace Project1.Controllers
             int cash = workMoney.GetMani(Static.UserGame.userId);
             if (cash < mashin.cost)
             {
-                //MessageBox.Show("Нет денег");
+                //MessageBox.Show("Нет денег");//на хосте MessageBox не отрабатывает
             }
             else
             {
                 workMoney.minMani(mashin.cost,Static.UserGame.userId);
                 workAuto.SetAuto(Static.UserGame.userId,mashin.nameAuto,mashin.services, mashin.content, 1);
-            }
-            return PartialView("PartialAuto", workAuto.GetAutoAll(Static.UserGame.userId));
-        }
-        public PartialViewResult PartialAutoWork(int id)
-        {
-            Random rnd = new Random();
-            Auto mashin = workAuto.GetAutoById(id, Static.UserGame.userId);
-            workMoney.AddMoney(mashin.services,Static.UserGame.userId);
-            workAuto.JobsEnd(id, Static.UserGame.userId);
-            if (rnd.Next(101) < 25)
-            {
-                workAuto.Broken(id, Static.UserGame.userId);
-                int content = workAuto.GetContent(id, Static.UserGame.userId);
-                int axez = rnd.Next(content + 1);
-            }
-            return PartialView("PartialAuto", workAuto.GetAutoAll(Static.UserGame.userId));
-        }
-        public PartialViewResult PartialAutoRepair(int id)
-        {
-            int cash = workMoney.GetMani(Static.UserGame.userId);
-            Auto mashin = workAuto.GetAutoById(id, Static.UserGame.userId);
-            int cashForRepair = mashin.content;
-            if (cash < cashForRepair)
-            {
-                //MessageBox.Show("Нет денег");
-            }
-            else
-            {
-                workMoney.minMani(cashForRepair,Static.UserGame.userId);
-                workAuto.SetBroken(0, id, Static.UserGame.userId);
             }
             return PartialView("PartialAuto", workAuto.GetAutoAll(Static.UserGame.userId));
         }

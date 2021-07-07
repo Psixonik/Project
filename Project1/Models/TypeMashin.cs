@@ -9,18 +9,18 @@ namespace Project1.Models
     {
         public int id { get; set; }
 
-        public string nameAuto { get; set; }
+        public string nameAuto { get; set; }//тип машины
 
-        public string kyzov { set; get; }
+        public string kyzov { set; get; }//тип кузова
 
-        public int colKyzov { set; get; }
+        public int colKyzov { set; get; }//количество кузовов
 
-        public string koleso { set; get; }
+        public string koleso { set; get; }//тип колес
 
-        public int colKoleso { set; get; }
+        public int colKoleso { set; get; }//количество колес
 
-        public string motor { set; get; }
+        public string motor { set; get; }//тип мотора
 
-        public int colMotor { set; get; }
+        public int colMotor { set; get; }//количество моторов
     }
 }

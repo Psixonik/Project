@@ -24,6 +24,9 @@ namespace Project1.Controllers
         List<string> error = new List<string>();
         User user;
         bool reg = true;
+
+        //регистрация или вход в игру
+
         public ActionResult Index()
         {
             ViewBag.error = "";
@@ -35,6 +38,7 @@ namespace Project1.Controllers
         {
             error.Clear();
             reg = true;
+
             ErrorPsw(psw, psw_repeat);           
             if (reg)
             {
@@ -102,6 +106,7 @@ namespace Project1.Controllers
             {
                 Random rnd = new Random();
                 Static.Items.correctEmail = rnd.Next(Static.Items.minRnd, Static.Items.maxRnd);
+                //данные собственной почьты. Завести для игры отдельную почьту?
                 var fromAddress = new MailAddress("solovejv.1979@gmail.com");
                 var fromPassword = "oaxktugkzezmkiyd";
                 var toAddress = new MailAddress(email);
@@ -162,7 +167,7 @@ namespace Project1.Controllers
 
                 return Redirect("/Start/Index");
             }
-            catch (Exception e)
+            catch 
             {
                 ViewBag.ansver = ansver;
                 return View();

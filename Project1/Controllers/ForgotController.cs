@@ -15,7 +15,8 @@ namespace Project1.Controllers
         WorkInBDUsers workUser = new WorkInBDUsers();
         List<string> error = new List<string>();
         bool reg = true;
-        User user;
+
+        //повторная регистрация нового пользователя
         // GET: Forgot
         public ActionResult Index()
         {

@@ -8,6 +8,8 @@ namespace Project1.Static
 {
     public static class NewUser
     {
+        //создание нового пользователя
+
         public static void CreatNewUser(int userId)
         {
             WorkInBDMoney workMoney = new WorkInBDMoney();
@@ -15,7 +17,6 @@ namespace Project1.Static
             WorkInBDWorkes workWorkers = new WorkInBDWorkes();
             WorkInBDUtilits workUtilits = new WorkInBDUtilits();
             workMoney.СreateNewUser(userId, UserGame.cash, UserGame.credit, UserGame.dayForCredit);
-            //workSklad.СreateNewUser(idUaer);
             workUtilits.CreatNewUser(userId, UserGame.gas, UserGame.water, UserGame.electro);
             workWorkers.СreateNewUser(userId, UserGame.colWorkers, UserGame.zp, UserGame.al, UserGame.dayOfStrike, UserGame.strike);
         }

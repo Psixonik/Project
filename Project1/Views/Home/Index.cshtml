@@ -12,17 +12,19 @@
         <input type="text" placeholder="Имя" name="name" required>
 
         <label for="psw"><b>Пароль</b></label>
-        <input type="password" placeholder="Пароль" name="psw" required>
+        <input type="password" placeholder="Пароль" name="psw"
+                              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+               title="Пароль должен содержать как минимум одну цифру, одну заглавную и строчную букву и как минимум 8 или более символов."required>
 
         <label for="psw-repeat"><b>Подтверждение пароля</b></label>
-        <input type="password" placeholder="Подтверждение пароля" name="psw_repeat" required>
+        <input type="password" placeholder="Подтверждение пароля" name="psw_repeat"
+ required>
 
         <label for="psw-repeat"><b>Email</b></label>
         <input type="text" placeholder="Ваш Email" name="email" required>
 
         <hr>
         <button type="submit" class="registerbtn">Зарегестрироваться</button>
-    </div>
 
     <div class="container signin">
         <p>Вы уже зарегестрированы? <a href="/Home/Enter">Войти</a>.</p>
@@ -40,6 +42,5 @@
 </form>
 
 
-
-    <script src="~/Content/js/Home/index.js"></script>
+<script src="~/Content/js/Home/index.js"></script>
 

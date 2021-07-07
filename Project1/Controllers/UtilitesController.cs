@@ -13,7 +13,8 @@ namespace Project1.Controllers
         // GET: Utilites
         public ActionResult Index()
         {
-            return View(db.Utilits);
+            //return View(db.Utilits);
+            return null;
         }
     }
 }

@@ -15,6 +15,9 @@ namespace Project1.Controllers
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         WorkInBDUtilits workUtilites = new WorkInBDUtilits();
         WorkInBDAuto workAuto = new WorkInBDAuto();
+
+        //новый день
+
         // GET: NewDay
         public ActionResult Index()
         {
@@ -45,7 +48,6 @@ namespace Project1.Controllers
             if (workMoney.GetMani(Static.UserGame.userId) <= 0)
             {
                 //MessageBox.Show("Game Over");
-                //return Redirect("/Start/GameOver");
                 return View("~/Views/Start/GameOver.cshtml");
             }
             else if (workMoney.GetMani(Static.UserGame.userId)>=Static.UserGame.maniForWin)

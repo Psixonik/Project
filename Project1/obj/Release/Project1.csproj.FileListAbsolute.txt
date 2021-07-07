@@ -176,5 +176,3 @@ C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.csproj.Core
 C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.csproj.CopyComplete
 C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.dll
 C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.pdb
-C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.Migrations.MigrateDB.resources
-C:\Users\Андрей\Desktop\Project1\Project1\obj\Release\Project1.csproj.GenerateResource.cache

@@ -15,6 +15,8 @@ namespace Project1.Controllers
         WorkInBDWorkes workWorkers = new WorkInBDWorkes();
         WorkInBDUtilits workUtilits = new WorkInBDUtilits();
 
+        //показ затрат цеха
+        
         // GET: Payments
         public ActionResult Index()
         {

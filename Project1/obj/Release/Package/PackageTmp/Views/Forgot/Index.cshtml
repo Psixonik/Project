@@ -1,0 +1,47 @@
+﻿<!--forgot-->
+@{
+    ViewBag.Title = "Index";
+}
+<link rel="stylesheet" href="~/Content/css/Forgot/index.css">
+<form method="post" action="/Forgot/Index">
+    <div class="container">
+        <h1>Повторная регистрация</h1>
+        <p>Введите данные</p>
+        <hr>
+        @{
+            if (ViewBag.error[0] != "")
+            {
+                <label for="name"><b>Введите Email</b></label>
+                <input type="text" placeholder="email" name="email" required>
+            }
+            else
+            {
+                <label for="name"><b>Имя</b></label>
+                <input type="text" placeholder="Имя" name="name" required>
+
+                <label for="psw"><b>Пароль</b></label>
+                <input type="password" placeholder="Пароль" name="psw" required>
+
+                <label for="psw-repeat"><b>Подтверждение пароля</b></label>
+                <input type="password" placeholder="Подтверждение пароля" name="psw_repeat" required>
+
+                <label for="psw-repeat"><b>Email</b></label>
+                <input type="text" placeholder="Ваш Email" name="email" required value="@ViewBag.email" readonly>
+            }
+        }
+        <hr>
+        <button type="submit" class="registerbtn">Зарегестрироваться</button>
+    </div>
+
+    <div>
+        <ul>
+            @{
+                foreach (string item in ViewBag.error)
+                {
+                    <li>@item</li>
+                }
+            }
+        </ul>
+    </div>
+</form>
+

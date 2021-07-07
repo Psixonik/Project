@@ -22,14 +22,14 @@ namespace Project1.Controllers
 
         // GET: Bazaar
         [HttpGet]
-        public ActionResult Index(string str)
+        public ActionResult Index(string str)//показать базар
         {
             ViewBag.rezalt = str;
             return View(db.Bazaars);
         }
 
 
-        public ActionResult Buy(string id, string col)
+        public ActionResult Buy(string id, string col)//покупка
         {
             int maniForBuy;
             int maniOfShop;
@@ -44,7 +44,6 @@ namespace Project1.Controllers
             }
            
             maniForBuy = workBazaar.GetDetailDbId(idInBD).money * colBuy;
-            //maniOfShop = workMoney.GetMani(Static.UserGame.userId) *colBuy;
             maniOfShop = workMoney.GetMani(Static.UserGame.userId);
             if (maniForBuy > maniOfShop)
             {
@@ -76,7 +75,7 @@ namespace Project1.Controllers
             return Redirect("\\Bazaar\\Index?str="+str);
         }
 
-        public ActionResult Back()
+        public ActionResult Back()//вернуться назад
         {
             return Redirect("/Home/Index");
         }

@@ -10,7 +10,7 @@ namespace Project1.BDInitializer
 {
    public class Initializer : DropCreateDatabaseAlways<BDContext>
     {
-
+        //использовалось для тестирования
         protected override void Seed(BDContext db)
         {
             Detail p1 = new Detail { name = "кузов", type = "МАЗ", col = 10 };

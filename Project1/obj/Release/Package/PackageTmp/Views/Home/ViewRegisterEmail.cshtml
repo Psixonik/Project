@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Project1.Models.User>
+@using Project1.Models;
+@{
+    ViewBag.Title = "ViewRegisterEmail";
+    User user = @ViewBag.user;
+}
+<link rel="stylesheet" href="~/Content/css/Home/ViewRegisterEmail.css">
+
+<form method="post" action="RegisterEmail">
+    <div class="container">
+        <h1>Вы</h1>
+        <hr>
+
+        <label for="name"><b>Имя :</b></label><br>
+        <label id="labelEmail"><b>@user.name</b></label><br>
+
+        <label for="psw"><b>Email :</b></label><br>
+        <label id="labelGame"><b>@user.email</b></label>
+
+        <hr>
+        <div class="btn">
+            <input id="btnEmail" type="button" value="Подтвердить Email" onclick="location.href='@Url.Action("RegisterEmail", "Home",new { email = @user.email })'" />
+            <input id="btnGame" type="button" value="Пропустить" onclick="location.href='@Url.Action("Enter", "Home")'" />
+        </div>
+    </div>
+
+</form>

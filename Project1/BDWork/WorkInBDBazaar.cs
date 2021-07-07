@@ -16,11 +16,11 @@ namespace Project1.BDWork
             return db.Bazaars.Where(c => c.id == id).FirstOrDefault();
         }
 
-        public string getTypeDetailByNameAndType(string name, string type)
+        public string getTypeDetailByNameAndType(string name, string type)//получить деталь по её типу
         {
             return db.Bazaars.Where(c => c.type == type).FirstOrDefault().type;
         }
-        public string getTypeDetailById(int id)
+        public string getTypeDetailById(int id)//получить деталь по её id
         {
             return db.Bazaars.Where(c => c.id == id).FirstOrDefault().type;
         }

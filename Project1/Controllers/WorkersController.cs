@@ -15,6 +15,8 @@ namespace Project1.Controllers
         BDContext db = new BDContext();
         WorkInBDWorkes workWorkes = new WorkInBDWorkes();
 
+        //рабочии
+        
         // GET: Home
         public ActionResult Index(int? zp)
         {
@@ -46,10 +48,8 @@ namespace Project1.Controllers
             if (ViewBag.ColWorcers > 0 || change == "add")
             {
                 workWorkes.ChenchWorker(change, Static.UserGame.userId);
-                //ViewBag.allZP = workWorkes.GetColWorkes() * workWorkes.GetZP();
                 workWorkes.changAllZp(Static.UserGame.userId);
             }
-            //Thread.Sleep(1000);
             workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
             return PartialView("WorkesPartial", workers);
         }
@@ -58,7 +58,6 @@ namespace Project1.Controllers
         {
             workWorkes.ChenchZP(zp, Static.UserGame.userId);
             workWorkes.changAllZp(Static.UserGame.userId);
-            //Thread.Sleep(1000);
             IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
             return PartialView("ZpPartial", workers);
         }

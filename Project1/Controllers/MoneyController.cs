@@ -16,21 +16,20 @@ namespace Project1.Controllers
         WorkInBDMoney workMoney = new WorkInBDMoney();
         WorkInBDCredit workCredit = new WorkInBDCredit();
         BDContext db = new BDContext();
+
+        //меню банка
+
         // GET: Cash
         public ActionResult Index()
         {
-            /*ViewBag.Credits = workCredit.GetCredits();
-            ViewBag.Day = workCredit.GetDayOfCredits();
-            ViewBag.Lengt = db.Credits.Count();*/
-
-            ViewBag.mani = workMoney.GetMani(Static.UserGame.userId);
-            ViewBag.credit = workMoney.GetCredit(Static.UserGame.userId);
-            ViewBag.day = workMoney.GetDayForCredit(Static.UserGame.userId);
+            ViewBag.mani = workMoney.GetMani(Static.UserGame.userId);//деньги игрока
+            ViewBag.credit = workMoney.GetCredit(Static.UserGame.userId);//возможные кредиты
+            ViewBag.day = workMoney.GetDayForCredit(Static.UserGame.userId);//дни до погашиния кредита
 
             return View(db.Credits);
         }
 
-        public ActionResult Credit(string filtr)
+        public ActionResult Credit(string filtr)//взять кредит или нет?
         {
             if (filtr != "no")
             {

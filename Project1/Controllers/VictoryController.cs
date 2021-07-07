@@ -9,13 +9,15 @@ namespace Project1.Controllers
 {
     public class VictoryController : Controller
     {
+        //победа
+        
         // GET: Victory
         public ActionResult Index()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Win()
+        public ActionResult Win()//заново
         {
             WorkInBDMoney workMoney = new WorkInBDMoney();
             WorkInBDSklad workSklad = new WorkInBDSklad();
