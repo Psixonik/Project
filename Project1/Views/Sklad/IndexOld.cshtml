@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Project1.Models.Detail>
+@using Project1.Models;
+@model dynamic;
+
+@{
+    ViewBag.Title = "Склад";
+}
+<link rel="stylesheet" href="~/Content/css/Sklad/index.css">
+<script src="~/Content/js/jquery.min.js"></script>
+<script src="~/Content/js/workers/index.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+<form name="axez" method="post" action="/Sklad/SkladPartial">
+    <div id="arrow">
+        <label>Назад</label><br>
+        <a href='@Url.Action("Index","Start")'>
+            <img src="~/img/arrow.png" runat="server" alt="Назад" id="arrow_img" />
+        </a>
+    </div>
+    <h1>Склад</h1>
+
+    <div id="list">
+        <select name="dropdowntipo" id="DropDown" , onchange="SelectedIndexChanged(this)">
+            @{
+                foreach (var item in Model)
+                {
+                    {
+                        if (ViewBag.element == item)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                        else
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    }
+                }
+            }
+        </select>
+
+        <a data-ajax="true" data-ajax-begin="clear" data-ajax-loading="#loading"
+           data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Workers/WorkesPartial?change=add">
+            <input />
+        </a>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Тип
+            </th>
+            <th>
+                Количество
+            </th>
+        </tr>
+        <!-- @foreach (Detail item in ViewBag.details)
+         {
+             <tr>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.name)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.type)
+                 </td>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.col)
+                 </td>
+             </tr>
+         }-->
+        <tbody id="data">
+            @Html.Partial("SkladPartial", Model)
+        </tbody>
+
+    </table>
+    <p id="loading" hidden>Загрузка...</p>
+    @{
+        var ajaxOptions = new AjaxOptions
+        {
+            UpdateTargetId = "data",
+            InsertionMode = InsertionMode.Replace,
+            LoadingElementId = "loading",
+            OnBegin = "clear"
+        };
+    }
+</form>
+
+<script type="text/javascript">
+    function SelectedIndexChanged() {
+        document.forms["axez"].submit();
+    }
+</script>
+

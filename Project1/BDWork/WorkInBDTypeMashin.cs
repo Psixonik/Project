@@ -15,14 +15,14 @@ namespace Project1.BDWork
         public TypeMashin GetTypeMashineByName(string name)//получить машину в заказе по имени
         {
             newMashin = db.TypeMashins
-                        .Where(b => b.nameAuto == name)
+                        .Where(b => b.NameAuto == name)
                         .FirstOrDefault();
             return newMashin;
         }
         public TypeMashin GetTypeMashineById(int id)//получить машину в заказе по id
         {
             newMashin = db.TypeMashins
-                        .Where(b => b.id == id)
+                        .Where(b => b.Id == id)
                         .FirstOrDefault();
             return newMashin;
         }

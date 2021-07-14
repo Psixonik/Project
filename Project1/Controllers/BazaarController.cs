@@ -43,8 +43,8 @@ namespace Project1.Controllers
                 return Redirect("\\Bazaar\\Index?str=" + str);
             }
            
-            maniForBuy = workBazaar.GetDetailDbId(idInBD).money * colBuy;
-            maniOfShop = workMoney.GetMani(Static.UserGame.userId);
+            maniForBuy = workBazaar.GetDetailDbId(idInBD).Money * colBuy;
+            maniOfShop = workMoney.GetMani(Static.UserGame.UserId);
             if (maniForBuy > maniOfShop)
             {
                 //MessageBox.Show("Мало денег");
@@ -58,15 +58,16 @@ namespace Project1.Controllers
 
                 try
                 {
-                    detailInSclad = workSklad.GetDeteilSomeBdByType(typeOfDetailInBazaar, Static.UserGame.userId).type;
-                    workSklad.UpdateForBuy(typeOfDetailInBazaar, colBuy, Static.UserGame.userId);
+                    detailInSclad = workSklad.GetDeteilSomeBdByType(typeOfDetailInBazaar, Static.UserGame.UserId).Type;
+                    workSklad.UpdateForBuy(typeOfDetailInBazaar, colBuy, Static.UserGame.UserId);
                 }
                 catch(Exception e)
                 {
+                    e.ToString();
                     Bazaar newBazaar = workBazaar.GetDetailDbId(idInBD);
-                    workSklad.newDetail(newBazaar.name, newBazaar.type, colBuy, Static.UserGame.userId);
+                    workSklad.newDetail(newBazaar.Name, newBazaar.Type, colBuy, Static.UserGame.UserId);
                 }
-                workMoney.minMani(maniForBuy,Static.UserGame.userId);
+                workMoney.minMani(maniForBuy,Static.UserGame.UserId);
                 //MessageBox.Show("Покупка совершена");
                 str = "Покупка совершена";
             }

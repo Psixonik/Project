@@ -30,13 +30,13 @@ namespace Project1.BDInitializer
             db.Credits.RemoveRange(db.Credits);
             db.SaveChanges();
 
-            Detail p1 = new Detail { name = "кузов", type = "МАЗ", col = 10 };
-            Detail p2 = new Detail { name = "кузов", type = "КрАЗ", col = 10 };
-            Detail p3 = new Detail { name = "кузов", type = "БТР", col = 10 };
-            Detail p4 = new Detail { name = "колесо", type = "260", col = 10 };
-            Detail p5 = new Detail { name = "колесо", type = "320", col = 10 };
-            Detail p6 = new Detail { name = "мотор", type = "Мотор для МАЗа", col = 10 };
-            Detail p7 = new Detail { name = "мотор", type = "Мотор для КрАЗа", col = 10 };
+            Detail p1 = new Detail { Name = "кузов", Type = "МАЗ", Col = 10 };
+            Detail p2 = new Detail { Name = "кузов", Type = "КрАЗ", Col = 10 };
+            Detail p3 = new Detail { Name = "кузов", Type = "БТР", Col = 10 };
+            Detail p4 = new Detail { Name = "колесо", Type = "260", Col = 10 };
+            Detail p5 = new Detail { Name = "колесо", Type = "320", Col = 10 };
+            Detail p6 = new Detail { Name = "мотор", Type = "Мотор для МАЗа", Col = 10 };
+            Detail p7 = new Detail { Name = "мотор", Type = "Мотор для КрАЗа", Col = 10 };
             //Detail p8 = new Detail { name = "мотор", type = "Мотор для ЗИЛа", col = 1 };
             db.Details.Add(p1);
             db.Details.Add(p2);
@@ -48,13 +48,13 @@ namespace Project1.BDInitializer
             //db.Detail.Add(p8);
             db.SaveChanges();
 
-            Money money = new Money { cash = 1000, credit = 0, dayForCredit = 0 };
+            Money money = new Money { Cash = 1000, Credit = 0, DayForCredit = 0 };
             db.Moneys.Add(money);
             db.SaveChanges();
 
-            Zakaz z1 = new Zakaz { name = "КрАЗ", col = 1, money = 100 };
-            Zakaz z2 = new Zakaz { name = "МАЗ", col = 1, money = 200 };
-            Zakaz z3 = new Zakaz { name = "БТР", col = 1, money = 300 };
+            Zakaz z1 = new Zakaz { Name = "КрАЗ", Col = 1, Money = 100 };
+            Zakaz z2 = new Zakaz { Name = "МАЗ", Col = 1, Money = 200 };
+            Zakaz z3 = new Zakaz { Name = "БТР", Col = 1, Money = 300 };
             db.Zakazs.Add(z1);
             db.Zakazs.Add(z2);
             db.Zakazs.Add(z3);
@@ -62,39 +62,39 @@ namespace Project1.BDInitializer
 
             TypeMashin t1 = new TypeMashin
             {
-                kyzov = "КрАЗ",
-                colKyzov = 1,
-                koleso = "260",
-                colKoleso = 4,
-                motor = "Мотор для КрАЗа",
-                colMotor = 1
+                Kyzov = "КрАЗ",
+                ColKyzov = 1,
+                Koleso = "260",
+                ColKoleso = 4,
+                Motor = "Мотор для КрАЗа",
+                ColMotor = 1
             };
             TypeMashin t2 = new TypeMashin
             {
-                kyzov = "МАЗ",
-                colKyzov = 1,
-                koleso = "260",
-                colKoleso = 4,
-                motor = "Мотор для МАЗа",
-                colMotor = 1
+                Kyzov = "МАЗ",
+                ColKyzov = 1,
+                Koleso = "260",
+                ColKoleso = 4,
+                Motor = "Мотор для МАЗа",
+                ColMotor = 1
             };
             TypeMashin t3 = new TypeMashin
             {
-                kyzov = "ЗИЛ",
-                colKyzov = 1,
-                koleso = "260",
-                colKoleso = 4,
-                motor = "Мотор для ЗИЛа",
-                colMotor = 1
+                Kyzov = "ЗИЛ",
+                ColKyzov = 1,
+                Koleso = "260",
+                ColKoleso = 4,
+                Motor = "Мотор для ЗИЛа",
+                ColMotor = 1
             };
             TypeMashin t4 = new TypeMashin
             {
-                kyzov = "БТР",
-                colKyzov = 1,
-                koleso = "320",
-                colKoleso = 8,
-                motor = "Мотор для КрАЗа",
-                colMotor = 2
+                Kyzov = "БТР",
+                ColKyzov = 1,
+                Koleso = "320",
+                ColKoleso = 8,
+                Motor = "Мотор для КрАЗа",
+                ColMotor = 2
             };
             db.TypeMashins.Add(t1);
             db.TypeMashins.Add(t2);
@@ -104,16 +104,16 @@ namespace Project1.BDInitializer
 
 
 
-            Bazaar bazaar1 = new Bazaar { name = "кузов", type = "МАЗ", money = 10 };
-            Bazaar bazaar2 = new Bazaar { name = "кузов", type = "КрАЗ", money = 20 };
-            Bazaar bazaar3 = new Bazaar { name = "кузов", type = "БТР", money = 30 };
+            Bazaar bazaar1 = new Bazaar { Name = "кузов", Type = "МАЗ", Money = 10 };
+            Bazaar bazaar2 = new Bazaar { Name = "кузов", Type = "КрАЗ", Money = 20 };
+            Bazaar bazaar3 = new Bazaar { Name = "кузов", Type = "БТР", Money = 30 };
 
-            Bazaar bazaar4 = new Bazaar { name = "колесо", type = "260", money = 10 };
-            Bazaar bazaar5 = new Bazaar { name = "колесо", type = "320", money = 20 };
+            Bazaar bazaar4 = new Bazaar { Name = "колесо", Type = "260", Money = 10 };
+            Bazaar bazaar5 = new Bazaar { Name = "колесо", Type = "320", Money = 20 };
 
-            Bazaar bazaar6 = new Bazaar { name = "мотор", type = "Мотор для МАЗа", money = 10 };
-            Bazaar bazaar7 = new Bazaar { name = "мотор", type = "Мотор для КрАЗа", money = 20 };
-            Bazaar bazaar8 = new Bazaar { name = "мотор", type = "Мотор для ЗИЛа", money = 30 };
+            Bazaar bazaar6 = new Bazaar { Name = "мотор", Type = "Мотор для МАЗа", Money = 10 };
+            Bazaar bazaar7 = new Bazaar { Name = "мотор", Type = "Мотор для КрАЗа", Money = 20 };
+            Bazaar bazaar8 = new Bazaar { Name = "мотор", Type = "Мотор для ЗИЛа", Money = 30 };
 
             db.Bazaars.Add(bazaar1);
             db.Bazaars.Add(bazaar2);
@@ -125,21 +125,21 @@ namespace Project1.BDInitializer
             db.Bazaars.Add(bazaar8);
             db.SaveChanges();
 
-            Worker workers = new Worker { colWorkers = 3, zp = 50 };
+            Worker workers = new Worker { ColWorkers = 3, Zp = 50 };
             db.Workers.Add(workers);
             db.SaveChanges();
 
-            Credit credit1 = new Credit { cash = 5000, day = 5 };
-            Credit credit2 = new Credit { cash = 10000, day = 10 };
-            Credit credit3 = new Credit { cash = 15000, day = 15 };
+            Credit credit1 = new Credit { Cash = 5000, Day = 5 };
+            Credit credit2 = new Credit { Cash = 10000, Day = 10 };
+            Credit credit3 = new Credit { Cash = 15000, Day = 15 };
             db.Credits.Add(credit1);
             db.Credits.Add(credit2);
             db.Credits.Add(credit3);
             db.SaveChanges();
 
-            NameOfMashin nameOfMashin1 = new NameOfMashin { nameAuto = "ЗИЛ", cost = 1000, services = 100, content = 100 };
-            NameOfMashin nameOfMashin2 = new NameOfMashin { nameAuto = "МАЗ", cost = 5000, services = 150, content = 150 };
-            NameOfMashin nameOfMashin3 = new NameOfMashin { nameAuto = "КрАЗ", cost = 25000, services = 300, content = 300 };
+            NameOfMashin nameOfMashin1 = new NameOfMashin { NameAuto = "ЗИЛ", Cost = 1000, Services = 100, Content = 100 };
+            NameOfMashin nameOfMashin2 = new NameOfMashin { NameAuto = "МАЗ", Cost = 5000, Services = 150, Content = 150 };
+            NameOfMashin nameOfMashin3 = new NameOfMashin { NameAuto = "КрАЗ", Cost = 25000, Services = 300, Content = 300 };
             db.Auto.Add(nameOfMashin1);
             db.Auto.Add(nameOfMashin2);
             db.Auto.Add(nameOfMashin3);

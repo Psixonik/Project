@@ -15,45 +15,45 @@ namespace Project1.BDWork
 
         public IEnumerable<Auto> GetAutoAll(int userId)//получить все машины игрока
         {
-            IEnumerable<Auto> axez=db.Autoes.Where(c =>  c.userId == userId);
+            IEnumerable<Auto> axez=db.Autoes.Where(c =>  c.UserId == userId);
             return axez;
         }
         public void SetAuto(int userId,string nameAuto, int services, int content, sbyte broken)//игрок купил новую машину
         {
-            Auto auto = new Auto { userId=userId,nameAuto = nameAuto, services = services, content = content, broken = broken };
+            Auto auto = new Auto { UserId=userId,NameAuto = nameAuto, Services = services, Content = content, Broken = broken };
             db.Autoes.Add(auto);
             db.SaveChanges();
         }
 
         public Auto GetAutoById(int id,int userId)//конкретная машина игрока
         {
-            return db.Autoes.Where(c => (c.id == id && c.userId==userId)).FirstOrDefault();
+            return db.Autoes.Where(c => (c.Id == id && c.UserId==userId)).FirstOrDefault();
         }
 
         public void JobsEnd(int id, int userId)//машина отработала
         {
-            Auto mashina =db.Autoes.Where(c => (c.id == id && c.userId == userId)).FirstOrDefault();
-            mashina.broken = 0;//Магическое число
+            Auto mashina =db.Autoes.Where(c => (c.Id == id && c.UserId == userId)).FirstOrDefault();
+            mashina.Broken = 0;//Магическое число
             db.SaveChanges();
         }
 
         public void Broken(int id, int userId)//машина сламалась
         {
-            Auto mashina = db.Autoes.Where(c => (c.id == id && c.userId == userId)).FirstOrDefault();
-            mashina.broken = -1;//Магическое число
+            Auto mashina = db.Autoes.Where(c => (c.Id == id && c.UserId == userId)).FirstOrDefault();
+            mashina.Broken = -1;//Магическое число
             db.SaveChanges();
         }
 
         public int GetContent(int id, int userId)//сколько машина может заработать
         {
-            Auto mashina = db.Autoes.Where(c => (c.id == id && c.userId == userId)).FirstOrDefault();
-            return mashina.maxContent;
+            Auto mashina = db.Autoes.Where(c => (c.Id == id && c.UserId == userId)).FirstOrDefault();
+            return mashina.MaxContent;
         }
 
         public void SetBroken(int broken, int id, int userId)//состояние машины (отработала, сламалась)
         {
-            Auto mashina = db.Autoes.Where(c => (c.id == id && c.userId == userId)).FirstOrDefault();
-            mashina.broken = broken;
+            Auto mashina = db.Autoes.Where(c => (c.Id == id && c.UserId == userId)).FirstOrDefault();
+            mashina.Broken = broken;
             db.SaveChanges();
         }
 
@@ -63,18 +63,18 @@ namespace Project1.BDWork
             Auto[] autos = db.Autoes.ToArray();
             foreach (Auto item in db.Autoes)
             {
-                if (item.broken == 0)
+                if (item.Broken == 0)
                 {
-                    arr.Add(item.id);
+                    arr.Add(item.Id);
                 }
             }
             for (int i = 0; i < arr.Count; i++)
             {
                 int axez = arr.ElementAt(i);
-                Auto auto = db.Autoes.Where(c => (c.id == axez && c.userId == userId)).FirstOrDefault();
+                Auto auto = db.Autoes.Where(c => (c.Id == axez && c.UserId == userId)).FirstOrDefault();
                 if (auto != null)
                 {
-                    auto.broken = 1;
+                    auto.Broken = 1;
                 }
                 db.SaveChanges();
             }
@@ -82,7 +82,7 @@ namespace Project1.BDWork
 
         public void DeletUserAndCreateNew(int userId)//удаление машин игрока
         {
-            IList<Auto> autoes = db.Autoes.Where(c => c.userId == userId).ToArray();
+            IList<Auto> autoes = db.Autoes.Where(c => c.UserId == userId).ToArray();
 
             if (autoes != null)
             {
@@ -96,10 +96,10 @@ namespace Project1.BDWork
 
         public void SaleAuto(int idMashin, int userId)//продажа машины
         {
-            Auto mashina = db.Autoes.Where(c => (c.id == idMashin && c.userId == userId)).FirstOrDefault();
+            Auto mashina = db.Autoes.Where(c => (c.Id == idMashin && c.UserId == userId)).FirstOrDefault();
             db.Autoes.Remove(mashina);
             db.SaveChanges();
-            workMoney.AddMoney(mashina.content/2, userId);
+            workMoney.AddMoney(mashina.Content/2, userId);
         }
     }
 }

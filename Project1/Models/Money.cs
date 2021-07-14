@@ -7,22 +7,22 @@ namespace Project1.Models
 {
     public class Money
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int userId { get; set; }//идентификатор игрока
+        public int UserId { get; set; }//идентификатор игрока
 
-        public int cash { get; set; }//наличьность игрока
+        public int Cash { get; set; }//наличьность игрока
 
-        public int credit { get; set; }//сумма кредита
+        public int Credit { get; set; }//сумма кредита
 
-        public int dayForCredit { get; set; }//дней до погашения кредита
+        public int DayForCredit { get; set; }//дней до погашения кредита
 
         public Money(int userId, int cash, int credit, int dayForCredit)
         {
-            this.userId = userId;
-            this.cash = cash;
-            this.credit = credit;
-            this.dayForCredit = dayForCredit;
+            this.UserId = userId;
+            this.Cash = cash;
+            this.Credit = credit;
+            this.DayForCredit = dayForCredit;
         }
         public Money()
         {

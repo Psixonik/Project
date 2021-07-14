@@ -12,14 +12,14 @@
         <hr>
 
         <label for="name"><b>Имя :</b></label><br>
-        <label id="labelEmail"><b>@user.name</b></label><br>
+        <label id="labelEmail"><b>@user.Name</b></label><br>
 
         <label for="psw"><b>Email :</b></label><br>
-        <label id="labelGame"><b>@user.email</b></label>
+        <label id="labelGame"><b>@user.Email</b></label>
 
         <hr>
         <div class="btn">
-            <input id="btnEmail" type="button" value="Подтвердить Email" onclick="location.href='@Url.Action("RegisterEmail", "Home",new { email = @user.email })'" />
+            <input id="btnEmail" type="button" value="Подтвердить Email" onclick="location.href='@Url.Action("RegisterEmail", "Home",new { email = @user.Email })'" />
             <input id="btnGame" type="button" value="Пропустить" onclick="location.href='@Url.Action("Enter", "Home")'" />
         </div>
     </div>

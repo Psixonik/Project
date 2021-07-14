@@ -21,44 +21,44 @@ namespace Project1.Controllers
         public ActionResult Index(int? zp)
         {
 
-            ViewBag.worker = workWorkes.GetColWorkes(Static.UserGame.userId);
+            ViewBag.worker = workWorkes.GetColWorkes(Static.UserGame.UserId);
             if (zp != null)
             {
                 ViewBag.allZP = zp * ViewBag.worker;
                 ViewBag.zp = zp;
-                workWorkes.ChenchZP((int)zp, Static.UserGame.userId);
+                workWorkes.ChenchZP((int)zp, Static.UserGame.UserId);
             }
             else
             {
-                ViewBag.allZP = workWorkes.GetZP(Static.UserGame.userId) * ViewBag.worker;
-                ViewBag.zp = workWorkes.GetZP(Static.UserGame.userId);
+                ViewBag.allZP = workWorkes.GetZP(Static.UserGame.UserId) * ViewBag.worker;
+                ViewBag.zp = workWorkes.GetZP(Static.UserGame.UserId);
             }
-            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
+            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.UserId);
             return View(workers);
         }
 
         public PartialViewResult WorkesPartial(string change)
         {
-            ViewBag.ColWorcers = workWorkes.GetColWorkes(Static.UserGame.userId);
-            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
+            ViewBag.ColWorcers = workWorkes.GetColWorkes(Static.UserGame.UserId);
+            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.UserId);
             if (ViewBag.ColWorcers >= 3 && change == "add")
             {
                 return PartialView("WorkesPartial", workers);
             }
             if (ViewBag.ColWorcers > 0 || change == "add")
             {
-                workWorkes.ChenchWorker(change, Static.UserGame.userId);
-                workWorkes.changAllZp(Static.UserGame.userId);
+                workWorkes.ChenchWorker(change, Static.UserGame.UserId);
+                workWorkes.changAllZp(Static.UserGame.UserId);
             }
-            workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
+            workers = db.Workers.Where(c => c.userId == Static.UserGame.UserId);
             return PartialView("WorkesPartial", workers);
         }
 
         public PartialViewResult ZpPartial(int zp)
         {
-            workWorkes.ChenchZP(zp, Static.UserGame.userId);
-            workWorkes.changAllZp(Static.UserGame.userId);
-            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.userId);
+            workWorkes.ChenchZP(zp, Static.UserGame.UserId);
+            workWorkes.changAllZp(Static.UserGame.UserId);
+            IEnumerable<Worker> workers = db.Workers.Where(c => c.userId == Static.UserGame.UserId);
             return PartialView("ZpPartial", workers);
         }
     }

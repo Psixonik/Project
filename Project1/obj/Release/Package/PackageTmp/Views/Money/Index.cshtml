@@ -57,18 +57,18 @@
                 @{
                     foreach (var item in Model)
                     {
-                        <tr class="cheart+@item.id">
+                        <tr class="cheart+@item.Id">
                             <td>
-                                @item.cash
+                                @item.Cash
                             </td>
                             <td>
-                                @item.day
+                                @item.Day
                             </td>
                             <td>
-                                <text style="visibility:visible;width:30px;color:transparent" id="id+@item.id">@item.id</text>
-                                <text style="visibility:visible;width:30px;color:transparent" id="cash+@item.id">@item.cash</text>
-                                <text style="visibility:visible;width:30px;color:transparent" id="day+@item.id">@item.day</text>
-                                <input class="question" value="@item.id" onclick="test(this)">
+                                <text style="visibility:visible;width:30px;color:transparent" id="id+@item.Id">@item.Id</text>
+                                <text style="visibility:visible;width:30px;color:transparent" id="cash+@item.Id">@item.Cash</text>
+                                <text style="visibility:visible;width:30px;color:transparent" id="day+@item.Id">@item.Day</text>
+                                <input class="question" value="@item.Id" onclick="test(this)">
                             </td>
                         </tr>
                     }

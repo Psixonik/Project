@@ -9,13 +9,13 @@ namespace Project1.Models
     {
         public int id { get; set; }//primary key
 
-        public string name { get; set; }//имя игрока
+        public string Name { get; set; }//имя игрока
 
-        public string pas { get; set; }//пароль игрока
+        public string Pas { get; set; }//пароль игрока
 
-        public string email { get; set; }//Email игрока
+        public string Email { get; set; }//Email игрока
 
-        public bool correctEmail { get; set; }//подтвержден или нет Email
+        public bool CorrectEmail { get; set; }//подтвержден или нет Email
 
 
         public User()
@@ -23,16 +23,16 @@ namespace Project1.Models
 
         public User(string name, string pas)
         {
-            this.name = name;
-            this.pas = pas;
+            this.Name = name;
+            this.Pas = pas;
         }
         public User(int id,string name, string pas, string email, bool correctEmail)
         {
             this.id = id;
-            this.name = name;
-            this.pas = pas;
-            this.email = email;
-            this.correctEmail = correctEmail;
+            this.Name = name;
+            this.Pas = pas;
+            this.Email = email;
+            this.CorrectEmail = correctEmail;
         }
     }
 }

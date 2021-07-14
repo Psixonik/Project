@@ -31,10 +31,10 @@ namespace Project1.Controllers
         {
             foreach (var item in db.Zakazs)
             {
-                newMashin = workInBDTypeMashin.GetTypeMashineByName(item.name);
-                titl.Add(newMashin.kyzov + " "+newMashin.colKyzov+" шт."+
-                        "\nКолесо: " + newMashin.koleso + " " + newMashin.colKoleso + " шт.\n" +
-                        newMashin.motor + " " + newMashin.colMotor + " шт.");
+                newMashin = workInBDTypeMashin.GetTypeMashineByName(item.Name);
+                titl.Add(newMashin.Kyzov + " "+newMashin.ColKyzov+" шт."+
+                        "\nКолесо: " + newMashin.Koleso + " " + newMashin.ColKoleso + " шт.\n" +
+                        newMashin.Motor + " " + newMashin.ColMotor + " шт.");
             }
             ViewBag.titl = titl;            
             return View(db.Zakazs);
@@ -42,17 +42,17 @@ namespace Project1.Controllers
 
         public  ActionResult Create(Zakaz zakaz)
         {
-            newMashin = workInBDTypeMashin.GetTypeMashineByName(zakaz.name);
+            newMashin = workInBDTypeMashin.GetTypeMashineByName(zakaz.Name);
             Kyzov(errorCrear, newMashin,zakaz);
             Koleso(errorCrear, newMashin, zakaz);
             Motor(errorCrear, newMashin, zakaz);
           
             if (fl)
             {
-                workInBDZakaz.UpdateSklad(zakaz, newMashin,Static.UserGame.userId);
-                workInBDZakaz.deletZacaz(zakaz.id);
-                money.AddMoney(zakaz, Static.UserGame.userId);
-                errorCrear.Add("Сборка заказа завершена. Вы получили "+zakaz.money +" $");
+                workInBDZakaz.UpdateSklad(zakaz, newMashin,Static.UserGame.UserId);
+                workInBDZakaz.deletZacaz(zakaz.Id);
+                money.AddMoney(zakaz, Static.UserGame.UserId);
+                errorCrear.Add("Сборка заказа завершена. Вы получили "+zakaz.Money +" $");
             }
             ViewBag.errorCrear = errorCrear;            
             return View();
@@ -60,18 +60,18 @@ namespace Project1.Controllers
 
         private void Kyzov(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
-            threKyzov = workInBDZakaz.Kyzov(newMashin,Static.UserGame.userId);
-            BildZakaz(threKyzov,zakaz, "кузов", newMashin.colKyzov);
+            threKyzov = workInBDZakaz.Kyzov(newMashin,Static.UserGame.UserId);
+            BildZakaz(threKyzov,zakaz, "кузов", newMashin.ColKyzov);
         }
         private void Koleso(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         {
-            threKoleso = workInBDZakaz.Koleso(newMashin, Static.UserGame.userId);
-            BildZakaz(threKoleso, zakaz, "колесо", newMashin.colKoleso);
+            threKoleso = workInBDZakaz.Koleso(newMashin, Static.UserGame.UserId);
+            BildZakaz(threKoleso, zakaz, "колесо", newMashin.ColKoleso);
         }
         private void Motor(List<string> errorCrear, TypeMashin newMashin, Zakaz zakaz)
         { 
-            threMotor = workInBDZakaz.Motor(newMashin, Static.UserGame.userId);
-            BildZakaz(threMotor, zakaz, "мотор", newMashin.colMotor);
+            threMotor = workInBDZakaz.Motor(newMashin, Static.UserGame.UserId);
+            BildZakaz(threMotor, zakaz, "мотор", newMashin.ColMotor);
         }
 
         private void BildZakaz(Detail type,Zakaz zakaz, string str, int col)
@@ -79,19 +79,19 @@ namespace Project1.Controllers
             if (type == null)
             {
                 fl = false;
-                errorCrear.Add("На складе ненайден " + str +" типа "+ zakaz.name);
+                errorCrear.Add("На складе ненайден " + str +" типа "+ zakaz.Name);
             }
-            if (type != null && type.col < col * zakaz.col)
+            if (type != null && type.Col < col * zakaz.Col)
             {
                 fl = false;
-                errorCrear.Add("На складе недостаточьно " + str + " типа " + type.type+
-                    ". В наличии " + type.col + ". Необходимо " + col * zakaz.col);
+                errorCrear.Add("На складе недостаточьно " + str + " типа " + type.Type+
+                    ". В наличии " + type.Col + ". Необходимо " + col * zakaz.Col);
             }
         }
 
         public ActionResult Delet(Zakaz zakaz)
         {
-            workInBDZakaz.deletZacaz(zakaz.id);
+            workInBDZakaz.deletZacaz(zakaz.Id);
             return Redirect("/Zakaz/AllZakaz");
         }
     }

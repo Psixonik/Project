@@ -7,15 +7,15 @@ namespace Project1.Models
 {
     public class NameOfMashin
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public string nameAuto { get; set; }//название
+        public string NameAuto { get; set; }//название
 
-        public int cost { get; set; }//цена
+        public int Cost { get; set; }//цена
 
-        public int services { get; set; }//цена услуги
+        public int Services { get; set; }//цена услуги
 
-        public int content { get; set; }//содержание
+        public int Content { get; set; }//содержание
 
     }
 }

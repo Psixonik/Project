@@ -27,7 +27,7 @@ namespace Project1.BDWork
         public Detail Kyzov(TypeMashin newMashin, int userId)//получить количество кузовов машины в заказе
         {
             threKyzov = db.Details
-                        .Where(b => (b.type == newMashin.kyzov && b.userId == userId))
+                        .Where(b => (b.Type == newMashin.Kyzov && b.UserId == userId))
                         .FirstOrDefault();
             return threKyzov;
         }
@@ -35,14 +35,14 @@ namespace Project1.BDWork
         {
 
             threKoleso = db.Details
-                         .Where(b => (b.type == newMashin.koleso && b.userId == userId))
+                         .Where(b => (b.Type == newMashin.Koleso && b.UserId == userId))
                          .FirstOrDefault();
             return threKoleso;
         }
         public Detail Motor(TypeMashin newMashin, int userId)//получить количество моторов машины в заказе
         {
             threMotor = db.Details
-                        .Where(b => (b.type == newMashin.motor && b.userId == userId))
+                        .Where(b => (b.Type == newMashin.Motor && b.UserId == userId))
                         .FirstOrDefault();
             return threMotor;
         }
@@ -55,7 +55,7 @@ namespace Project1.BDWork
         public void deletZacaz(int id)//убрать заказ
         {
             Zakaz forDelet = db.Zakazs
-                            .Where(o => o.id == id)
+                            .Where(o => o.Id == id)
                             .FirstOrDefault();
             db.Zakazs.Remove(forDelet);
             db.SaveChanges();
@@ -74,14 +74,14 @@ namespace Project1.BDWork
             Zakaz zakaz = new Zakaz();
             Random rnd = new Random();
             colWorkers = workWorkers.GetColWorkes(userId);
-            IEnumerable<string> nameOfMashin = (from c in db.TypeMashins select c.nameAuto);
+            IEnumerable<string> nameOfMashin = (from c in db.TypeMashins select c.NameAuto);
             var arrNameOfMashin = nameOfMashin.ToArray();
 
             for (int i = 0; i < colWorkers; i++)//Количество заказов.
             {
-                zakaz.name = arrNameOfMashin[rnd.Next(COL_MASHIN)];
-                zakaz.col = rnd.Next(4)+1;//магическое число. Количество машин в заказе.
-                zakaz.money = rnd.Next(100)+1;//магическое число. Цена заказа.
+                zakaz.Name = arrNameOfMashin[rnd.Next(COL_MASHIN)];
+                zakaz.Col = rnd.Next(4)+1;//магическое число. Количество машин в заказе.
+                zakaz.Money = rnd.Next(100)+1;//магическое число. Цена заказа.
 
                 db.Zakazs.Add(zakaz);
                 db.SaveChanges();

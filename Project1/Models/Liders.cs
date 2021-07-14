@@ -7,8 +7,8 @@ namespace Project1.Models
 {
     public class Liders
     {
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public int cash { get; set; }
+        public int Cash { get; set; }
     }
 }

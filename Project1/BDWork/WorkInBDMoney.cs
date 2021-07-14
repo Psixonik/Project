@@ -17,24 +17,24 @@ namespace Project1.BDWork
 
         public int GetMani(int userId)//получить наличьность игрока
         {
-            Money axez = db.Moneys.Where(c => c.userId == userId).FirstOrDefault();
-            return axez.cash;
+            Money axez = db.Moneys.Where(c => c.UserId == userId).FirstOrDefault();
+            return axez.Cash;
         }
         public void AddMoney(Zakaz zakaz,int userId)//увеличить деньги игрока
         {
-            int moneyForZakaz = zakaz.money;
-            Money moneyUpdate = db.Moneys.Where(c => c.userId == userId).FirstOrDefault();
-            moneyUpdate.cash += moneyForZakaz;
+            int moneyForZakaz = zakaz.Money;
+            Money moneyUpdate = db.Moneys.Where(c => c.UserId == userId).FirstOrDefault();
+            moneyUpdate.Cash += moneyForZakaz;
             db.SaveChanges();
         }
 
         public void minMani(int minMani, int userId)//уменьшить деньги игрока
         {
 
-            Money moneyUpdate = db.Moneys.Where(p => p.userId == userId).FirstOrDefault();
+            Money moneyUpdate = db.Moneys.Where(p => p.UserId == userId).FirstOrDefault();
             if (moneyUpdate != null)
             {
-                moneyUpdate.cash -= minMani;
+                moneyUpdate.Cash -= minMani;
             }
             db.SaveChanges();
         }
@@ -43,47 +43,47 @@ namespace Project1.BDWork
         {
             int minZpWorkers = workWorkers.GetColWorkes(userId) * workWorkers.GetZP(userId);
             int minUtilits = workUtilits.GetGas(userId) + workUtilits.GetWater(userId) + workUtilits.GetElectro(userId);
-            Money moneyUpdate = db.Moneys.Where(c => c.userId == userId).FirstOrDefault();
-            moneyUpdate.cash -= (minZpWorkers + minUtilits);
+            Money moneyUpdate = db.Moneys.Where(c => c.UserId == userId).FirstOrDefault();
+            moneyUpdate.Cash -= (minZpWorkers + minUtilits);
             db.SaveChanges();
         }
 
         public int GetCredit(int userId)//получить кредит игрока
         {
-            return db.Moneys.Where(c => c.userId == userId).FirstOrDefault().credit;
+            return db.Moneys.Where(c => c.UserId == userId).FirstOrDefault().Credit;
         }
 
         public int GetDayForCredit(int userId)//получить количество дней до попогашения кредита игроком
         {
-            return db.Moneys.Where(c => c.userId == userId).FirstOrDefault().dayForCredit;
+            return db.Moneys.Where(c => c.UserId == userId).FirstOrDefault().DayForCredit;
         }
 
         public void AddManiForCredit(int cash, int day, int userId)//игрок взял кредит
         {
-            Money moneyUpdate = db.Moneys.Where(p => p.userId == userId).FirstOrDefault();
+            Money moneyUpdate = db.Moneys.Where(p => p.UserId == userId).FirstOrDefault();
             if (moneyUpdate != null)
             {
-                moneyUpdate.cash += cash;
+                moneyUpdate.Cash += cash;
             }
             db.SaveChanges();
-            moneyUpdate.credit = cash;
+            moneyUpdate.Credit = cash;
             db.SaveChanges();
-            moneyUpdate.dayForCredit = day;
+            moneyUpdate.DayForCredit = day;
             db.SaveChanges();
         }
 
         public void MinDayForCredit(int userId)//уменьшить количество дней до погашения кредита
         {
-            Money moneyUpdate = db.Moneys.Where(p => p.userId == userId).FirstOrDefault();
+            Money moneyUpdate = db.Moneys.Where(p => p.UserId == userId).FirstOrDefault();
             if (moneyUpdate != null)
             {
-                if (moneyUpdate.dayForCredit == 0)
+                if (moneyUpdate.DayForCredit == 0)
                 {
                     MessageBox.Show("Game Over");
                 }
                 else
                 {
-                    moneyUpdate.dayForCredit--;
+                    moneyUpdate.DayForCredit--;
                 }
             }
             db.SaveChanges();
@@ -91,15 +91,15 @@ namespace Project1.BDWork
 
         public void AddMoney(int cash, int userId)//увеличить деньги игрока
         {
-            Money moneyUpdate = db.Moneys.Where(p => p.userId == userId).FirstOrDefault();
-            moneyUpdate.cash += cash;
+            Money moneyUpdate = db.Moneys.Where(p => p.UserId == userId).FirstOrDefault();
+            moneyUpdate.Cash += cash;
             db.SaveChanges();
         }
 
         public void MinCredit(int userId)//вычесть кредит
         {
-            Money moneyUpdate = db.Moneys.Where(p => p.userId == userId).FirstOrDefault();
-            moneyUpdate.credit = 0;
+            Money moneyUpdate = db.Moneys.Where(p => p.UserId == userId).FirstOrDefault();
+            moneyUpdate.Credit = 0;
             db.SaveChanges();
         }
 
@@ -112,7 +112,7 @@ namespace Project1.BDWork
 
         public void DeletUserAndCreateNew(int userId)//удалить игрока
         {
-            IList<Money> moneys = db.Moneys.Where(c => c.userId == userId).ToArray();
+            IList<Money> moneys = db.Moneys.Where(c => c.UserId == userId).ToArray();
 
             if (moneys != null)
             {
@@ -122,7 +122,7 @@ namespace Project1.BDWork
                     db.SaveChanges();
                 }
             }
-            СreateNewUser(userId, UserGame.cash, UserGame.credit, UserGame.dayForCredit);
+            СreateNewUser(userId, UserGame.Cash, UserGame.Credit, UserGame.DayForCredit);
         }
     }
 

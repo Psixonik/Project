@@ -7,15 +7,15 @@ namespace Project1.Models
 {
     public class Detail
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int userId { get; set; }//идентификатор игрока
+        public int UserId { get; set; }//идентификатор игрока
 
-        public string name { get; set; }//Наименование детали ("Мотор для КРаЗ","Мотор для МАЗ")
+        public string Name { get; set; }//Наименование детали ("Мотор для КРаЗ","Мотор для МАЗ")
 
-        public string type { get; set; }//тип детали ("Кузов","колесо")
+        public string Type { get; set; }//тип детали ("Кузов","колесо")
 
-        public int col { get; set; }//количество деталей
+        public int Col { get; set; }//количество деталей
 
     }
 }

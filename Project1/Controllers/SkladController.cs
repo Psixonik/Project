@@ -26,7 +26,7 @@ namespace Project1.Controllers
         {
             creatSeachName();
             ViewBag.element = " ";
-            ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.userId);
+            ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.UserId);
             return View(ViewBag.details);
         }
 
@@ -45,19 +45,19 @@ namespace Project1.Controllers
             {
                 case "все":
                     {
-                        ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.userId);
+                        ViewBag.details = workInBDSklad.GetDeteilAll(Static.UserGame.UserId);
                         return View(db.Details);
                     }
                 default:
                     {
-                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.userId);
+                        ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.UserId);
                         return View(ViewBag.details);
                     }
             }
         }
         public PartialViewResult SkladPartial(string dropdowntipo)
         {
-            ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.userId);
+            ViewBag.details = workInBDSklad.GetDeteilSomeBdByName(dropdowntipo, Static.UserGame.UserId);
             return PartialView("SkladPartial", ViewBag.details);
         }
     }

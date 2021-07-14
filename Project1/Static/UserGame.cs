@@ -10,24 +10,24 @@ namespace Project1.Static
 
         //данные нового игрока
 
-        public static int userId { get; set; }
+        public static int UserId { get; set; }
 
-        public static int counaxez { get; set; } = 1;
+        public static int Counaxez { get; set; } = 1;
 
-        public static int cash { get; set; } = 10000;
-        public static int credit { get; set; } = 0;
-        public static int dayForCredit { get; set; } = 0;
+        public static int Cash { get; set; } = 10000;
+        public static int Credit { get; set; } = 0;
+        public static int DayForCredit { get; set; } = 0;
 
-        public static int gas { get; set; } = 100;
-        public static int water { get; set; } = 100;
-        public static int electro { get; set; } = 100;
+        public static int Gas { get; set; } = 100;
+        public static int Water { get; set; } = 100;
+        public static int Electro { get; set; } = 100;
 
-        public static int colWorkers { get; set; } = 0;
-        public static int zp { get; set; } = 0;
-        public static int al { get; set; } = 0;
-        public static int dayOfStrike { get; set; } = 0;
-        public static bool strike { get; set; } = false;
+        public static int ColWorkers { get; set; } = 0;
+        public static int Zp { get; set; } = 0;
+        public static int Al { get; set; } = 0;
+        public static int DayOfStrike { get; set; } = 0;
+        public static bool Strike { get; set; } = false;
 
-        public static int maniForWin { get; set; } = 1000000;
+        public static int ManiForWin { get; set; } = 1000000;
     }
 }

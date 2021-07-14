@@ -7,12 +7,12 @@ namespace Project1.Models
 {
     public class Bazaar
     {
-        public int id { get; set; }//primary key
+        public int Id { get; set; }//primary key
 
-        public string name { get; set; }//Наименование детали ("Мотор для КРаЗ","Мотор для МАЗ")
+        public string Name { get; set; }//Наименование детали ("Мотор для КРаЗ","Мотор для МАЗ")
 
-        public string type { get; set; }//тип детали ("Кузов","колесо")
+        public string Type { get; set; }//тип детали ("Кузов","колесо")
 
-        public int money { get; set; }//стоимость
+        public int Money { get; set; }//стоимость
     }
 }

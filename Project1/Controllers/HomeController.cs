@@ -49,7 +49,7 @@ namespace Project1.Controllers
             ViewBag.error = error;
             if (reg)
             {
-                user = new User(Static.UserGame.userId, name, psw, email, false);
+                user = new User(Static.UserGame.UserId, name, psw, email, false);
                 workUser.SaveUser(user);
                 Static.NewUser.CreatNewUser(user.id);
                 error.Add("Юзер добавлен");
@@ -105,7 +105,7 @@ namespace Project1.Controllers
             try
             {
                 Random rnd = new Random();
-                Static.Items.correctEmail = rnd.Next(Static.Items.minRnd, Static.Items.maxRnd);
+                Static.Items.CorrectEmail = rnd.Next(Static.Items.MinRnd, Static.Items.MaxRnd);
                 //данные собственной почьты. Завести для игры отдельную почьту?
                 var fromAddress = new MailAddress("solovejv.1979@gmail.com");
                 var fromPassword = "oaxktugkzezmkiyd";
@@ -113,7 +113,7 @@ namespace Project1.Controllers
 
 
                 string subject = "Код подтверждения";
-                string body = Static.Items.correctEmail.ToString();
+                string body = Static.Items.CorrectEmail.ToString();
 
                 System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
                 {
@@ -146,9 +146,9 @@ namespace Project1.Controllers
         {
             try
             {
-                if (Static.Items.correctEmail == Convert.ToInt32(code))
+                if (Static.Items.CorrectEmail == Convert.ToInt32(code))
                 {
-                    workUser.SetEmailBool(Static.UserGame.userId);
+                    workUser.SetEmailBool(Static.UserGame.UserId);
                 }
             }
             catch { }
@@ -163,7 +163,7 @@ namespace Project1.Controllers
             try
             {
                 int id = Convert.ToInt32(ansver);
-                Static.UserGame.userId = id;
+                Static.UserGame.UserId = id;
 
                 return Redirect("/Start/Index");
             }

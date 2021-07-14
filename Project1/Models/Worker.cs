@@ -7,28 +7,28 @@ namespace Project1.Models
 {
     public class Worker
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public int userId { get; set; }//идентификатор игрока
 
-        public int colWorkers { get; set; }//количество рабочих
+        public int ColWorkers { get; set; }//количество рабочих
 
-        public int zp { get; set; }//зарплата одного рабочего
+        public int Zp { get; set; }//зарплата одного рабочего
 
-        public int al { get; set; }//зарплата всех рабочих
+        public int Al { get; set; }//зарплата всех рабочих
 
-        public int dayOfStrike { get; set; }//оставшихся дней забастовки
+        public int DayOfStrike { get; set; }//оставшихся дней забастовки
 
-        public bool strik { get; set; }//забастовка или работа?
+        public bool Strik { get; set; }//забастовка или работа?
 
         public Worker(int userId, int colWorkers, int zp, int al, int dayOfStrike, bool strik)
         {
             this.userId = userId;
-            this.colWorkers = colWorkers;
-            this.zp = zp;
-            this.al = al;
-            this.dayOfStrike = dayOfStrike;
-            this.strik = strik;
+            this.ColWorkers = colWorkers;
+            this.Zp = zp;
+            this.Al = al;
+            this.DayOfStrike = dayOfStrike;
+            this.Strik = strik;
         }
         public Worker()
         {

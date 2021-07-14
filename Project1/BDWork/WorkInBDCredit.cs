@@ -12,11 +12,11 @@ namespace Project1.BDWork
 
         public IEnumerable<int> GetCredits()//получить возможные кредиты
         {
-            return (from c in db.Credits select c.cash).ToList();
+            return (from c in db.Credits select c.Cash).ToList();
         }
         public IEnumerable<int> GetDayOfCredits()//получить дни до погашения
         {
-            return (from c in db.Credits select c.day).ToList();
+            return (from c in db.Credits select c.Day).ToList();
         }
     }
 }

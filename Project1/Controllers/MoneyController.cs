@@ -22,9 +22,9 @@ namespace Project1.Controllers
         // GET: Cash
         public ActionResult Index()
         {
-            ViewBag.mani = workMoney.GetMani(Static.UserGame.userId);//деньги игрока
-            ViewBag.credit = workMoney.GetCredit(Static.UserGame.userId);//возможные кредиты
-            ViewBag.day = workMoney.GetDayForCredit(Static.UserGame.userId);//дни до погашиния кредита
+            ViewBag.mani = workMoney.GetMani(Static.UserGame.UserId);//деньги игрока
+            ViewBag.credit = workMoney.GetCredit(Static.UserGame.UserId);//возможные кредиты
+            ViewBag.day = workMoney.GetDayForCredit(Static.UserGame.UserId);//дни до погашиния кредита
 
             return View(db.Credits);
         }
@@ -36,7 +36,7 @@ namespace Project1.Controllers
                 string[] arr = filtr.Split(' ');
                 int cash = Convert.ToInt32(arr[0]);
                 int day = Convert.ToInt32(arr[1]);
-                workMoney.AddManiForCredit(cash, day, Static.UserGame.userId);
+                workMoney.AddManiForCredit(cash, day, Static.UserGame.UserId);
             }
             return Redirect("\\Money\\Index");
         }

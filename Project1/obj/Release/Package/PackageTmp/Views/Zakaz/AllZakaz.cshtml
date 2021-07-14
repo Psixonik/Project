@@ -37,13 +37,13 @@
                         @(count+1)
                     </td>
                     <td title="Кузов:@ViewBag.titl[count]">
-                        @Html.DisplayFor(modelItem => item.name)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.col)
+                        @Html.DisplayFor(modelItem => item.Col)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.money)
+                        @Html.DisplayFor(modelItem => item.Money)
                     </td>
                     <td>
                         @Html.ActionLink("Выполнить", "Create", item, null) |

@@ -13,16 +13,16 @@ namespace Project1.BDWork
 
         public Bazaar GetDetailDbId(int id)
         {
-            return db.Bazaars.Where(c => c.id == id).FirstOrDefault();
+            return db.Bazaars.Where(c => c.Id == id).FirstOrDefault();
         }
 
         public string getTypeDetailByNameAndType(string name, string type)//получить деталь по её типу
         {
-            return db.Bazaars.Where(c => c.type == type).FirstOrDefault().type;
+            return db.Bazaars.Where(c => c.Type == type).FirstOrDefault().Type;
         }
         public string getTypeDetailById(int id)//получить деталь по её id
         {
-            return db.Bazaars.Where(c => c.id == id).FirstOrDefault().type;
+            return db.Bazaars.Where(c => c.Id == id).FirstOrDefault().Type;
         }
 
 

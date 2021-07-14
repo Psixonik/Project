@@ -41,30 +41,30 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.name)
+                        @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.type)
+                        @Html.DisplayFor(modelItem => item.Type)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.money)
+                        @Html.DisplayFor(modelItem => item.Money)
                     </td>
                     <td>
-                        @Html.EditorFor(Count => item.name, new
+                        @Html.EditorFor(Count => item.Name, new
                    {
                        htmlAttributes = new
                        {
                            type = "number",
                            min = "1",
                            max = "100",
-                           Name = "numeric" + @item.id,
-                           id = "numeric" + @item.id
+                           Name = "numeric" + @item.Id,
+                           id = "numeric" + @item.Id
                             }
                         })
                         @Html.ActionLink(  "Купить"
                                             ,"Buy"
-                                            ,new { id = item.id}
-                                            ,new { onclick = "this.href += '?col=' + document.getElementById('numeric"+@item.id+"').value;",@class="aLink"}
+                                            ,new { id = item.Id}
+                                            ,new { onclick = "this.href += '?col=' + document.getElementById('numeric"+@item.Id+"').value;",@class="aLink"}
                                             )
 
                     </td>

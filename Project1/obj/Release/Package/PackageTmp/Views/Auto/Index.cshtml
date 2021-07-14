@@ -43,14 +43,14 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.nameAuto)
+                        @Html.DisplayFor(modelItem => item.NameAuto)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.cost)
+                        @Html.DisplayFor(modelItem => item.Cost)
                     </td>
                     <td>
                             <a data-ajax="true"
-                               data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAuto?id=@item.id">
+                               data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAuto?id=@item.Id">
                                 Купить
                             </a>
                     </td>

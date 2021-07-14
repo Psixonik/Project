@@ -15,39 +15,39 @@
 
     @foreach (Auto item in Model)
     {
-        int axez = @item.content / 2;
+        int axez = @item.Content / 2;
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.nameAuto)
+            @Html.DisplayFor(modelItem => item.NameAuto)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.services)
+            @Html.DisplayFor(modelItem => item.Services)
         </td>
         @{
 
-            if (item.broken == 1)
+            if (item.Broken == 1)
             {
                 <td>
                     <a data-ajax="true"
-                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoWork?id=@item.id">
+                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoWork?id=@item.Id">
                         Выполнить
                     </a>
                 </td>
                 <td>
                     <a data-ajax="true"
-                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/Sale?id=@item.id">
+                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/Sale?id=@item.Id">
                         Продать машину за @axez
                     </a>
                 </td>
             }
-            else if (item.broken == -1)
+            else if (item.Broken == -1)
             {
                 <td>
-                    @item.content
+                    @item.Content
                 </td>
                 <td>
                     <a data-ajax="true"
-                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoRepair?id=@item.id">
+                       data-ajax-mode="replace" data-ajax-update="#data" data-ajax-url="/Auto/PartialAutoRepair?id=@item.Id">
                         Ремонт
                     </a>
                 </td>

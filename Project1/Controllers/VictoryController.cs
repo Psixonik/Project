@@ -26,11 +26,11 @@ namespace Project1.Controllers
             WorkInBDAuto workAuto = new WorkInBDAuto();
             WorkInBDZakaz workZakaz = new WorkInBDZakaz();
 
-            workMoney.DeletUserAndCreateNew(Static.UserGame.userId);
-            workSklad.DeletUserAndCreateNew(Static.UserGame.userId);
-            workWorkers.DeletUserAndCreateNew(Static.UserGame.userId);
-            workUtilits.DeletUserAndCreateNew(Static.UserGame.userId);
-            workAuto.DeletUserAndCreateNew(Static.UserGame.userId);
+            workMoney.DeletUserAndCreateNew(Static.UserGame.UserId);
+            workSklad.DeletUserAndCreateNew(Static.UserGame.UserId);
+            workWorkers.DeletUserAndCreateNew(Static.UserGame.UserId);
+            workUtilits.DeletUserAndCreateNew(Static.UserGame.UserId);
+            workAuto.DeletUserAndCreateNew(Static.UserGame.UserId);
             workZakaz.DeletAllZakaz();
             return Redirect("/Start/Index");
         }

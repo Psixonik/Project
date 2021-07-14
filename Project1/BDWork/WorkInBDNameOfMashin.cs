@@ -13,9 +13,9 @@ namespace Project1.BDWork
 
         public IEnumerable<string> GetSeachMenu()
         {
-            IEnumerable<string> menu = (from c in db.Auto select c.nameAuto).ToList().Distinct();
+            IEnumerable<string> menu = (from c in db.Auto select c.NameAuto).ToList().Distinct();
             IEnumerable<string> resultado;
-            resultado = db.Auto.Select(c => c.nameAuto + " Цена: " + c.cost).ToList();
+            resultado = db.Auto.Select(c => c.NameAuto + " Цена: " + c.Cost).ToList();
 
             return resultado;
         }
@@ -28,7 +28,7 @@ namespace Project1.BDWork
 
         public NameOfMashin GetMashonById(int id)
         {
-            return db.Auto.Where(c => c.id == id).FirstOrDefault();
+            return db.Auto.Where(c => c.Id == id).FirstOrDefault();
         }
     }
 }

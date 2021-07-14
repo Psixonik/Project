@@ -16,9 +16,9 @@ namespace Project1.Static
             WorkInBDSklad workSklad = new WorkInBDSklad();
             WorkInBDWorkes workWorkers = new WorkInBDWorkes();
             WorkInBDUtilits workUtilits = new WorkInBDUtilits();
-            workMoney.СreateNewUser(userId, UserGame.cash, UserGame.credit, UserGame.dayForCredit);
-            workUtilits.CreatNewUser(userId, UserGame.gas, UserGame.water, UserGame.electro);
-            workWorkers.СreateNewUser(userId, UserGame.colWorkers, UserGame.zp, UserGame.al, UserGame.dayOfStrike, UserGame.strike);
+            workMoney.СreateNewUser(userId, UserGame.Cash, UserGame.Credit, UserGame.DayForCredit);
+            workUtilits.CreatNewUser(userId, UserGame.Gas, UserGame.Water, UserGame.Electro);
+            workWorkers.СreateNewUser(userId, UserGame.ColWorkers, UserGame.Zp, UserGame.Al, UserGame.DayOfStrike, UserGame.Strike);
         }
     }
 }

@@ -22,10 +22,10 @@ namespace Project1.Controllers
         public ActionResult Index()
         {
             workZakaz.DeletAllZakaz();
-            workZakaz.CreatedNewZakaz(Static.UserGame.userId);
-            workMoney.MinManiEndOfDay(Static.UserGame.userId);
-            workAuto.ShowBrokenOrJobs(Static.UserGame.userId);
-            if (workWorkers.GetStrik(Static.UserGame.userId))
+            workZakaz.CreatedNewZakaz(Static.UserGame.UserId);
+            workMoney.MinManiEndOfDay(Static.UserGame.UserId);
+            workAuto.ShowBrokenOrJobs(Static.UserGame.UserId);
+            if (workWorkers.GetStrik(Static.UserGame.UserId))
             {
                 workWorkers.MinDayOfStrike();
             }
@@ -33,30 +33,30 @@ namespace Project1.Controllers
             {
                 workWorkers.CheckForStrike();
             }
-            int mani = workMoney.GetCredit(Static.UserGame.userId);
+            int mani = workMoney.GetCredit(Static.UserGame.UserId);
             int day;
             if (mani > 0)
             {
-                workMoney.MinDayForCredit(Static.UserGame.userId);
-                day = workMoney.GetDayForCredit(Static.UserGame.userId);
+                workMoney.MinDayForCredit(Static.UserGame.UserId);
+                day = workMoney.GetDayForCredit(Static.UserGame.UserId);
                 if (day == 0)
                 {
-                    workMoney.minMani(workMoney.GetCredit(Static.UserGame.userId), Static.UserGame.userId);
-                    workMoney.MinCredit(Static.UserGame.userId);
+                    workMoney.minMani(workMoney.GetCredit(Static.UserGame.UserId), Static.UserGame.UserId);
+                    workMoney.MinCredit(Static.UserGame.UserId);
                 }
             }
-            if (workMoney.GetMani(Static.UserGame.userId) <= 0)
+            if (workMoney.GetMani(Static.UserGame.UserId) <= 0)
             {
                 //MessageBox.Show("Game Over");
                 return View("~/Views/Start/GameOver.cshtml");
             }
-            else if (workMoney.GetMani(Static.UserGame.userId)>=Static.UserGame.maniForWin)
+            else if (workMoney.GetMani(Static.UserGame.UserId)>=Static.UserGame.ManiForWin)
             {
                 return Redirect("/Victory/Index");
             }
             else
             {
-                workUtilites.ChancItems(Static.UserGame.userId);
+                workUtilites.ChancItems(Static.UserGame.UserId);
                 return Redirect("/Start/Index");
             }
         }

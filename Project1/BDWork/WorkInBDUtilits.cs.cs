@@ -14,33 +14,33 @@ namespace Project1.BDWork
 
         public int GetGas(int userId)//получить цену газа
         {
-            Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
-            return utilits.gas;
+            Utilits utilits = db.Utilits.Where(c => c.UserId == userId).FirstOrDefault();
+            return utilits.Gas;
         }
         public int GetWater(int userId)//получить цену воды
         {
-            Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
-            return utilits.water;
+            Utilits utilits = db.Utilits.Where(c => c.UserId == userId).FirstOrDefault();
+            return utilits.Water;
         }
         public int GetElectro(int userId)//получить цену света
         {
-            Utilits utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
-            return utilits.electro;
+            Utilits utilits = db.Utilits.Where(c => c.UserId == userId).FirstOrDefault();
+            return utilits.Electro;
         }
         public void ChancItems(int userId)//новые чены
         {
             Random rnd = new Random();
 
             Utilits utilits = new Utilits();
-            utilits = db.Utilits.Where(c => c.userId == userId).FirstOrDefault();
+            utilits = db.Utilits.Where(c => c.UserId == userId).FirstOrDefault();
 
-            utilits.gas = rnd.Next(91) + 10;
+            utilits.Gas = rnd.Next(91) + 10;
             db.SaveChanges();
 
-            utilits.water = rnd.Next(91) + 10;
+            utilits.Water = rnd.Next(91) + 10;
             db.SaveChanges();
 
-            utilits.electro = rnd.Next(91) + 10;
+            utilits.Electro = rnd.Next(91) + 10;
             db.SaveChanges();
         }
 
@@ -53,7 +53,7 @@ namespace Project1.BDWork
 
         public void DeletUserAndCreateNew(int userId)//удалить игрока
         {
-            IList<Utilits> utilits = db.Utilits.Where(c => c.userId == userId).ToArray();
+            IList<Utilits> utilits = db.Utilits.Where(c => c.UserId == userId).ToArray();
 
             if (utilits != null)
             {
@@ -63,7 +63,7 @@ namespace Project1.BDWork
                     db.SaveChanges();
                 }
             }
-            CreatNewUser(userId, UserGame.gas, UserGame.water, UserGame.electro);
+            CreatNewUser(userId, UserGame.Gas, UserGame.Water, UserGame.Electro);
         }
     }
 }

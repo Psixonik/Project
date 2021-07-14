@@ -16,16 +16,16 @@ namespace Project1.BDWork
 
         public void UpdateSklad(Zakaz zakaz, TypeMashin newMashin, Detail threKyzov, Detail threKoleso, Detail threMotor, int userId)
         {
-            int newKyzov = threKyzov.col - zakaz.col;
-            int newKoleso = threKoleso.col - zakaz.col;
-            int newMotor = threMotor.col - zakaz.col;
+            int newKyzov = threKyzov.Col - zakaz.Col;
+            int newKoleso = threKoleso.Col - zakaz.Col;
+            int newMotor = threMotor.Col - zakaz.Col;
 
             var kyzov = db.Details
-                    .Where(c => (c.type == newMashin.kyzov&&c.userId==userId))
+                    .Where(c => (c.Type == newMashin.Kyzov&&c.UserId==userId))
                     .FirstOrDefault();
             // Внести изменения
-            kyzov.col = kyzov.col - newMashin.colKyzov * zakaz.col;
-            if (kyzov.col == 0)
+            kyzov.Col = kyzov.Col - newMashin.ColKyzov * zakaz.Col;
+            if (kyzov.Col == 0)
             {
                 db.Details.Remove(kyzov);
             }
@@ -33,11 +33,11 @@ namespace Project1.BDWork
             db.SaveChanges();
 
             var koleso = db.Details
-                .Where(c => (c.type == newMashin.koleso&&c.userId==userId))
+                .Where(c => (c.Type == newMashin.Koleso&&c.UserId==userId))
                 .FirstOrDefault();
             // Внести изменения
-            koleso.col = koleso.col - newMashin.colKoleso * zakaz.col;
-            if (koleso.col == 0)
+            koleso.Col = koleso.Col - newMashin.ColKoleso * zakaz.Col;
+            if (koleso.Col == 0)
             {
                 db.Details.Remove(koleso);
             }
@@ -45,11 +45,11 @@ namespace Project1.BDWork
             db.SaveChanges();
 
             var motor = db.Details
-                .Where(c => (c.type == newMashin.motor&&c.userId==userId))
+                .Where(c => (c.Type == newMashin.Motor&&c.UserId==userId))
                 .FirstOrDefault();
             // Внести изменения
-            motor.col = motor.col - newMashin.colMotor * zakaz.col;
-            if (motor.col == 0)
+            motor.Col = motor.Col - newMashin.ColMotor * zakaz.Col;
+            if (motor.Col == 0)
             {
                 db.Details.Remove(motor);
             }
@@ -59,7 +59,7 @@ namespace Project1.BDWork
 
         public Detail GetDeteilSomeBdByType(string type, int userId)//получить деталь по типу
         {
-            Detail axez = db.Details.Where(c => (c.type == type && c.userId == userId)).FirstOrDefault();
+            Detail axez = db.Details.Where(c => (c.Type == type && c.UserId == userId)).FirstOrDefault();
             return axez;
         }
 
@@ -72,14 +72,14 @@ namespace Project1.BDWork
             }
             else
             {
-                axez = db.Details.Where(c => (c.name == name && c.userId == userId));
+                axez = db.Details.Where(c => (c.Name == name && c.UserId == userId));
             }
             return axez;
         }
 
         public IEnumerable<Detail> GetDeteilAll(int userId)//получить все детали игрока
         {
-            IEnumerable<Detail> axez = db.Details.Where(c => c.userId == userId);
+            IEnumerable<Detail> axez = db.Details.Where(c => c.UserId == userId);
             return axez;
         }
 
@@ -87,7 +87,7 @@ namespace Project1.BDWork
         {
 
             IEnumerable<string> concatenated = new List<string> { " " };
-            IEnumerable<string> menu = (from c in db.Bazaars select c.name).ToList().Distinct();
+            IEnumerable<string> menu = (from c in db.Bazaars select c.Name).ToList().Distinct();
             concatenated = concatenated.Concat(menu);
             concatenated = concatenated.Concat(new List<string> { "все" });
 
@@ -97,8 +97,8 @@ namespace Project1.BDWork
         public void UpdateForBuy(string type, int colBuy, int userId)//изменить количество при покупке
         {
             Detail col;
-            col = db.Details.Where(c => c.type == type && c.userId == userId).FirstOrDefault();
-            col.col += colBuy;
+            col = db.Details.Where(c => c.Type == type && c.UserId == userId).FirstOrDefault();
+            col.Col += colBuy;
             db.SaveChanges();
         }
 
@@ -107,10 +107,10 @@ namespace Project1.BDWork
             // Создать новую деталь
             Detail newDetail = new Detail
             {
-                userId = userId,
-                name = newName,
-                type = newType,
-                col = newCol
+                UserId = userId,
+                Name = newName,
+                Type = newType,
+                Col = newCol
             };
 
             // Добавить в DbSet
@@ -124,10 +124,10 @@ namespace Project1.BDWork
         {
             Detail newDetail = new Detail
             {
-                userId = userId,
-                name = "",
-                type = "",
-                col = 0
+                UserId = userId,
+                Name = "",
+                Type = "",
+                Col = 0
             };
 
             // Добавить в DbSet
@@ -139,7 +139,7 @@ namespace Project1.BDWork
 
         public void DeletUserAndCreateNew(int userId)//играть заново
         {
-            IList<Detail> details = db.Details.Where(c => c.userId == userId).ToArray();
+            IList<Detail> details = db.Details.Where(c => c.UserId == userId).ToArray();
             
             if (details != null)
             {
